@@ -23,9 +23,9 @@ While the early internet may have been fairly decentralized, in recent years it 
 
 ### The automation dilemma
 
-Despite the improvements blockchains bring over centrally-managed datacenters, they are not a wholesale replacement for the entire application stack. One critical use-case not supported by blockchains today are lambdas: automated code that can run without dedicated servers or human intervention.&#x20;
+Despite the improvements blockchains bring over centrally-managed datacenters, they are not a wholesale replacement for the entire application stack. One critical use-case not supported by blockchains today are **lambdas**: automated code that can run without dedicated servers or human intervention.&#x20;
 
-This presents a problem for decentralization because developers today are forced to fallback on centralized solutions to automate on-chain programs. A dapp is only as decentralized as its most centralized dependency. We refer to this problem as the "automation dilemma" **** – dapp developers can either choose _automation_ or _decentralization_, but not both.&#x20;
+This presents a problem for decentralization because developers today are forced to fallback on centralized solutions to automate on-chain programs. A dapp is only as decentralized as its most centralized dependency. We refer to this problem as the **automation dilemma** – dapp developers can either choose _automation_ or _decentralization_, but not both.&#x20;
 
 ## Why Clockwork?&#x20;
 
