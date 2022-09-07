@@ -51,7 +51,7 @@ solana program deploy \
 
 ## Stream logs
 
-To stream logs from your deployed programs, you can use the Solana CLI.
+To stream logs from your deployed program, you can use the Solana CLI.
 
 ```bash
 solana logs --url localhost
