@@ -6,7 +6,7 @@ description: >-
 
 # Hello world
 
-{% hint style="success" %}
+{% hint style="info" %}
 The full source-code for this example is open-source and free-to-fork on Github.
 
 [https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork)
