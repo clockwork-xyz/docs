@@ -1,14 +1,10 @@
+---
+description: >-
+  This example program executes an SPL token transfer on a user-defined
+  schedule.
+---
+
 # Recurring payments
-
-## Summary
-
-This example program executes an SPL token transfer on a user-defined schedule.
-
-{% hint style="info" %}
-The full source-code for this example is open-source and free-to-fork on Github.
-
-[https://github.com/clockwork-xyz/examples/tree/main/payments](https://github.com/clockwork-xyz/examples/tree/main/payments)
-{% endhint %}
 
 ## Accounts
 
