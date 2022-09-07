@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/gitbook-header-architecture.png
+cover: ../.gitbook/assets/gitbook-header-architecture-2.png
 coverY: 0
 ---
 
