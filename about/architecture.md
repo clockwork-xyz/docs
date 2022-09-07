@@ -14,7 +14,7 @@ Clockwork has two primary layers:
 
 These two layers work together to power any on-chain workflow you can imagine. What makes Clockwork unique is that all workers on the network are actually Solana validators and RPC nodes under the hood. This provides significant performance benefits over centralized backends and other automation services. Since the Clockwork run on the same physical hardware as the Solana validators, it is significantly cheaper, more reliable, and less spammy than traditional bots.
 
-<figure><img src="../.gitbook/assets/Blank diagram (3).png" alt=""><figcaption><p>Clockwork workers run on the Solana validators and RPC nodes. The Clockwork program serves as a proxy contract which forwards crank transactions to your program.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank diagram (3).png" alt=""><figcaption><p>The Clockwork program serves as a proxy contract which verifies and forwards cranks on to your target program.</p></figcaption></figure>
 
 ## Automating signatures&#x20;
 
