@@ -19,7 +19,7 @@ Blockchains represent a major new paradigm shift in software engineering. Where 
 
 **Decentralization is core to everything we do in crypto.** It's the foundational principle behind network security, censorship resistance, and permissionless computing. Despite the crypto industry's emphasis on "decentralization" being something novel, ironically it's not a new concept at all. In fact, the trade-off between centralized, authoritarian decision making and decentralized group coordination has been a recurring theme in philosophy, economics, politics, and technology for the last few centuries.&#x20;
 
-Decentralization was even a core value and principle of the early Internet. Though in recent years, this has become much less true. The vast majority of internet communications today flow through a small handful of companies and infrastructure operators. In general, this centralization makes services across the internet less secure and more susceptible to censorship. When a network administrator can ban any user at will, true user autonomy and asset ownership are impossible.&#x20;
+Decentralization was even a core value and principle of the early Internet. Though in recent years, this has become much less true. Today, the vast majority of internet communications flow through a small handful of companies and infrastructure providers. In general, this centralization makes services across the internet less secure and more susceptible to censorship. When a network administrator can ban any user at will, true user autonomy and asset ownership are impossible.&#x20;
 
 ### The automation dilemma
 
