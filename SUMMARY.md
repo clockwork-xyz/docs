@@ -9,12 +9,12 @@
 
 * [Getting started](developers/getting-started.md)
 * [Building with queues](developers/building-with-queues.md)
-* [Example code](developers/example-code/README.md)
-  * [Hello world](developers/example-code/hello-world.md)
-  * [Recurring payments](developers/example-code/recurring-payments.md)
-  * [Token distributor](developers/example-code/token-distributor.md)
-  * [Dollar cost averaging](developers/example-code/dollar-cost-averaging.md)
-  * [Serum crank](developers/example-code/serum-crank.md)
+* [Examples](developers/examples/README.md)
+  * [Hello world](developers/examples/hello-world.md)
+  * [Recurring payments](developers/examples/recurring-payments.md)
+  * [Token distributor](developers/examples/token-distributor.md)
+  * [Dollar cost averaging](developers/examples/dollar-cost-averaging.md)
+  * [Serum crank](developers/examples/serum-crank.md)
 
 ## Workers
 
