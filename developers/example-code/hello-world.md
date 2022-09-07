@@ -1,16 +1,17 @@
+---
+description: >-
+  This example program prints "Hello world" and the current timestamp every 60
+  seconds.
+---
+
 # Hello world
-
-## Summary
-
-* Prints "Hello world" and the current timestamp every 60 seconds.
-* **This example is open-source and free-to-fork on Github.**
-
-{% embed url="https://github.com/clockwork-xyz/examples/tree/main/hello_clockwork" %}
 
 ## Accounts
 
-{% tabs %}
-{% tab title="Authority" %}
+<details>
+
+<summary>Authority</summary>
+
 This program uses a singleton `Authority` account. Once initialized, the authority account can sign for [CPIs](https://docs.solana.com/developing/programming-model/calling-between-programs) on behalf of our program.
 
 ```rust
@@ -35,13 +36,15 @@ impl Authority {
     }
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+</details>
 
 ## Instructions
 
-{% tabs %}
-{% tab title="Initialize" %}
+<details>
+
+<summary>Initialize</summary>
+
 The `Initialize` instruction is only intended to be called once at the point of program initialization. It creates a Clockwork queue named `"hello"` and schedules it to fire every 15 seconds. Note we pass in the queue account as a `SystemAccount` and verify its PDA seeds follow the expected pattern.&#x20;
 
 ```rust
@@ -130,9 +133,13 @@ pub fn handler<'info>(ctx: Context<'_, '_, '_, 'info, Initialize<'info>>) -> Res
     Ok(())
 }
 ```
-{% endtab %}
 
-{% tab title="HelloWorld" %}
+</details>
+
+<details>
+
+<summary>HelloWorld</summary>
+
 The `HelloWorld` instruction is the target instruction we setup as the kickoff instruction for the queue. Here we simply verify the signer is our program's queue, named `"hello"`, and then print a log message.
 
 ```rust
@@ -170,5 +177,5 @@ pub fn handler(_ctx: Context<HelloWorld>) -> Result<CrankResponse> {
     Ok(CrankResponse { next_instruction: None })
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+</details>
