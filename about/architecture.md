@@ -18,7 +18,7 @@ These two layers work in tandem to efficiently power automations for other on-ch
 
 ## Automating signatures&#x20;
 
-Clockwork is a non-custodial service, and thus does not hold onto users' private keys. This invites unique security challenges when scheduling transactions on behalf users.&#x20;
+Clockwork is a **non-custodial** service, and thus does not hold onto users' private keys. This invites unique security challenges when scheduling transactions on behalf users.&#x20;
 
 ### Pre-signed transactions
 
@@ -26,6 +26,6 @@ One naive approach to scheduling transactions would be to save pre-signed transa
 
 ### Delegated signatories
 
-Instead, Clockwork uses a "delegated signatory" model. When a worker builds and submits a crank transaction, the Clockwork program verifies the crank is valid and adds an additional PDA signer before forwarding the request onto the target program.&#x20;
+Instead, Clockwork uses a **delegated signatory** model. When a worker builds and submits a crank transaction, the Clockwork program verifies the crank is valid and adds an additional PDA signer before forwarding the request onto the target program.&#x20;
 
 Target programs can verify the PDA signature is valid to know if the crank request is safe to process. This proxy-contract model can protect programs against spam and unintentional invocations. Code samples for how verify crank requests correctly can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/blob/main/hello\_clockwork/programs/hello\_clockwork/src/instructions/hello\_world.rs) repo on Github.&#x20;
