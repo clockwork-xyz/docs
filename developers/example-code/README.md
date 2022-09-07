@@ -9,7 +9,7 @@
 * ****[**Serum crank**](serum-crank.md) – Indefinitely processes open orders on a permissioned Serum market.
 
 {% hint style="info" %}
-All example programs were written in [Anchor](https://www.anchor-lang.com/). Anchor is a framework which makes it easy to build programs on Solana. It has many features designed to help developers avoid common smart-contract security bugs.
+All example programs are written in [**Anchor**](https://www.anchor-lang.com/). Anchor is a framework which makes it easy to build programs on Solana. It has many features designed to help developers avoid common smart-contract security bugs.
 {% endhint %}
 
 ## Source
