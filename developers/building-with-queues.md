@@ -1,10 +1,10 @@
-# Queues
+# Building with queues
 
 **A queue is a** [**Solana account**](https://docs.solana.com/developing/programming-model/accounts) **for managing the state of an on-chain job or workflow.** They are the core Clockwork primitive developers can use to automate their programs.&#x20;
 
 ## Account model
 
-Queues track a few basic properties about the workflow they manage such as its owner, triggering condition, kickoff instruction, next instruction, and execution context.&#x20;
+A queue tracks a few basic properties about the workflow it manages such as its owner, triggering condition, kickoff instruction, next instruction, and execution context.&#x20;
 
 ```rust
 #[account]
