@@ -9,7 +9,7 @@ coverY: 0
 
 ## **Background**
 
-Blockchains represent a major new paradigm shift in software development. Where applications are traditionally hosted in centrally-managed datacenters, blockchains offer an alternative hosting environment maintained by a decentralized community of stakeholders. In the distributed runtime of a blockchain, program state is redundantly copied to thousands of nodes around the world, and program execution can happen on any node in the network.&#x20;
+Blockchains represent a major new paradigm shift in software engineering. Where applications are traditionally hosted in large, centrally-managed, "cloud" datacenters, blockchains offer an alternative hosting environment run by a decentralized community of stakeholders. In the distributed runtime of a blockchain, program state is redundantly copied to thousands of nodes around the world, and program execution can happen on any node in the network.&#x20;
 
 ### Solana
 
@@ -17,9 +17,9 @@ Blockchains represent a major new paradigm shift in software development. Where 
 
 ### Decentralization
 
-**Decentralization is core to everything we do in crypto.** It's the foundational principle behind network security, censorship resistance, and permissionless computing.&#x20;
+**Decentralization is core to everything we do in crypto.** It's the foundational principle behind network security, censorship resistance, and permissionless computing. Despite the crypto industry's emphasis on "decentralization" being something novel, ironically it's not a new concept at all. In fact, the trade-off between centralized, authoritarian decision making and decentralized group coordination has been a recurring theme in philosophy, economics, politics, and technology for the last few centuries.&#x20;
 
-While the early internet may have been fairly decentralized, in recent years it has become much less so. The vast majority of internet communications today flow through a small handful of companies and infrastructure providers. This makes services across the internet less secure and susceptible to censorship. When a network administrator can ban any user at will, true autonomy and asset ownership is impossible.&#x20;
+Decentralization was even a core value and principle of the early Internet. Though in recent years, this has become much less true. The vast majority of internet communications today flow through a small handful of companies and infrastructure operators. In general, this centralization makes services across the internet less secure and more susceptible to censorship. When a network administrator can ban any user at will, true user autonomy and asset ownership are impossible.&#x20;
 
 ### The automation dilemma
 
