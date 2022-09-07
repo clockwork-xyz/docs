@@ -1,5 +1,5 @@
 # Serum crank
 
-{% hint style="warning" %}
-Coming soon
+{% hint style="info" %}
+Coming soon!
 {% endhint %}
