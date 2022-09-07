@@ -23,10 +23,10 @@ Decentralization was even a core value and principle of the early Internet. Thou
 
 ### The automation dilemma
 
-Despite the improvements blockchains bring over centrally-managed datacenters, they are not a wholesale replacement for the entire application stack. One critical use-case not supported by blockchains today are **lambdas**: automated code that can run without dedicated servers or human intervention.&#x20;
+Despite the improvements blockchains have over centrally-managed datacenters, they are not a wholesale replacement for the entire software stack. One critical use-case not supported by blockchains today are **lambdas**: automated code that can run without dedicated servers or human intervention.&#x20;
 
-This presents a problem for decentralization because developers today are forced to fallback on centralized solutions to automate on-chain programs. A dapp is only as decentralized as its most centralized dependency. We refer to this problem as the **automation dilemma** – dapp developers can either choose _automation_ or _decentralization_, but not both.&#x20;
+This presents a problem for decentralization because developers today are forced to fallback on centralized solutions to automate on-chain programs. A dapp is only as decentralized as its most centralized dependency. We refer to this problem as **the automation dilemma** – dapp developers today are being forced to choose between building dapps that are _automated_ or building dapps that are _decentralized._
 
 ## Why Clockwork?&#x20;
 
-We believe an open-source, easy-to-use, decentralized automation layer is necessary for developers to build really great dapps. By providing public tooling and infrastructure, we hope to support builders across the ecosystem in their mission to create a truly decentralized internet.&#x20;
+We believe an open-source, easy-to-use, decentralized automation layer is necessary for developers to build the next wave of really great dapps. By providing public tooling and infrastructure, we hope to support builders across the ecosystem in their mission to build a truly decentralized internet.&#x20;
