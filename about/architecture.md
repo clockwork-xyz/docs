@@ -18,7 +18,7 @@ These two layers work in tandem to efficiently power automations for other on-ch
 
 ## Automating signatures&#x20;
 
-Clockwork is a **non-custodial** service, and thus does not hold onto users' private keys. This invites unique security challenges when scheduling transactions on behalf users.&#x20;
+**Clockwork is non-custodial**, and thus does not hold onto users' private keys. This invites unique security challenges when scheduling transactions on behalf users.&#x20;
 
 ### Pre-signed transactions
 
