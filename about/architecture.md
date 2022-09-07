@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/gitbook-header-architecture-2.png
+cover: ../.gitbook/assets/gitbook-header-3.png
 coverY: 0
 ---
 
@@ -10,7 +10,7 @@ coverY: 0
 Clockwork has two primary abstraction layers:
 
 1. A **smart-contract** where users can create on-chain task queues.
-2. A **worker network** which submits transactions to crank users' task queues.
+2. A **worker network** that submits transactions to crank users' task queues.
 
 These two layers work in tandem to efficiently power automations for other on-chain programs. What makes Clockwork unique is that all workers on the network are actually Solana validators and RPC nodes under the hood. This provides significant performance benefits over centralized backends and other automation services. Since the network runs on the same physical hardware as the Solana validators, it is generally cheaper, more reliable, and less spammy than traditional bots.
 
