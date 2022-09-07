@@ -22,7 +22,7 @@ These two layers work in tandem to power automations for other on-chain programs
 
 ### Pre-signed transactions
 
-One naive approach to scheduling transactions would be to save pre-signed transaction data somewhere for use at a later date. This is problematic since it would be impossible to prevent malicious actors from executing the signed transactions ahead of their intended schedule. Solana explicitly protects against this by requiring every transaction to contain a [**recent blockhash**](https://docs.solana.com/developing/programming-model/transactions#recent-blockhash). This has the consequence of causing Solana transactions to go stale if they're not submitted to blockchain within a few minutes of been signed.
+One naive approach to scheduling transactions would be to save pre-signed transaction data somewhere for submission at a later date. This is problematic since it would be impossible to prevent malicious actors from submitting the signed transactions ahead of their intended schedule. Solana explicitly protects against this by requiring every transaction to contain a [**recent blockhash**](https://docs.solana.com/developing/programming-model/transactions#recent-blockhash). This has the consequence of causing Solana transactions to go stale if they're not submitted to blockchain within a few minutes of been signed.
 
 ### Delegated signatories
 
