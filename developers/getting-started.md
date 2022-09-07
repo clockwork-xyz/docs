@@ -2,7 +2,7 @@
 
 ## Build from source
 
-Currently, the fastest way to get started Clockwork is to download the open-source repo, checkout the latest stable version, and build the toolkit from source.
+Currently, the fastest way to get started Clockwork is to download the open-source repo, checkout the latest release, and build the toolkit from source:
 
 ```bash
 git clone https://github.com/clockwork-xyz/clockwork
@@ -13,13 +13,13 @@ git checkout tags/$(git describe --tags)
 
 ## Deploy to localnet
 
-First, remember to configure your Solana config for local development.
+First, remember to configure your Solana config for local development:
 
 ```bash
 solana config set --url localhost
 ```
 
-Launch a Clockwork node for local development.
+Launch a Clockwork node for local development:
 
 ```bash
 clockwork localnet
