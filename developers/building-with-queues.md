@@ -55,21 +55,21 @@ New trigger types will be supported soon including slot-based schedules and even
 
 ## Flow control
 
-As soon as a queue's triggering condition is met, the worker network will begin submitting transactions to "crank" the queue. When this happens, the queue will initialize a new `exec_context` to track its current execution state and send a CPI to the target program defined in the queue's `kickoff_instruction`.
+As soon as a queue's trigger condition is met, the worker network will begin submitting transactions to "crank" the queue. When this happens, the queue will initialize a new `exec_context` to track its current execution state and send a CPI to the target program defined in the queue's `kickoff_instruction`.
 
 Here, the target program can do whatever work it needs to with the accounts and data defined in the `kickoff_instruction`. When finished, the target program can return a `CrankResponse` and optionally specify a `next_instruction` to be invoked on the next crank of the queue.
 
-<figure><img src="../.gitbook/assets/Blank document (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank document (15).png" alt=""><figcaption><p>On the first crank, a queue will execute its <code>kickoff_instruction</code>.</p></figcaption></figure>
 
-As long as a queue has a non-null `next_instruction` value, the worker network will automatically submit transactions to crank the queue. Each crank instruction has the responsibility of building an instruction for the next crank. In this way, queues provide a simple interface for developers to write complex and dynamic workflows using smart-contracts.&#x20;
+As long as a queue has a non-null `next_instruction` value, the worker network will continue submitting transactions to crank the queue. Each crank has the responsibility of building the instruction to be invoked on the next crank. In this way, queues provide a simple interface for developers to write complex and dynamic workflows using smart-contracts.&#x20;
 
-Workers will continue cranking a queue indefinitely until either a null `next_instruction` value is returned or the queue's balance is insufficient to pay for the transaction.
+The worker network will automatically crank a queue indefinitely until either its `next_instruction` value is null, an error is thrown, or the queue's balance is insufficient to pay for the transaction.
 
-<figure><img src="../.gitbook/assets/Blank document (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank document (16).png" alt=""><figcaption><p>On subsequent cranks, a queue will execute its <code>next_instruction</code> until a null value is returned.</p></figcaption></figure>
 
-## Fees
+## Automation fees
 
-All queues must maintain a SOL balance to compensate workers for their automation services. Clockwork fees are paid in SOL and charged per crank. The fee is currently set at a flat 1000 lamports per crank and managed by the Clockwork team. This price is subject to change given future price discovery and long term may transition to a more dynamic market-based mechanism.
+All queues must maintain a sufficient balance of SOL to pay workers for their automation services. Automation fees are paid in [lamports](https://docs.solana.com/introduction#what-are-sols) and charged per crank. The fee is currently set to a flat rate of 1000 lamports per crank and managed by the core Clockwork team. This value is subject to change with future price discovery and long-term may transition to a DAO-controlled or market-based mechanism.
 
 ## Payers
 
