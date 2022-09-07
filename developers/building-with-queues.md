@@ -61,7 +61,7 @@ Here, the target program can do whatever work it needs to with the accounts and 
 
 <figure><img src="../.gitbook/assets/Blank document (15).png" alt=""><figcaption><p>On the first crank, a queue will execute its <code>kickoff_instruction</code>.</p></figcaption></figure>
 
-As long as a queue has a non-null `next_instruction` value, the worker network will continue submitting transactions to crank the queue. Each crank has the responsibility of building the instruction to be invoked on the next crank. In this way, queues provide a simple interface for developers to write complex and dynamic workflows using smart-contracts.&#x20;
+As long as a queue has a non-null `next_instruction` value, the worker network will continue submitting transactions to crank the queue. Each crank has the responsibility of building the instruction to be invoked on the next crank. In this way, queues provide a simple interface for developers to build complex and dynamically branching workflows via smart-contracts.&#x20;
 
 The worker network will automatically crank a queue indefinitely until either its `next_instruction` value is null, an error is thrown, or the queue's balance is insufficient to pay for the transaction.
 
