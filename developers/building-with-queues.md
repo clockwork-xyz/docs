@@ -69,7 +69,7 @@ The worker network will automatically crank a queue indefinitely until either it
 
 ## Automation fees
 
-All queues must maintain a sufficient balance of SOL to pay workers for their automation services. Automation fees are paid in [lamports](https://docs.solana.com/introduction#what-are-sols) and charged per crank. The fee is currently set to a flat rate of 1000 lamports per crank and managed by the core Clockwork team. This value is subject to change with future price discovery and long-term may transition to a DAO-controlled or market-based mechanism.
+All queues must maintain a sufficient balance of SOL to pay workers for their services. The automation fee is currently set to a flat rate of 1000 lamports per crank and managed by the core Clockwork team. This value is subject to change with future price discovery and long-term may transition to a DAO-controlled or market-based mechanism.
 
 ## Payers
 
