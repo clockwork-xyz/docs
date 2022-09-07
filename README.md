@@ -9,7 +9,7 @@ coverY: 0
 
 ## **Background**
 
-Blockchains represent a major new paradigm in software development. Where applications are traditionally hosted in centrally-managed datacenters, blockchains offer an alternative hosting environment maintained by a decentralized community of stakeholders. In the distributed runtime of a blockchain, program state is redundantly copied to thousands of nodes around the world, and program execution can happen on any node in the network.&#x20;
+Blockchains represent a major new paradigm shift in software development. Where applications are traditionally hosted in centrally-managed datacenters, blockchains offer an alternative hosting environment maintained by a decentralized community of stakeholders. In the distributed runtime of a blockchain, program state is redundantly copied to thousands of nodes around the world, and program execution can happen on any node in the network.&#x20;
 
 ### Solana
 
