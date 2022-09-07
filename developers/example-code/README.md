@@ -16,6 +16,6 @@ All example programs are written in [**Anchor**](https://www.anchor-lang.com/). 
 
 ## Source
 
-You can find the full source code for all example programs on Github:
+You can find the full source code for all example programs shown here on Github:
 
 {% embed url="https://github.com/clockwork-xyz/examples" %}
