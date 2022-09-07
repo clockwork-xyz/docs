@@ -26,6 +26,6 @@ One naive approach to scheduling transactions would be to save pre-signed transa
 
 ### Delegated signatories
 
-Instead, Clockwork uses a **delegated signatory** model. When a worker builds and submits a crank transaction, the Clockwork program verifies the crank is valid and adds an additional PDA signer before forwarding the request onto the target program.&#x20;
+Instead, Clockwork uses a **delegated signatory** model. When a worker builds and submits a crank transaction, the Clockwork program verifies the transaction and adds an additional PDA signer before forwarding the request on to the target program.&#x20;
 
 Target programs can verify the PDA signature from the Clockwork program to know if the crank request is safe to process. This proxy-contract model protects programs against spam and unintended invocations. Code samples showing how correctly verify crank requests can be found in the [**examples** ](https://github.com/clockwork-xyz/examples/blob/main/hello\_clockwork/programs/hello\_clockwork/src/instructions/hello\_world.rs)repo on Github.&#x20;
