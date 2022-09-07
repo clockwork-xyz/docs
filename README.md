@@ -29,4 +29,4 @@ This presents a problem for decentralization because developers today are forced
 
 ## Why Clockwork?&#x20;
 
-We believe an easy-to-use, open-source, decentralized automation layer is necessary for developers to build the next set of really great dapps. By providing public tooling and infrastructure, we hope to support developers across the ecosystem in their mission to build a truly decentralized internet.&#x20;
+We believe an open-source, easy-to-use, decentralized automation layer is necessary for developers to build really great dapps. By providing public tooling and infrastructure, we hope to support builders across the ecosystem in their mission to create a truly decentralized internet.&#x20;
