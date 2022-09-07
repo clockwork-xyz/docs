@@ -1,10 +1,8 @@
----
-description: >-
-  This example program prints "Hello world" and the current timestamp every 60
-  seconds.
----
-
 # Hello world
+
+## Summary
+
+This example program prints "Hello world" and the current timestamp every 60 seconds.
 
 {% hint style="info" %}
 The full source-code for this example is open-source and free-to-fork on Github.
