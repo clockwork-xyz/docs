@@ -1,5 +1,5 @@
 # Dollar cost averaging
 
-{% hint style="warning" %}
-Coming soon
+{% hint style="info" %}
+Coming soon!
 {% endhint %}

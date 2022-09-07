@@ -19,4 +19,3 @@
 ## Workers
 
 * [Deploying a worker](workers/deploying-a-worker.md)
-* [Staking](workers/staking.md)
