@@ -1,6 +1,6 @@
 # Building with queues
 
-**A queue is a** [**Solana account**](https://docs.solana.com/developing/programming-model/accounts) **for managing the state of an on-chain job or workflow.** They are the core primitive developers can use to automate their programs.&#x20;
+**A queue is an** [**account**](https://docs.solana.com/developing/programming-model/accounts) **for managing the state of an on-chain job or workflow.** It is the core primitive for building automated programs on Solana.
 
 ## Account model
 
@@ -21,7 +21,7 @@ pub struct Queue {
 
 ### Public address
 
-The public address of every queue is derived deterministically from its `authority` and `id` properties. These properties are immutable and may never change.&#x20;
+The public address of every queue is derived deterministically from its `authority` and `id` properties. These properties are immutable and may never change throughout the lifetime of the queue.&#x20;
 
 ```json
 [
@@ -33,24 +33,28 @@ The public address of every queue is derived deterministically from its `authori
 
 ### Authority
 
-On Solana, the term “authority” is used by convention to refer to the owner of a particular asset or account. For Clockwork queues, the authority is its creator – the account which signed the transaction to create the queue. A queue’s authority has the following permissions:
+On Solana, the term “authority” is often used by convention to refer to the user-space owner of a particular account. For Clockwork queues, the authority is its creator – the account which signed the transaction to create the queue. A queue’s authority has the following permissions:
 
 * Pause and resume the queue
-* Update the queue’s trigger and first instruction
+* Update the queue’s `trigger` and `first_instruction`
 * Withdraw from the queue’s balance
 * Close the queue account
 
-An authority may be any valid public address (i.e. a wallet pubkey or PDA). When the authority is a PDA, we occasionally refer to this as a “program authority” since the account managed by a program. If you are unfamiliar with PDAs, the Solana Cookbook has a [great writeup](https://solanacookbook.com/core-concepts/pdas.html) on what they are and how to use them to build secure programs.
+An authority may be any valid public address (i.e. a wallet pubkey or PDA). When the authority is a PDA, we occasionally refer to this as a “program authority” since the account managed by a program. If you are unfamiliar with PDAs, the Solana Cookbook has a [great writeup](https://solanacookbook.com/core-concepts/pdas.html) on what they are and how to build secure programs with them.
 
 ### Triggers
 
 Clockwork currently supports 2 trigger types:
 
-* **Cron** – Executes according to the specified schedule. If the schedule is recurring and a prior execution context is still active when the trigger condition is met, the queue will wait until the prior execution context is finished before kicking off a new one.&#x20;
-* **Immediate** – Begins executing immediately and cranks indefinitely until a null `next_instruction` is returned.&#x20;
+* **Cron** – Executes according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron).&#x20;
+  * Solana's sysvar clock is used the source-of-truth for time when processing on-chain cron schedules. If Solana's network clock drifts relative to your local wallclock, cron schedules will remain synced to Solana time rather than your local time.
+  * If the schedule is recurring and a prior execution context is still active when the triggering moment is met, the queue will finish the prior execution context before kicking off a new one. In other words, queues are single-threaded and should be designed to complete within their schedule's resolution period to avoid drift.
+  * If the cron schedule is invalid or has reached a stopping point, the queue will not kickoff a new execution context.
+* **Immediate** – Begins executing immediately.&#x20;
+  * Queues will crank indefinitely until a null `next_instruction` is returned. This property can be exploited to create an "infinite" queue that cranks forever.
 
 {% hint style="info" %}
-New trigger types will be supported soon including slot-based schedules and event-driven conditions. If you have an idea for a trigger type that is not supported here, please [file an issue](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
+New trigger types will be supported soon including slot-based schedules and event-driven conditions. If you have an idea for a trigger type that is not supported here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
 {% endhint %}
 
 ## Flow control
@@ -69,7 +73,7 @@ The worker network will automatically crank a queue indefinitely until either it
 
 ## Automation fees
 
-All queues must maintain a sufficient balance of SOL to pay workers for their automation services. Automation fees are paid in [lamports](https://docs.solana.com/introduction#what-are-sols) and charged per crank. The fee is currently set to a flat rate of 1000 lamports per crank and managed by the core Clockwork team. This value is subject to change with future price discovery and long-term may transition to a DAO-controlled or market-based mechanism.
+All queues must maintain a sufficient balance of SOL to pay workers for their services. The automation fee is currently set to a flat rate of 1000 lamports per crank and managed by the core Clockwork team. This value is subject to change with future price discovery and long-term may transition to a DAO-controlled or market-based mechanism.
 
 ## Payers
 
