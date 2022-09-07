@@ -1,17 +1,16 @@
----
-description: >-
-  This example program executes an SPL token transfer on a user-defined
-  schedule.
----
-
 # Recurring payments
+
+## Summary
+
+* Executes an SPL token transfer on a user-defined schedule.
+* **This example is open-source and free-to-fork on Github.**
+
+{% embed url="https://github.com/clockwork-xyz/examples/tree/main/payments" %}
 
 ## Accounts
 
-<details>
-
-<summary>Payment</summary>
-
+{% tabs %}
+{% tab title="Payment" %}
 The `Payment` account holds onto basic information such as who the sender and recipient are, the mint, and the escrowed balance. Note the payment account's PDA seeds consist of the sender, recipient, and mint properties. This allows our program to create a new payment for every (sender, recipient, mint) tuple.&#x20;
 
 ```rust
@@ -84,16 +83,14 @@ impl PaymentAccount for Account<'_, Payment> {
     }
 }
 ```
-
-</details>
+{% endtab %}
+{% endtabs %}
 
 ## Instructions
 
-<details>
-
-<summary>CreatePayment</summary>
-
-This instruction simply initializes a payment account and then creates a Clockwork queue to call `DisbursePayment` according to the user-defined scheduler.&#x20;
+{% tabs %}
+{% tab title="CreatePayment" %}
+This instruction initializes a `Payment` account and then creates a queue to invoke `DisbursePayment` according to the user-defined scheduler.&#x20;
 
 ```rust
 use {
@@ -255,13 +252,9 @@ pub fn handler<'info>(
     Ok(())
 }
 ```
+{% endtab %}
 
-</details>
-
-<details>
-
-<summary>DisbursePayment</summary>
-
+{% tab title="DisbursePayment" %}
 The `DisbursePayment` instruction simply invokes a token transfer from the escrow account (owned by the payment PDA) to the recipient's associated token account.
 
 ```rust
@@ -347,5 +340,13 @@ pub fn handler(ctx: Context<'_, '_, '_, '_, DisbursePayment<'_>>) -> Result<Cran
     Ok(CrankResponse{ next_instruction: None })
 }
 ```
+{% endtab %}
+{% endtabs %}
+
+<details>
+
+<summary>DisbursePayment</summary>
+
+
 
 </details>

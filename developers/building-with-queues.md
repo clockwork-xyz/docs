@@ -51,7 +51,7 @@ Clockwork currently supports 2 trigger types:
   * If the schedule is recurring and a prior execution context is still active when the triggering moment is met, the queue will finish the prior execution context before kicking off a new one. In other words, queues are single-threaded and should be designed to complete within their schedule's resolution period to avoid drift.
   * If the cron schedule is invalid or has reached a stopping point, the queue will not kickoff a new execution context.
 * **Immediate** – Begins executing immediately.&#x20;
-  * This schedule can be useful to users and programs that need to immediately kickoff a complex chain of instructions.
+  * Queues will crank indefinitely until a null `next_instruction` is returned. This property can be exploited to create an "infinite" queue that cranks forever.
 
 {% hint style="info" %}
 New trigger types will be supported soon including slot-based schedules and event-driven conditions. If you have an idea for a trigger type that is not supported here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
@@ -59,13 +59,13 @@ New trigger types will be supported soon including slot-based schedules and even
 
 ## Flow control
 
-As soon as a queue's trigger condition is met, the worker network will begin submitting transactions to "crank" the queue. When this happens, the queue will initialize a new `exec_context` to track its current execution state and send a CPI to the target program defined by the queue's `kickoff_instruction`.
+As soon as a queue's trigger condition is met, the worker network will begin submitting transactions to "crank" the queue. When this happens, the queue will initialize a new `exec_context` to track its current execution state and send a CPI to the target program defined in the queue's `kickoff_instruction`.
 
-Here, the target program can do whatever work it needs to with the accounts and data defined in the `kickoff_instruction`. When finished, the program can return a `CrankResponse` and optionally specify a `next_instruction` to be invoked on the next crank of the queue.
+Here, the target program can do whatever work it needs to with the accounts and data defined in the `kickoff_instruction`. When finished, the target program can return a `CrankResponse` and optionally specify a `next_instruction` to be invoked on the next crank of the queue.
 
 <figure><img src="../.gitbook/assets/Blank document (15).png" alt=""><figcaption><p>On the first crank, a queue will execute its <code>kickoff_instruction</code>.</p></figcaption></figure>
 
-As long as a queue has a non-null `next_instruction` value, workers will continue submitting transactions to crank the queue. Each crank has the responsibility of building the instruction to be invoked on the next crank. In this way, queues provide a simple interface for building complex and dynamically branching workflows via smart-contracts.&#x20;
+As long as a queue has a non-null `next_instruction` value, the worker network will continue submitting transactions to crank the queue. Each crank has the responsibility of building the instruction to be invoked on the next crank. In this way, queues provide a simple interface for developers to build complex and dynamically branching workflows via smart-contracts.&#x20;
 
 The worker network will automatically crank a queue indefinitely until either its `next_instruction` value is null, an error is thrown, or the queue's balance is insufficient to pay for the transaction.
 
@@ -83,7 +83,7 @@ Anchor currently does not support PDAs as payers for account initialization. Thi
 C1ockworkPayer11111111111111111111111111111
 ```
 
-If an account in your instruction references the Clockwork payer account, workers will automatically inject their address in its place. By doing this, the worker node will pay for any account initializations your programs need to do, and Clockwork will reimburse them from the queue’s balance.
+If an account in your instruction references the Clockwork payer account, Clockwork will automatically inject the worker’s address in its place when invoking the CPI. By doing this, the worker node will pay for any account initializations and Clockwork will reimburse the worker from your queue’s balance.
 
 {% hint style="info" %}
 Once Anchor adds support for PDA payers (expected in the next release), this “payer injection” feature will be deprecated in favor of using PDAs to pay for account initializations.
