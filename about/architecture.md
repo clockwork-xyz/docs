@@ -7,12 +7,12 @@ coverY: 0
 
 ## Network design
 
-Clockwork has two primary abstraction layers:
+Clockwork has two primary layers:
 
 1. A **smart-contract** where users can create on-chain task queues.
 2. A **worker network** that submits transactions to crank on-chain task queues.
 
-These two layers work together to power any on-chain workflow you can imagine. What makes Clockwork unique is that all workers on the network are actually Solana validators and RPC nodes under the hood. This provides significant performance benefits over centralized backends and other automation services, since the network runs on the same physical hardware as the Solana validators. In general, Clockwork is significantly cheaper, more reliable, and less spammy than traditional bots.
+These two layers work together to power any on-chain workflow you can imagine. What makes Clockwork unique is that all workers on the network are actually Solana validators and RPC nodes under the hood. This provides significant performance benefits over centralized backends and other automation services. Since the Clockwork run on the same physical hardware as the Solana validators, it is significantly cheaper, more reliable, and less spammy than traditional bots.
 
 <figure><img src="../.gitbook/assets/Blank diagram (3).png" alt=""><figcaption><p>The Clockwork program serves as a proxy contract which verifies and forwards cranks on to your target program.</p></figcaption></figure>
 
