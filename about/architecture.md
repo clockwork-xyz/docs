@@ -7,7 +7,7 @@ coverY: 0
 
 ## Network design
 
-Clockwork has two primary layers:
+Clockwork has two primary abstraction layers:
 
 1. A **smart-contract** where users can create on-chain task queues.
 2. A **worker network** that submits transactions to crank on-chain task queues.
