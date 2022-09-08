@@ -13,11 +13,13 @@ Blockchains represent a major paradigm shift in software engineering. Where trad
 
 ### Solana
 
-**Solana is the most active blockchain in the world.** Its affordable fees, low-latency confirmation times, and scalable architecture make Solana an ideal choice for users and developers. With around 40,000,000 non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. Powered by over 3,400 full-node validators ([**source**](https://solana.com/news/validator-health-report-august-2022)), Solana is additionally one of the most decentralized blockchains in the world.
+**Solana is the most active blockchain in the world.** Its affordable fees, low-latency confirmation times, and scalable architecture make Solana an ideal choice for users and developers. With around 40,000,000 non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. Powered by over 3,400 validators ([**source**](https://solana.com/news/validator-health-report-august-2022)), Solana is additionally one of the most decentralized blockchains in the world.
 
 ### Decentralization
 
-**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Despite the crypto industry's emphasis on "decentralization" as being something novel, it's ironically a very old idea. The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Decentralization was even a core principle and property of the Internet in its earliest days. Though in recent years, this has become much less true.&#x20;
+**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Despite the crypto industry's emphasis on "decentralization" as being something novel, it's ironically a very old idea.&#x20;
+
+The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Decentralization was a core principle and property of the Internet in its earliest days. Though in recent years, this has become much less true.&#x20;
 
 Today, the vast majority of internet communications flow through a small handful of companies and infrastructure providers. This centralization generally makes services across the internet much less secure and more susceptible to censorship. When a network administrator can ban any user at will, true autonomy and asset ownership are impossible.&#x20;
 
