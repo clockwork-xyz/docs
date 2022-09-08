@@ -5,7 +5,7 @@ coverY: 0
 
 # Architecture
 
-## Network design
+## Overview
 
 Clockwork has two primary compute layers:
 
@@ -15,6 +15,12 @@ Clockwork has two primary compute layers:
 These two layers work together to power automations for other programs. At a network level, Clockwork is unique in that all workers on the network are Solana validators and RPC nodes under the hood. Since the network runs on the same physical hardware as the validators, this design is generally more reliable, less spammy, and lower cost than traditional SaaS-based alternatives.
 
 <figure><img src="../.gitbook/assets/Blank diagram (5).png" alt=""><figcaption><p>The Clockwork program serves as a proxy contract which verifies and forwards cranks on to your target program.</p></figcaption></figure>
+
+## Transaction queues
+
+As a smart-contract primitive, Clockwork provides **transaction queues** for developers to manage the state of on-chain jobs and workflows. Queues tell worker nodes which transactions to submit and pay yield to workers who submit transactions promptly. They doubly serve as a communication and payment channel, efficiently allowing users to transact and delegate to the worker network.
+
+<figure><img src="../.gitbook/assets/Blank document (18).png" alt=""><figcaption><p>Queues provide bi-directional exchange of value between users and the worker network.</p></figcaption></figure>
 
 ## Automating signatures&#x20;
 
