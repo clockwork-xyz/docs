@@ -13,7 +13,7 @@ Blockchains represent a major paradigm shift in software engineering. Where trad
 
 ### Solana
 
-**Solana is the most active blockchain in the world.** Its affordable fees, low-latency confirmation times, and scalable architecture make Solana an ideal choice for new users and developers entering the crypto ecosystem today. With around 40,000,000 non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. Powered by over 3,400 full-node validators ([**source**](https://solana.com/news/validator-health-report-august-2022)), Solana is additionally one of the most decentralized blockchains in the world.
+**Solana is the most active blockchain in the world.** Its affordable fees, low-latency confirmation times, and scalable architecture make Solana an ideal choice for users and developers. With around 40,000,000 non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. Powered by over 3,400 full-node validators ([**source**](https://solana.com/news/validator-health-report-august-2022)), Solana is additionally one of the most decentralized blockchains in the world.
 
 ### Decentralization
 
