@@ -1,7 +1,12 @@
+---
+cover: ../.gitbook/assets/gitbook-header-fees.png
+coverY: 0
+---
+
 # Fees
 
-{% hint style="danger" %}
-Work in progress!
-{% endhint %}
+**Fees are a cost, paid by users for the automation services provided by the worker network.** Without fees, the worker network would have no incentive to allocate compute resources towards cranking users' transaction queues.
 
-All queues must maintain a sufficient balance of SOL to pay workers for their services. The automation fee is currently set to a flat rate of **1000 lamports / crank** (1 one millionth of a SOL) and managed by the core Clockwork team. This value is subject to change with future price discovery and long-term may transition to a DAO-controlled or market-based mechanism.
+## Balance
+
+The automation fee is currently set to a flat rate of **1000 lamports / crank** (1 one millionth of a SOL). This value is managed by the core Clockwork team and subject to change with future price discovery. Long-term, we aim to make pricing to a DAO-controlled or market-based mechanism.
