@@ -13,23 +13,21 @@ Blockchains represent a major paradigm shift in software engineering. Where trad
 
 ### Solana
 
-**Solana is the most active blockchain in the world.** Its affordable fees, low-latency confirmation times, and scalable architecture make Solana an ideal choice for users and developers. With around 40,000,000 non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. Powered by over 3,400 validators ([**source**](https://solana.com/news/validator-health-report-august-2022)), Solana is additionally one of the most decentralized blockchains in the world.
+**Solana is the most active blockchain in the world.** Its affordable fees, low-latency confirmation times, and scalable architecture make it an ideal choice for users and developers. With around 40,000,000 non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. Powered by over 3,400 validators ([**source**](https://solana.com/news/validator-health-report-august-2022)), Solana is additionally one of the most decentralized blockchains in the world.
 
 ### Decentralization
 
-**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Despite the crypto industry's emphasis on "decentralization" as being something novel, it's ironically a very old idea...
+**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Yet despite the crypto industry's attempt to emphasize "decentralization" as being something novel, it's ironically a very old idea...
 
-The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Decentralization was a core property of the Internet in its earliest days. Though in recent years, this has become much less true.&#x20;
-
-Today, the vast majority of internet communications flow through a small handful of companies and infrastructure providers. This centralization generally makes services across the internet less secure and susceptible to censorship. When a network administrator can ban any user at will, true autonomy and asset ownership are impossible.&#x20;
+The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Despite decentralization being a core principle of the early Internet, this has become become much less true in recent years. Today, the vast majority of internet communications flow through a small handful of companies. Centralization generally makes internet services less secure and more susceptible to censorship. When a network admin can ban any user at will, true autonomy and asset ownership are impossible.&#x20;
 
 This is why we work in crypto – to take advantage of some wild wizardy called **asymmetric cryptography** and build tools that help people live their lives _independent from_ and _collaboratively with_ one another.
 
 ### The automation dilemma
 
-Despite the improvements blockchains provide over centrally-managed datacenters, they are not a wholesale replacement for the entire software stack. One critical use-case not supported by blockchains today are **lambdas**, automated code that can run without dedicated servers or human intervention.&#x20;
+Despite the improvements blockchains have made over centrally-managed datacenters, they are not yet a wholesale replacement for the entire software stack. One critical use-case not supported by blockchains today are **lambdas**, automated code that can run without dedicated servers or human intervention.&#x20;
 
-This presents a problem for decentralization because developers are forced to fallback on centralized solutions to automate on-chain programs. A dapp is only as decentralized as its most centralized dependency! We call this problem **the automation dilemma** – where a developer is must choose between _automation or decentralization_ in the system they are building.
+This presents a problem for decentralization because it forces developers to fallback on centralized solutions to automate on-chain programs. A dapp is only as decentralized as its most centralized dependency! We call this problem **the automation dilemma** – where a developer must choose between _automation or decentralization_ in the system they are building.
 
 ## Why Clockwork?&#x20;
 
