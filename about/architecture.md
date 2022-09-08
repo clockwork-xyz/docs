@@ -20,7 +20,7 @@ These two layers work together to power automations for other programs. At a net
 
 As a smart-contract primitive, Clockwork provides **transaction queues** for developers to manage the state of on-chain jobs and workflows. Queues tell worker nodes which transactions to submit and pay yield to workers who submit transactions promptly. They doubly serve as a communication and payment channel, allowing users to securely transact with and delegate to the worker network.
 
-<figure><img src="../.gitbook/assets/Blank document (18).png" alt=""><figcaption><p>Queues allow for bi-directional exchange of value between users and the worker network.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank document (18).png" alt=""><figcaption><p>Queues unlock bi-directional exchange of value between users and worker nodes.</p></figcaption></figure>
 
 ## Automating signatures&#x20;
 
