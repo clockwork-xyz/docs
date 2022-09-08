@@ -12,7 +12,7 @@ The Clockwork automation engine has two primary components:
 1. A **smart-contract** where users can pay SOL to create transaction queues.
 2. A **worker network** where node operators can crank queues and collect automation fees as yield.
 
-These two layers work together to power automations for other programs. At a network level, Clockwork is unique in that every worker is a Solana validator or RPC node under the hood. Since Clockwork runs on the same physical machines that power Solana, it is generally more reliable, less spammy, and cheaper than traditional SaaS-based alternatives.
+These two layers work together to power automations for other programs. At a network level, Clockwork is unique in that every worker is a Solana validator or RPC node under the hood. Since the worker next runs on the same physical machines that already power Solana, it is generally more reliable, less spammy, and cheaper than traditional SaaS-based alternatives.
 
 <figure><img src="../.gitbook/assets/Blank diagram (5).png" alt=""><figcaption><p>The Clockwork program serves as a proxy contract which verifies and forwards cranks on to your target program.</p></figcaption></figure>
 
