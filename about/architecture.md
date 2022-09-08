@@ -22,10 +22,10 @@ These two layers work together to power automations for other programs. At a net
 
 ### Pre-signed transactions
 
-One naive approach to scheduling transactions would be to save pre-signed transaction data somewhere for submission at a later date. This is problematic since it would be impossible to prevent a malicious actor from submitting a pre-signed transaction ahead of its intended schedule. Solana explicitly protects against this by requiring every transaction to contain a [**recent blockhash**](https://docs.solana.com/developing/programming-model/transactions#recent-blockhash). This has the consequence of causing Solana transactions to go stale if they're not submitted to blockchain within a couple minutes of being signed.
+One naive approach to scheduling transactions would be to save pre-signed transaction data somewhere for submission at a later date. This is problematic since it would be impossible to prevent a malicious actor from submitting pre-signed transactions ahead of their intended schedules. Solana explicitly protects against this by requiring every transaction to contain a [**recent blockhash**](https://docs.solana.com/developing/programming-model/transactions#recent-blockhash). This has the consequence of causing Solana transactions to go stale if they're not submitted to blockchain within a couple minutes of being signed.
 
 ### Delegated signatories
 
-Instead, Clockwork utilizes a **delegated signatory** model. When a worker submits a crank transaction, the Clockwork program receives it first and adds an additional PDA signer to the transaction's context before forwarding it on to the target program.&#x20;
+Instead, Clockwork utilizes a **delegated signatory** model. When a worker submits a crank transaction, the Clockwork program receives it first and adds an additional PDA signer to the transaction context before forwarding it on to the target program.&#x20;
 
 Target programs can verify the Clockwork signature is valid to know if the crank request is safe to process. This proxy-contract model protects programs against spam and from unwanted invocations. Code samples for how to correctly verify crank requests can be found in the [**examples** ](https://github.com/clockwork-xyz/examples/blob/main/hello\_clockwork/programs/hello\_clockwork/src/instructions/hello\_world.rs)repo on Github.&#x20;
