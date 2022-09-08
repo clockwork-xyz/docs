@@ -9,4 +9,4 @@ coverY: 0
 
 ## Flat rate
 
-The automation fee is currently set to a flat rate of **1000 lamports / crank** (1 one millionth of a SOL). This value is managed by the core Clockwork team and subject to change with future price discovery. Long-term, we aim to migrate pricing to either a DAO-controlled or market-based mechanism.
+The automation fee is currently set to a flat rate of **1000 lamports / crank**. This value is managed by the core Clockwork team and subject to change with future price discovery. Long-term, we aim to migrate pricing to either a DAO-controlled or market-based mechanism.
