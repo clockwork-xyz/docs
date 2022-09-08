@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/gitbook-header-fees-2.png
+cover: ../.gitbook/assets/gitbook-header-fees-3.png
 coverY: 0
 ---
 
