@@ -21,7 +21,7 @@ Blockchains represent a major paradigm shift in software engineering. Where trad
 
 The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Despite decentralization being a core principle of the early Internet, it has become much more centralized in recent years. Today, the vast majority of internet communications flow through only a small handful of companies. Centralization generally makes internet services less secure and more susceptible to censorship. When a network admin can ban any user at will, true autonomy and asset ownership is impossible.&#x20;
 
-This is why we work in crypto – to take advantage of some wild wizardy called **asymmetric cryptography** and build tools that help people live their lives _independent from_ and _collaboratively with_ one another.
+This is why we work in crypto – to take advantage of some wild wizardy called **asymmetric cryptography**, and build tools that help people live their lives _independent from_ and _collaboratively with_ one another.
 
 ### The automation dilemma
 
