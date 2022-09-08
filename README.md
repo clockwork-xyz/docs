@@ -5,7 +5,7 @@ coverY: 0
 
 # Intro
 
-**Clockwork** **is an open-source automation engine for** [**Solana**](https://solana.com/). Blockchain developers can use Clockwork to schedule transactions and securely automate decentralized workflows.
+**Clockwork** **is an open-source automation engine for the** [**Solana**](https://solana.com/) **blockchain**. Developers can use Clockwork to schedule transactions and securely automate decentralized workflows.
 
 ## **Background**
 
