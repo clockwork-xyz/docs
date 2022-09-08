@@ -14,13 +14,13 @@ The Clockwork automation engine has two primary components:
 
 These two layers work together to power automations for other programs. At a network level, Clockwork is unique in that every worker is a Solana validator or RPC node under the hood. Since the entire network runs on the same physical servers that already power Solana, Clockwork is generally more reliable, less spammy, and cheaper than traditional SaaS-based alternatives.
 
-<figure><img src="../.gitbook/assets/Blank diagram (5).png" alt=""><figcaption><p>The Clockwork program serves as a proxy-contract which verifies and forwards crank requests on to your target program.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank diagram (5).png" alt=""><figcaption><p>The Clockwork program serves as a proxy-contract which verifies and forwards crank transactions on to your target program.</p></figcaption></figure>
 
 ## Transaction queues
 
-As a smart-contract primitive, Clockwork provides **transaction queues** for users to manage the state of on-chain jobs and workflows. Queues tell worker nodes which transactions to submit and pay yield to workers who submit transactions promptly. They doubly serve as a communication and payment channel, allowing users to securely transact with and delegate tasks to the worker network.
+As a smart-contract primitive, Clockwork provides **transaction queues** for users to manage the state of on-chain jobs and workflows. Queues tell worker nodes which transactions to execute and pay yield to nodes that submit transactions quickly. They serve as a bi-directional communication and payment channel, allowing users to securely transact with and delegate tasks to the worker network.
 
-<figure><img src="../.gitbook/assets/Blank document (18).png" alt=""><figcaption><p>Queues facilitate bi-directional exchange of value between users and worker nodes.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank document (18).png" alt=""><figcaption><p>Queues facilitate a bi-directional exchange of value between users and workers.</p></figcaption></figure>
 
 ## Automating signatures&#x20;
 
