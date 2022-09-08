@@ -5,7 +5,7 @@ coverY: 0
 
 # Fees
 
-**Fees are a cost, paid by users for the automation services provided by the worker network.** Without fees, the worker network would have no incentive to allocate compute resources towards cranking users' transaction queues.
+**Fees are a cost, paid by users for the automation services provided by the worker network.** Without fees, the worker network would have no incentive to allocate compute resources towards automating transactions.
 
 ## Balance
 
