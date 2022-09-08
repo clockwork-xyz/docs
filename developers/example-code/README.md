@@ -12,6 +12,6 @@ Below are list of example programs, built on Clockwork, to automate on-chain act
 
 ## Source
 
-**All example programs are open-source and free-to-fork on Github!** If you're looking for a place to begin a code-dive, the examples repo is a great launching pad 🦀🤿
+**All example programs are open-source and free-to-fork on Github!** If you're looking for a place to begin a code-dive, the examples repo is a great launch point 🦀🤿
 
 {% embed url="https://github.com/clockwork-xyz/examples" %}
