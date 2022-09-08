@@ -54,7 +54,7 @@ Clockwork currently supports 2 trigger types:
   * This schedule can be useful to users and programs that need to immediately kickoff a complex chain of instructions.
 
 {% hint style="info" %}
-New trigger types will be supported soon including slot-based schedules and event-driven conditions. If you have an idea for a trigger type that is not supported here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
+New trigger types will be supported soon, including slot-based schedules and event-driven conditions. If you have an idea for a trigger type that is not supported here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
 {% endhint %}
 
 ## Flow control
