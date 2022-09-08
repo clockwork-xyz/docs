@@ -17,13 +17,13 @@ Blockchains represent a major paradigm shift in software engineering. Where trad
 
 ### Decentralization
 
-**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Despite the crypto industry's emphasis on "decentralization" as being something novel, it's ironically a very old idea.&#x20;
+**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Despite the crypto industry's emphasis on "decentralization" as being something novel, it's ironically a very old idea...
 
-The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Decentralization was a core principle and property of the Internet in its earliest days. Though in recent years, this has become much less true.&#x20;
+The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Decentralization was a core property of the Internet in its earliest days. Though in recent years, this has become much less true.&#x20;
 
-Today, the vast majority of internet communications flow through a small handful of companies and infrastructure providers. This centralization generally makes services across the internet much less secure and more susceptible to censorship. When a network administrator can ban any user at will, true autonomy and asset ownership are impossible.&#x20;
+Today, the vast majority of internet communications flow through a small handful of companies and infrastructure providers. This centralization generally makes services across the internet less secure and susceptible to censorship. When a network administrator can ban any user at will, true autonomy and asset ownership are impossible.&#x20;
 
-This is why we work in crypto – to make use of some wild wizardy called **asymmetric cryptography** and build tools that help people live both independent _from_ and collaboratively _with_ one other.
+This is why we work in crypto – to take advantage of some wild wizardy called **asymmetric cryptography** and build tools that help people live their lives _independent from_ and _collaboratively with_ one another.
 
 ### The automation dilemma
 
