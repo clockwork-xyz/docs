@@ -5,11 +5,11 @@ coverY: 0
 
 # Introduction
 
-**Clockwork** **is a decentralized automation network for** [**Solana**](https://solana.com/). Blockchain developers can use Clockwork to schedule transactions and automate on-chain workflows without relying on centralized infrastructure.&#x20;
+**Clockwork** **is a decentralized automation network for** [**Solana**](https://solana.com/). Blockchain developers can use Clockwork to schedule transactions and automate on-chain programs without relying on centralized infrastructure.&#x20;
 
 ## **Background**
 
-Blockchains represent a paradigm shift in software development. Where traditional applications are hosted in large, centrally-managed datacenters, blockchains offer an alternative hosting environment run by a decentralized community of stakeholders. In the distributed runtime of a blockchain, program state is redundantly copied to thousands of nodes around the world, and program execution can happen on any node in the network.&#x20;
+Blockchains represent a major paradigm shift in software engineering. Where traditional applications are hosted in large, centrally-managed datacenters, blockchains offer an alternative hosting environment run by a decentralized community of stakeholders. In the distributed runtime of a blockchain, program state is redundantly copied to thousands of nodes around the world, and program execution can happen on any node in the network.&#x20;
 
 ### Solana
 

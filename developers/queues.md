@@ -1,4 +1,4 @@
-# Building with queues
+# Queues
 
 **A queue is an** [**account**](https://docs.solana.com/developing/programming-model/accounts) **for managing the state of an on-chain job or workflow.** It is the core developer primitive for building automated programs on Solana.
 
@@ -70,10 +70,6 @@ As long as a queue has a non-null `next_instruction` value, workers will continu
 The worker network will automatically crank a queue indefinitely until either its `next_instruction` value is null, an error is thrown, or the queue's balance is insufficient to pay for the transaction.
 
 <figure><img src="../.gitbook/assets/Blank document (16).png" alt=""><figcaption><p>On subsequent cranks, a queue will execute its <code>next_instruction</code> until a null value is returned.</p></figcaption></figure>
-
-## Automation fees
-
-All queues must maintain a sufficient balance of SOL to pay workers for their services. The automation fee is currently set to a flat rate of 1000 lamports per crank and managed by the core Clockwork team. This value is subject to change with future price discovery and long-term may transition to a DAO-controlled or market-based mechanism.
 
 ## Payers
 
