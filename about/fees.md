@@ -1,6 +1,6 @@
 # Fees
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Work in progress!
 {% endhint %}
 
