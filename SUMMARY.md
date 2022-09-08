@@ -10,7 +10,7 @@
 ## Developers
 
 * [Getting started](developers/getting-started.md)
-* [Queues](developers/queues.md)
+* [Building with queues](developers/building-with-queues.md)
 * [Examples](developers/example-code/README.md)
   * [Hello world](developers/example-code/hello-world.md)
   * [Recurring payments](developers/example-code/recurring-payments.md)
