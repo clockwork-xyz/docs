@@ -12,7 +12,7 @@ rm clockwork-geyser-plugin-release-x86_64-unknown-linux-gnu.tar.bz2
 
 ## Create a keypair
 
-Next, create a new keypair for signing Clockwork txs. Load this keypair with a small amount of SOL (\~0.01 ◎). You will be compensated for lamports spent by the tasks your worker executes. Automation fees (rewards) are implemented and will soon be enabled.
+Next, create a new keypair for signing Clockwork txs. Load this keypair with a small amount of SOL (\~0.01 ◎). You will be compensated for lamports spent by the transactions your worker automates.&#x20;
 
 ```
 solana-keygen new -o clockwork-worker-keypair.json
