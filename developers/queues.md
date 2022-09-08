@@ -1,4 +1,4 @@
-# Queues
+# Building with queues
 
 **A queue is an** [**account**](https://docs.solana.com/developing/programming-model/accounts) **for managing the state of an on-chain job or workflow.** It is the core developer primitive for building automated programs on Solana.
 
