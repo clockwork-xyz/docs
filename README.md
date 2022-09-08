@@ -23,7 +23,7 @@ The trade-off between centralized, authoritarian decision making and decentraliz
 
 Today, the vast majority of internet communications flow through a small handful of companies and infrastructure providers. This centralization generally makes services across the internet much less secure and more susceptible to censorship. When a network administrator can ban any user at will, true autonomy and asset ownership are impossible.&#x20;
 
-This is why we work in crypto – to make use of some wild wizardy called **asymmetric cryptography** and build tools for people to be both independent _from_ and collaborative _with_ one other.
+This is why we work in crypto – to make use of some wild wizardy called **asymmetric cryptography** and build tools that help people live both independent _from_ and collaboratively _with_ one other.
 
 ### The automation dilemma
 
