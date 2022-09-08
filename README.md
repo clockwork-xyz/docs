@@ -9,7 +9,7 @@ coverY: 0
 
 ## **Background**
 
-Blockchains represent a major paradigm shift in software engineering. Where traditionally an app would be hosted in a large centrally-managed datacenter, blockchains like Solana offer an alternative environment maintained by a decentralized community of stakeholders. On a blockchain, program state can be efficiently copied to thousands of nodes around the world, making information more durable and difficult to erase. Since blockchain nodes can be operated from any datacenter around the world, they also tend to have better uptimes than many centralized computing stacks!
+Blockchains represent a major paradigm shift in software engineering. Where traditionally an app would be hosted in a large centrally-managed datacenter, blockchains like Solana offer an alternative environment maintained by a decentralized community of stakeholders. On a blockchain, program state can be efficiently copied to thousands of nodes around the world –– making information more durable and difficult to erase. Since blockchain nodes typically operate out of many independent datacenters, they also tend to have better uptimes than individual ones!
 
 ### Solana
 
