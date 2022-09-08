@@ -4,6 +4,8 @@
 
 * [Introduction](README.md)
 * [Architecture](about/architecture.md)
+* [Fees](about/fees.md)
+* [Token](about/token.md)
 
 ## Developers
 
