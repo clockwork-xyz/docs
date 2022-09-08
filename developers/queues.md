@@ -61,7 +61,7 @@ New trigger types will be supported soon, including slot-based schedules and eve
 
 As soon as a queue's trigger condition is met, the worker network will begin submitting transactions to "crank" the queue. When this happens, the queue will initialize a new `exec_context` to track its current execution state and send a CPI to the target program defined by the queue's `kickoff_instruction`.
 
-Here, the target program can do whatever work it needs to with the accounts and data defined in the `kickoff_instruction`. When finished, the program can return a `CrankResponse` and optionally specify a `next_instruction` to be invoked on the next crank of the queue.
+Here, the target program can do whatever it needs to with the accounts and data defined in the `kickoff_instruction`. When finished, the program can return a `CrankResponse` and optionally specify a `next_instruction` to be invoked on the next crank of the queue.
 
 <figure><img src="../.gitbook/assets/Blank document (15).png" alt=""><figcaption><p>On the first crank, a queue will execute its <code>kickoff_instruction</code>.</p></figcaption></figure>
 
