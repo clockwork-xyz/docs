@@ -17,7 +17,7 @@ Blockchains represent a major paradigm shift in software engineering. Where trad
 
 ### Decentralization
 
-**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Yet despite the crypto industry's attempt to emphasize "decentralization" as being something novel, it's ironically a very old idea...
+**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind ideas like network security, censorship resistance, and permissionless computing. Yet despite the crypto industry's emphasis on "decentralization" as being something novel, it's ironically a very old idea...
 
 The trade-off between centralized, authoritarian decision making and decentralized, group-based coordination has been a recurring debate in philosophy, economics, politics, art, technology and history for many centuries. Despite decentralization being a core principle of the early Internet, this has become become much less true in recent years. Today, the vast majority of internet communications flow through a small handful of companies. Centralization generally makes internet services less secure and more susceptible to censorship. When a network admin can ban any user at will, true autonomy and asset ownership are impossible.&#x20;
 
