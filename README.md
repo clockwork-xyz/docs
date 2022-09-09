@@ -33,4 +33,4 @@ This creates a problem for decentralization because it means developers tend to 
 
 ## Why Clockwork?&#x20;
 
-We believe an open-source blockchain automation engine will be important for unlocking the next big wave of decentralized applications. By providing public tooling and developer infrastructure, we hope to support teams of all kinds in their journeys to rebuild the markets of the new global Internet.&#x20;
+We believe an open-source blockchain automation engine is important for unlocking the next big wave of decentralized applications. By providing public tooling and developer infrastructure, we hope to support teams of all kinds in their journeys to rebuild the markets of the new global Internet.&#x20;
