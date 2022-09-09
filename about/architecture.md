@@ -12,13 +12,13 @@ Clockwork is an automation engine with two primary components:
 1. A **smart-contract** where users can pay SOL to create transaction queues.
 2. A **worker network** where node operators can crank queues and collect automation fees as yield.
 
-These two layers work together to power automations for other programs. At a network level, Clockwork is unique in that every worker is a Solana validator or RPC node under the hood. Since the entire network runs on the same physical servers that already power Solana, Clockwork is generally more reliable, less spammy, and cheaper than traditional SaaS-based alternatives.
+These two layers work together to power automations for other programs. At a network level, Clockwork is unique in that every worker is a Solana validator or RPC node under the hood. Since the entire worker network runs on the same physical servers that already power the Solana blockchain, Clockwork is generally more reliable, less spammy, and cheaper than traditional SaaS-based alternatives.
 
 <figure><img src="../.gitbook/assets/Blank diagram (3).png" alt=""><figcaption><p>Clockwork straddles the on-chain / off-chain divide.</p></figcaption></figure>
 
 ## Transaction queues
 
-As a smart-contract primitive, Clockwork provides **transaction queues** for users to manage the state of on-chain jobs and workflows. Queues tell workers which transactions to execute and pay yield to workers who submit those transactions the fastest. They facilitate bi-directional communication and payments, allowing users to securely transact with and delegate tasks to the worker network.
+As a smart-contract primitive, Clockwork provides **transaction queues** for users to manage the state of on-chain jobs and workflows. Queues tell workers which transactions to execute and pay yield to workers who submit those transactions quickly. They facilitate bi-directional communication and payments, allowing users to securely transact with and delegate tasks to the worker network.
 
 <figure><img src="../.gitbook/assets/Blank document (18).png" alt=""><figcaption><p>Queues support exchange of value between users and workers.</p></figcaption></figure>
 
