@@ -15,7 +15,7 @@ On a blockchain, program state can be efficiently copied to thousands of nodes a
 
 ### Solana
 
-**Solana is the most active blockchain in the world.** Its affordable fees, low-latency messaging, and scalable architecture make it an ideal network for users and developers alike. Currently processing 40,000,000 non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over 3,400 validators supporting the network ([**source**](https://solana.com/news/validator-health-report-august-2022)), Solana is measurably one of the most decentralized blockchains in the world.
+**Solana is the most active blockchain in the world.** Its affordable fees, low-latency messaging, and scalable architecture make it an ideal network for users and developers alike. Currently processing around [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) non-vote transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over [**3,400**](https://solana.com/news/validator-health-report-august-2022) validators powering the network, Solana is measurably one of the most decentralized blockchains in the world.
 
 ### Decentralization
 
