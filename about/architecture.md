@@ -24,7 +24,7 @@ As a smart-contract primitive, Clockwork provides **transaction queues** for use
 
 ## Automating signatures&#x20;
 
-**Clockwork is a non-custodial service and does not hold onto users' private keys.** This creates unique security challenges for scheduling transactions on behalf of a user.&#x20;
+**Clockwork is a non-custodial service and does not hold onto users' private keys.** This creates unique security challenges for scheduling transactions on behalf of users.&#x20;
 
 ### Pre-signed transactions
 
