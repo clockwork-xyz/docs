@@ -23,7 +23,7 @@ On a blockchain, program state can be efficiently copied to thousands of nodes a
 
 The funny thing is, decentralization has always __ been __ a core principle of the Internet. It was only in recent years that this has become much less true. Today, the vast majority of Internet communications flow through just a small handful of companies. This centralization has generally made markets and services that depend on the Internet less secure and more susceptible to censorship.&#x20;
 
-This is why we work in crypto – to build systems that help people live their lives _independently from_ and _collaboratively with_ one another. The design space is enormous and we're excited by all the things we see others building in the space everyday.
+This is why we work in crypto – to build systems that help people live their lives _independently from_ and _collaboratively with_ one another. The design space is enormous and we're excited by all the things we see our friends in the space building everyday.
 
 ### The automation dilemma
 
