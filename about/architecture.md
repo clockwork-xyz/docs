@@ -26,7 +26,7 @@ As a smart-contract primitive, Clockwork provides **transaction queues** for use
 
 Queues are a flexible primitive that allow developers to build complex and asynchronous workflows using smart-contracts. To do this, queues break down their workloads into small steps called "cranks". **Each crank of a queue executes an atomic unit of work on the blockchain.**
 
-What makes queues so powerful is that each crank has the responsibility of building the transaction to be invoked on the next crank. This allows queues to respond dynamically to on-chain state changes and execute branching logical paths.&#x20;
+What makes queues so powerful is that each crank has the responsibility of building the transaction to be invoked on the next crank. This allows queues to respond dynamically to on-chain state changes and flow through branching logical paths. By this mechanism, Clockwork supports the composition of asynchronous workflows that span across multiple programs.
 
 ## Automating signatures&#x20;
 
