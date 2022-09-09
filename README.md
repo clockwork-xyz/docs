@@ -29,7 +29,7 @@ This is why we work in crypto – to build systems that help people live their l
 
 Despite the innovations blockchains provide over traditional data centers, they are not a wholesale replacement for the entire application stack. One critical use-case not supported by blockchains today are **lambdas**, automated code that can run without a dedicated server.&#x20;
 
-This creates a problem for decentralization because it means developers tend to fallback on centralized solutions to automate on-chain applications. A dapp is only as decentralized as its most centralized dependency! We call this problem **"the automation dilemma"** – when a developer is forced to choose between _automation_ or _decentralization_ in a system they are building.
+This creates a problem for decentralization because it means developers tend to fallback on centralized solutions in order to automate on-chain applications. A dapp is only as decentralized as its most centralized dependency! We call this problem **"the automation dilemma"** – when a developer is forced to choose between _automation_ or _decentralization_ in a system they are building.
 
 ## Why Clockwork?&#x20;
 
