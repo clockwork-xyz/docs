@@ -2,7 +2,7 @@
 
 ## Build from source
 
-Currently, the fastest way to get started Clockwork is to download the open-source repo, checkout the latest release, and build the toolkit from source:
+Currently, the fastest way to get up and running with Clockwork is to clone the repo, checkout the latest release, and build the toolkit from source:
 
 ```bash
 git clone https://github.com/clockwork-xyz/clockwork
@@ -19,13 +19,13 @@ First, remember to configure your Solana CLI for local development:
 solana config set --url localhost
 ```
 
-Now you can use the Clockwork CLI to launch a localnet with the Clockwork plugin and programs initialized and ready to go:
+Now you can use the Clockwork CLI to launch a localnet with all the Clockwork plugin and programs initialized and ready to go:
 
 ```bash
 clockwork localnet
 ```
 
-To deploy a program to your localnet, you can use either the Anchor or Solana CLI toolkits. As a shortcut, the Clockwork CLI also provides a `--bpf-program` flag to deploy the localnet with a pre-built program binary.&#x20;
+To deploy a program to localnet, you have three options. You can use either the Anchor, Clockwork, or Solana CLI. As a shortcut, the Clockwork CLI provides a `--bpf-program` flag for deploying the localnet with a pre-built program binary.&#x20;
 
 {% tabs %}
 {% tab title="Anchor" %}
