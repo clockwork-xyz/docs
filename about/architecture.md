@@ -7,7 +7,7 @@ coverY: 0
 
 ## Overview
 
-The Clockwork automation engine has two primary components:
+Clockwork is an automation engine with two primary components:
 
 1. A **smart-contract** where users can pay SOL to create transaction queues.
 2. A **worker network** where node operators can crank queues and collect automation fees as yield.
