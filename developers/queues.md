@@ -36,7 +36,7 @@ The public address of every queue is derived deterministically from its `authori
 On Solana, the term “authority” is often used by convention to refer to the user-space owner of a particular account. For Clockwork, a queue's authority is its creator – the account which signed the transaction to originally create the queue. A queue’s authority has the following permissions:
 
 * Pause and resume the queue.
-* Update the queue’s `trigger` and `first_instruction`.
+* Update the queue’s `trigger` and `kickoff_instruction`.
 * Withdraw from the queue’s balance.
 * Close the queue account.
 
