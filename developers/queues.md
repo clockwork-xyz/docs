@@ -51,7 +51,7 @@ Clockwork currently supports 2 trigger types:
    * This trigger type can be useful when a user or program needs to immediately kickoff a complex chain of instructions.
 2. **Cron**&#x20;
    * Executes according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron).&#x20;
-   * Clockwork uses Solana's network clock as the source-of-truth for time when processing cron schedules. If the Solana clock drifts relative to your local wallclock, Clockwork will remain synced to Solana time rather than your local time.
+   * Clockwork uses Solana's network clock as the source-of-truth for time when processing cron schedules. If the Solana clock drifts relative to your local wallclock, Clockwork will remain synced to Solana rather than to the wallclock of your local reference frame.
    * If the cron schedule is recurring and a prior execution context is still valid when the triggering condition is met, the prior execution context must finish before starting off a new one. In other words, queues are single-threaded and should be designed to complete within their schedule's resolution period to avoid drift.
 
 {% hint style="info" %}
@@ -74,7 +74,7 @@ The worker network will crank a queue indefinitely until either its `next_instru
 
 ## Payers
 
-Anchor currently does not support PDAs as payers for account initialization. This means that if one of your instructions initializes a new account, you must specify a keypair signer as the `payer`. For this, we provide a special Clocker payer address:
+Anchor currently does not support PDAs as payers for account initialization. This means that if one of your instructions initializes a new account, you must specify a keypair signer as the `payer`. For this, we provide a special Clockwork payer address:
 
 ```rust
 C1ockworkPayer11111111111111111111111111111
