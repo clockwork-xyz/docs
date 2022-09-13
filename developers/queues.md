@@ -51,7 +51,7 @@ Clockwork currently supports 2 trigger types:
    * This trigger type can be useful when a user or program needs to immediately kickoff a complex chain of instructions.
 2. **Cron**&#x20;
    * Executes according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron).&#x20;
-   * Clockwork uses Solana's network clock as the source-of-truth for time when processing cron schedules. If the Solana clock drifts relative to your local wallclock, Clockwork will remain synced to Solana rather than to the time of your local reference frame.
+   * Clockwork uses Solana's network clock as the source-of-truth for time when processing cron schedules. If the Solana clock drifts relative to your local wallclock, Clockwork will remain synced to Solana time rather than your local time.
    * If the cron schedule is recurring and a prior execution context is still valid when the triggering condition is met, the prior execution context must finish before starting off a new one. In other words, queues are single-threaded and should be designed to complete within their schedule's resolution period to avoid drift.
 
 {% hint style="info" %}
