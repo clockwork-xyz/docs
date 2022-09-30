@@ -21,9 +21,9 @@ On a blockchain, information is instantly copied to thousands of nodes around th
 
 **Decentralization is core to everything we do in crypto.** It's the fundamental principle behind network security, censorship resistance, and permissionless computing.&#x20;
 
-The funny thing is, decentralization is not a novel idea. It has been __ a core property of the Internet since its earliest days. However, in recent years this has become much less true. Today, the vast majority of Internet communications flow through a small handful of companies. This centralization has generally made markets and services that depend on the Internet less secure and more susceptible to censorship.&#x20;
+The funny thing is... decentralization is not really a novel idea. It's been __ a core property of the Internet since its earliest days. However in recent years, this has become much less true. Today, the vast majority of Internet communications flow through just a small handful of companies. This centralization generally makes communication, markets, and services that depend on the Internet less secure and more vulnerable to censorship.&#x20;
 
-This is why we work in crypto – to build systems that help people live their lives independently of and collaboratively with one another. The design space is enormous and we're excited by all the things we see our friends building everyday.
+This is why we work in crypto – to build systems that help people live their lives independently of and collaboratively with one another. The design space is enormous and we're tremendously inspired by the things we see our friends building everyday.
 
 ### The automation dilemma
 
