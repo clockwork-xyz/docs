@@ -9,21 +9,21 @@ coverY: 0
 
 ## **Background**
 
-**Blockchains represent a major paradigm shift in software engineering.** Where traditional applications are hosted in large centrally-managed data centers, blockchains like Solana offer an alternative computing environment – one that's maintained by a decentralized community of stakeholders.&#x20;
+**Blockchains represent a major paradigm shift in software engineering.** Where traditionally, applications are hosted in large centrally-managed data centers, blockchains like Solana offer an alternative computing environment – one that's maintained by a decentralized community of stakeholders.&#x20;
 
-On a blockchain, program state can be efficiently copied to thousands of nodes around the world, making information both transparent to read and durable in storage. Blockchains also efficiently distribute downtime risk across many independent data centers, generally proving to have more reliable uptime than relying on a single dedicated server!
+On a blockchain, information is instantly copied to thousands of nodes around the world, making it more transparent to read and durable in storage. Blockchains additionally distribute downtime risk across many independent data centers, generally proving to have more reliable uptime than relying on a single dedicated server!
 
 ### Solana
 
-**Solana is the most active blockchain in the world.** Its affordable fees, low-latency messaging, and scalable architecture make it an ideal network for users and developers alike. Currently processing around [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over [**3,400**](https://solana.com/news/validator-health-report-august-2022) validators powering the network, Solana is measurably one of the most decentralized blockchains in the world.
+**Solana is the most active blockchain in the world.** With its affordable fees, low-latency messaging, and scalable architecture, Solana is a favorite of users and developers alike. Currently processing over [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over [**3,400**](https://solana.com/news/validator-health-report-august-2022) validators powering the network, Solana is measurably one of the most decentralized blockchains in the world.
 
 ### Decentralization
 
-**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind values like network security, censorship resistance, and permissionless computing.&#x20;
+**Decentralization is core to everything we do in crypto.** It's the fundamental principle behind network security, censorship resistance, and permissionless computing.&#x20;
 
-The funny thing is, decentralization is not a novel idea and has been __ a core property of the Internet since its earliest days. It is only in recent years that this has become much less true. Today, the vast majority of Internet communications flow through just a small handful of companies. This centralization has generally made markets and services that depend on the Internet less secure and more susceptible to censorship.&#x20;
+The funny thing is, decentralization is not a novel idea. It has been __ a core property of the Internet since its earliest days. However, in recent years this has become much less true. Today, the vast majority of Internet communications flow through a small handful of companies. This centralization has generally made markets and services that depend on the Internet less secure and more susceptible to censorship.&#x20;
 
-This is why we work in crypto – to build systems that help people live their lives _independently of_ and _collaboratively with_ one another. The design space is enormous and we're excited by all the things we see our friends building everyday.
+This is why we work in crypto – to build systems that help people live their lives independently of and collaboratively with one another. The design space is enormous and we're excited by all the things we see our friends building everyday.
 
 ### The automation dilemma
 
@@ -33,4 +33,4 @@ This creates a problem for decentralization because it means developers tend to 
 
 ## Why Clockwork?&#x20;
 
-We believe an open-source blockchain automation engine will be important for unlocking the next big wave of decentralized applications. By providing public tooling and developer infrastructure, we hope to support teams of all kinds in their journeys to rewrite the games and markets of the new global Internet.&#x20;
+We believe an open-source, decentralized automation engine will be important for unlocking the next big wave of blockchain applications. By providing developer tooling and public infrastructure, we hope to support teams of all kinds in their journeys to rewrite the games and markets of the new global Internet.&#x20;
