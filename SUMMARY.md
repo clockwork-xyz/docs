@@ -18,6 +18,6 @@
   * [Dollar cost averaging](developers/example-code/dollar-cost-averaging.md)
   * [Serum crank](developers/example-code/serum-crank.md)
 
-## Workers
+## Workernet
 
-* [Deploying a worker](workers/deploying-a-worker.md)
+* [Deploying a worker](workernet/deploying-a-worker.md)

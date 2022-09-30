@@ -202,7 +202,7 @@ pub fn handler<'info>(
         recipient.key(),
         mint.key(),
         0,
-        disbursement_amountx,
+        disbursement_amount,
         schedule,
     )?;
 
@@ -215,9 +215,7 @@ pub fn handler<'info>(
             AccountMeta::new_readonly(payment.mint, false),
             AccountMeta::new(payment.key(), false),
             AccountMeta::new_readonly(payment_queue.key(), true),
-            AccountMeta::new_readonly(payment.recipient, false),
             AccountMeta::new(recipient_token_account.key(), false),
-            AccountMeta::new_readonly(payment.sender, false),
             AccountMeta::new_readonly(token_program.key(), false),
         ],
         data: clockwork_crank::anchor::sighash("disburse_payment").into(),
