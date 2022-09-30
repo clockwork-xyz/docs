@@ -25,7 +25,7 @@ Now you can use the Clockwork CLI to launch a localnet with all the Clockwork pl
 clockwork localnet
 ```
 
-To deploy a program to localnet, you have three options. You can use either the Anchor, Clockwork, or Solana CLI. As a shortcut, the Clockwork CLI provides a `--bpf-program` flag for deploying the localnet with a pre-built program binary.&#x20;
+To deploy a program to localnet, you have three options. You can use either the Anchor, Clockwork, or Solana CLIs. As a shortcut, the Clockwork CLI provides a `--bpf-program` flag for deploying the localnet with a pre-built program binary.&#x20;
 
 {% tabs %}
 {% tab title="Anchor" %}
