@@ -15,6 +15,7 @@ pub struct Queue {
     pub is_paused: bool,
     pub kickoff_instruction: InstructionData,
     pub next_instruction: Option<InstructionData>,
+    pub rate_limit: u64,
     pub trigger: Trigger,
 }
 ```
@@ -46,16 +47,17 @@ An authority may be any valid public address (i.e. a wallet pubkey or PDA). When
 
 Clockwork currently supports 2 trigger types:
 
-1. **Immediate**  
-   * Begins executing immediately.&#x20;
-   * This trigger type can be useful when a user or program needs to immediately kickoff a complex chain of instructions.
+1. **Account**
+   * Triggers whenever an account's data changes. This trigger type is useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.&#x20;
 2. **Cron**&#x20;
-   * Executes according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron).&#x20;
+   * Triggers according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron). This trigger type is useful for scheduling one-off or periodically recurring queues.&#x20;
    * Clockwork uses Solana's network clock as the source-of-truth for time when processing cron schedules. If the Solana clock drifts relative to your local wallclock, Clockwork will remain synced to Solana rather than to the time of your local reference frame.
    * If the cron schedule is recurring and a prior execution context is still valid when the triggering condition is met, the prior execution context must finish before starting off a new one. In other words, queues are single-threaded and should be designed to complete within their schedule's resolution period to avoid drift.
+3. **Immediate**  
+   * Begins executing immediately. This trigger type is useful when for immediately kicking off a complex chain of transactions.
 
 {% hint style="info" %}
-New trigger types will be supported soon, including slot-based schedules and event-driven conditions. If you have an idea for a trigger type that is not supported here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
+New trigger types will be supported soon. If you have an idea for a trigger type that is not listed here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
 {% endhint %}
 
 ## Flow control
