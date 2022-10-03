@@ -8,27 +8,38 @@ A queue account tracks a few basic properties about the workflow it manages incl
 
 ```rust
 pub struct Queue {
+    /// The owner of this queue.
     pub authority: Pubkey,
+    /// The cluster clock at the moment the queue was created.
     pub created_at: ClockData,
+    /// The context of the current thread execution state.
     pub exec_context: Option<ExecContext>,
+    /// The id of the queue, given by the authority.
     pub id: String,
-    pub is_paused: bool,
+    /// The instruction to kickoff the thread.
     pub kickoff_instruction: InstructionData,
+    /// The next instruction in the thread.
     pub next_instruction: Option<InstructionData>,
+    /// Whether or not the queue is currently paused.
+    pub paused: bool,
+    /// The maximum number of cranks allowed per slot.
+    pub rate_limit: u64,
+    /// The triggering event to kickoff a thread.
     pub trigger: Trigger,
 }
 ```
 
 ### Public address
 
-The public address of every queue is derived deterministically from its `authority` and `id`. These properties are immutable and may never change throughout the lifetime of the queue.&#x20;
+The public address of every queue is derived deterministically from its `authority` and `id`. These properties are immutable and may never change throughout the lifetime of the queue. To verify a Clockwork queue account in your programs, use the `pubkey()` helper function provided by the SDK:
 
-```json
-[
-    SEED_QUEUE,      // The static string "queue"
-    queue.authority, // The authority (owner) of the queue
-    queue.id         // The id given to this queue by the authority
-]
+```
+#[account(
+    address = queue.pubkey(),
+    contraint = queue.id.eq("my_queue"),
+    has_one = authority,
+)]
+pub queue: Account<'info, Queue>
 ```
 
 ### Authority
@@ -46,16 +57,17 @@ An authority may be any valid public address (i.e. a wallet pubkey or PDA). When
 
 Clockwork currently supports 2 trigger types:
 
-1. **Immediate**  
-   * Begins executing immediately.&#x20;
-   * This trigger type can be useful when a user or program needs to immediately kickoff a complex chain of instructions.
+1. **Account**
+   * Triggers whenever an account's data changes. This trigger type is useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.&#x20;
 2. **Cron**&#x20;
-   * Executes according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron).&#x20;
+   * Triggers according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron). This trigger type is useful for scheduling one-off or periodically recurring queues.&#x20;
    * Clockwork uses Solana's network clock as the source-of-truth for time when processing cron schedules. If the Solana clock drifts relative to your local wallclock, Clockwork will remain synced to Solana rather than to the time of your local reference frame.
    * If the cron schedule is recurring and a prior execution context is still valid when the triggering condition is met, the prior execution context must finish before starting off a new one. In other words, queues are single-threaded and should be designed to complete within their schedule's resolution period to avoid drift.
+3. **Immediate**  
+   * Begins executing immediately. This trigger type is useful when for immediately kicking off a complex chain of transactions.
 
 {% hint style="info" %}
-New trigger types will be supported soon, including slot-based schedules and event-driven conditions. If you have an idea for a trigger type that is not supported here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
+New trigger types will be supported soon. If you have an idea for a trigger type that is not listed here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
 {% endhint %}
 
 ## Flow control
