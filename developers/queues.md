@@ -33,7 +33,7 @@ pub struct Queue {
 
 The public address of every queue is derived deterministically from its `authority` and `id`. These properties are immutable and may never change throughout the lifetime of the queue. To verify a Clockwork queue account in your programs, use the `pubkey()` helper function provided by the SDK:
 
-```
+```rust
 #[account(
     address = queue.pubkey(),
     contraint = queue.id.eq("my_queue"),
