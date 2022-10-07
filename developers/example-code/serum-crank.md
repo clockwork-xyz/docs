@@ -1,7 +1,5 @@
 # Serum crank
 
-
-
 ## Summary
 
 * Indefinitely processes open orders on a permissioned Serum market.
@@ -121,8 +119,9 @@ pub struct Initialize<'info> {
 
     #[account(
         init,
-        address = Crank::pubkey(market.key()),
         payer = payer,
+        seeds = [SEED_CRANK, market.key().as_ref()],
+        bump,
         space = 8 + size_of::<Crank>(),
     )]
     pub crank: Account<'info, Crank>,
@@ -240,7 +239,7 @@ pub fn handler<'info>(ctx: Context<'_, '_, '_, 'info, Initialize<'info>>) -> Res
 ```
 {% endtab %}
 
-{% tab title="Swap" %}
+{% tab title="ReadEvents" %}
 The `ReadEvents` instruction deserializes a market's event queue, writes the data to the `Crank` account, and returns a `CrankResponse` that updates the queue with a new instruction to then invoke `ConsumeEvents`
 
 ```rust
@@ -259,7 +258,8 @@ use {
 pub struct ReadEvents<'info> {
     #[account(
         mut, 
-        address = Crank::pubkey(crank.market.key()),
+        seeds = [SEED_CRANK, crank.market.as_ref()],
+        bump, 
         has_one = event_queue,
         has_one = market,
         has_one = mint_a_vault,

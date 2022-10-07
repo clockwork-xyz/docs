@@ -51,6 +51,13 @@ impl Payment {
     }
 }
 
+impl TryFrom<Vec<u8>> for Payment {
+    type Error = Error;
+    fn try_from(data: Vec<u8>) -> std::result::Result<Self, Self::Error> {
+        Payment::try_deserialize(&mut data.as_slice())
+    }
+}
+
 pub trait PaymentAccount {
     fn new(
         &mut self,
@@ -82,6 +89,7 @@ impl PaymentAccount for Account<'_, Payment> {
         Ok(())
     }
 }
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -97,17 +105,16 @@ use {
     crate::state::*,
     anchor_lang::{
         prelude::*,
-        solana_program::{
-            instruction::Instruction, system_program, sysvar,
-        },
+        solana_program::{instruction::Instruction, system_program, sysvar},
     },
     anchor_spl::{
         associated_token::{self, AssociatedToken},
         token::{Mint, TokenAccount},
     },
-    clockwork_crank::{
-        program::ClockworkCrank,
-        state::{Trigger, SEED_QUEUE},
+    clockwork_sdk::queue_program::{
+        self,
+        accounts::{Queue, Trigger},
+        QueueProgram,
     },
     std::mem::size_of,
 };
@@ -118,8 +125,8 @@ pub struct CreatePayment<'info> {
     #[account(address = anchor_spl::associated_token::ID)]
     pub associated_token_program: Program<'info, AssociatedToken>,
 
-    #[account(address = clockwork_crank::ID)]
-    pub clockwork_program: Program<'info, ClockworkCrank>,
+    #[account(address = queue_program::ID)]
+    pub clockwork_program: Program<'info, QueueProgram>,
 
     #[account(
         init,
@@ -145,18 +152,10 @@ pub struct CreatePayment<'info> {
     )]
     pub payment: Account<'info, Payment>,
 
-    #[account(
-        seeds = [
-            SEED_QUEUE, 
-            payment.key().as_ref(), 
-            "payment".as_bytes()
-        ], 
-        seeds::program = clockwork_crank::ID,
-        bump
-    )]
+    #[account(address = Queue::pubkey(payment.key(), "payment".into()))]
     pub payment_queue: SystemAccount<'info>,
 
-    /// CHECK: The recipient can be any valid address
+    /// CHECK: the recipient is validated by the seeds of the payment account
     #[account()]
     pub recipient: AccountInfo<'info>,
 
@@ -196,7 +195,10 @@ pub fn handler<'info>(
     let system_program = &ctx.accounts.system_program;
     let token_program = &ctx.accounts.token_program;
 
-    // Initialize payment account
+    // get payment bump
+    let bump = *ctx.bumps.get("payment").unwrap();
+
+    // initialize payment account
     payment.new(
         sender.key(),
         recipient.key(),
@@ -206,7 +208,7 @@ pub fn handler<'info>(
         schedule,
     )?;
 
-    // Build disburse_payment ix
+    // create ix
     let disburse_payment_ix = Instruction {
         program_id: crate::ID,
         accounts: vec![
@@ -215,18 +217,19 @@ pub fn handler<'info>(
             AccountMeta::new_readonly(payment.mint, false),
             AccountMeta::new(payment.key(), false),
             AccountMeta::new_readonly(payment_queue.key(), true),
+            AccountMeta::new_readonly(payment.recipient, false),
             AccountMeta::new(recipient_token_account.key(), false),
+            AccountMeta::new_readonly(payment.sender, false),
             AccountMeta::new_readonly(token_program.key(), false),
         ],
-        data: clockwork_crank::anchor::sighash("disburse_payment").into(),
+        data: clockwork_sdk::queue_program::utils::anchor_sighash("disburse_payment").into(),
     };
 
-    // Create queue to automate disburse_payment ix
-    let bump = *ctx.bumps.get("payment").unwrap();
-    clockwork_crank::cpi::queue_create(
+    // Create queue
+    clockwork_sdk::queue_program::cpi::queue_create(
         CpiContext::new_with_signer(
             clockwork_program.to_account_info(),
-            clockwork_crank::cpi::accounts::QueueCreate {
+            clockwork_sdk::queue_program::cpi::accounts::QueueCreate {
                 authority: payment.to_account_info(),
                 payer: sender.to_account_info(),
                 queue: payment_queue.to_account_info(),
@@ -240,15 +243,17 @@ pub fn handler<'info>(
                 &[bump],
             ]],
         ),
-        disburse_payment_ix.into(),
         "payment".into(),
+        disburse_payment_ix.into(),
         Trigger::Cron {
-            schedule: payment.schedule.to_string()
+            schedule: payment.schedule.to_string(),
+            skippable: true,
         },
     )?;
 
     Ok(())
 }
+
 ```
 {% endtab %}
 
@@ -263,7 +268,7 @@ use {
         associated_token::AssociatedToken,
         token::{self, Mint, TokenAccount, Transfer}
     },
-    clockwork_crank::state::{Queue, SEED_QUEUE, CrankResponse},
+    clockwork_sdk::queue_program::accounts::{Queue, CrankResponse, QueueAccount},
 };
 
 #[derive(Accounts)]
@@ -274,7 +279,7 @@ pub struct DisbursePayment<'info> {
     #[account(
         mut,
         associated_token::authority = payment,
-        associated_token::mint = mint,
+        associated_token::mint = payment.mint,
     )]
     pub escrow: Box<Account<'info, TokenAccount>>,
 
@@ -283,22 +288,29 @@ pub struct DisbursePayment<'info> {
 
     #[account(
         mut,
-        seeds = [SEED_PAYMENT, payment.sender.key().as_ref(), payment.recipient.key().as_ref(), payment.mint.as_ref()],
+        seeds = [
+            SEED_PAYMENT, 
+            payment.sender.key().as_ref(), 
+            payment.recipient.key().as_ref(), 
+            payment.mint.key().as_ref()
+        ],
         bump,
+        has_one = sender,
+        has_one = recipient,
+        has_one = mint,
     )]
     pub payment: Box<Account<'info, Payment>>,
 
     #[account(
         signer, 
-        seeds = [
-            SEED_QUEUE, 
-            payment.key().as_ref(), 
-            "payment".as_bytes()
-        ], 
-        seeds::program = clockwork_crank::ID,
-        bump,
+        address = payment_queue.pubkey(),
+        constraint = payment_queue.id.eq("payment"),
     )]
     pub payment_queue: Box<Account<'info, Queue>>,
+
+    /// CHECK: the recipient is validated by the payment account
+    #[account()]
+    pub recipient: AccountInfo<'info>,
 
     #[account( 
         mut,
@@ -306,6 +318,10 @@ pub struct DisbursePayment<'info> {
         associated_token::mint = payment.mint,
     )]
     pub recipient_token_account: Box<Account<'info, TokenAccount>>,
+
+    /// CHECK: the sender is validated by the payment account
+    #[account()]
+    pub sender: AccountInfo<'info>,
 
     #[account(address = anchor_spl::token::ID)]
     pub token_program: Program<'info, anchor_spl::token::Token>,
@@ -318,11 +334,12 @@ pub fn handler(ctx: Context<'_, '_, '_, '_, DisbursePayment<'_>>) -> Result<Cran
     let recipient_token_account = &ctx.accounts.recipient_token_account;
     let token_program = &ctx.accounts.token_program;
 
-    // Update balance of payment account
+    let bump = *ctx.bumps.get("payment").unwrap();
+
+    // update balance of payment account
     payment.balance = payment.balance.checked_sub(payment.disbursement_amount).unwrap();
 
-    // Transfer from escrow to recipient's token account
-    let bump = *ctx.bumps.get("payment").unwrap();
+    // transfer from escrow to recipient's token account
     token::transfer(
         CpiContext::new_with_signer(
             token_program.to_account_info(), 
@@ -334,9 +351,10 @@ pub fn handler(ctx: Context<'_, '_, '_, '_, DisbursePayment<'_>>) -> Result<Cran
             &[&[SEED_PAYMENT, payment.sender.as_ref(), payment.recipient.as_ref(), payment.mint.as_ref(), &[bump]]]),
         payment.disbursement_amount,
     )?;
-        
+
     Ok(CrankResponse{ next_instruction: None })
 }
+
 ```
 {% endtab %}
 {% endtabs %}
