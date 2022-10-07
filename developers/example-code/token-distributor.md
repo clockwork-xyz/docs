@@ -1,7 +1,5 @@
 # Token distributor
 
-
-
 ## Summary
 
 * Mints a new token to a target user's associated token account on a user defined scheduler.
@@ -87,7 +85,7 @@ impl DistributorAccount for Account<'_, Distributor> {
 ## Instructions
 
 {% tabs %}
-{% tab title="CreatePayment" %}
+{% tab title="Initialize" %}
 This instruction initializes a `Distributor` account and then creates a queue to invoke `MintToken` according to the user-defined scheduler.&#x20;
 
 ```rust
@@ -127,13 +125,14 @@ pub struct Initialize<'info> {
 
     #[account(
         init,
-        address = Distributor::pubkey(mint.key(), authority.key()),
+        seeds = [SEED_DISTRIBUTOR, mint.key().as_ref(), authority.key().as_ref()],
+        bump,
         payer = authority,
         space = 8 + size_of::<Distributor>(),
     )]
     pub distributor: Account<'info, Distributor>,
 
-    #[account(address = Queue::pubkey(authority.key(), "distributor".into()))]
+    #[account(address = Queue::pubkey(distributor.key(), "distributor".into()))]
     pub distributor_queue: SystemAccount<'info>,
 
     /// CHECK: manually validated against recipient's token account
@@ -337,6 +336,7 @@ pub fn handler<'info>(ctx: Context<'_, '_, '_, 'info, MintToken<'info>>) -> Resu
         next_instruction: None,
     })
 }
+
 ```
 {% endtab %}
 {% endtabs %}
