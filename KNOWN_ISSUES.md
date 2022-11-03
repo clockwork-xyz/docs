@@ -19,4 +19,4 @@ You might not have configured a keypair yet, run `solana-keygen` and `solana con
 The Clockwork plugins depends on a specific of Solana _(for know we recommend that you use the exact same version)_.
 Make sure your Solana validator uses the same version as Clockwork by installing it again if needed `solana-install init x.y.z`.
 - Check the [release notes](https://github.com/clockwork-xyz/clockwork/releases) in doubt.
-- If you for some reason you cannot install the same version, please talk to us.
+- If for some reason you cannot install the same version, please talk to us.
