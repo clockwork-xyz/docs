@@ -1,4 +1,4 @@
-# List Of Known And Common Issues
+# FAQ
 
 ## Installation
 
