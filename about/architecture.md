@@ -3,7 +3,11 @@ cover: ../.gitbook/assets/gitbook-header-architecture-2 (1).png
 coverY: 0
 ---
 
-# Architecture
+# Workernet
+
+{% hint style="info" %}
+This page is under construction 👷🏼
+{% endhint %}
 
 ## Overview
 
@@ -16,28 +20,3 @@ These two layers work together to power automations for other programs. At a net
 
 <figure><img src="../.gitbook/assets/Blank diagram (3).png" alt=""><figcaption><p>Clockwork straddles the on-chain / off-chain divide.</p></figcaption></figure>
 
-## Transaction queues
-
-As a smart-contract primitive, Clockwork provides **transaction queues** for users to manage the state of on-chain jobs and workflows. Queues tell workers which transactions to execute and pay yield to workers who submit those transactions quickly. They facilitate bi-directional communication and payments, allowing users to securely transact with and delegate tasks to the worker network.
-
-<figure><img src="../.gitbook/assets/Blank document (18).png" alt=""><figcaption><p>Queues support exchange of value between users and workers.</p></figcaption></figure>
-
-### Composition through cranks
-
-Queues are a flexible primitive that allow developers to build complex and asynchronous workflows using smart-contracts. To do this, queues break down their workloads into small steps called "cranks". **Each crank is a transaction that executes an atomic unit of work on the blockchain.**
-
-What makes queues so powerful is that each crank is responsible for building a transaction to be invoked on the next crank. This allows queues to respond dynamically to on-chain state changes and flow through branching and cyclical logical paths. Though this mechanism, Clockwork supports the composition of asynchronous workflows that span across multiple programs.
-
-## Automating signatures&#x20;
-
-**Clockwork is a non-custodial service and does not hold onto users' private keys.** This creates unique security challenges for scheduling transactions on behalf of users.&#x20;
-
-### Pre-signed transactions
-
-One naive approach to transaction scheduling would be to save pre-signed transaction data somewhere for submission at a later date. This is problematic since it would be impossible to prevent a malicious actor from submitting pre-signed transactions ahead of their intended schedules. Solana explicitly protects against this by requiring every transaction to contain a [**recent blockhash**](https://docs.solana.com/developing/programming-model/transactions#recent-blockhash). This has the consequence of causing Solana transactions to go stale if they're not submitted to blockchain within a couple minutes of being signed.
-
-### Delegated signatories
-
-Instead, Clockwork utilizes a **delegated signatory** model. When a worker submits a crank transaction, the Clockwork program receives it first and adds an additional PDA signer to the transaction context before forwarding it on to the target program.&#x20;
-
-Target programs can verify the Clockwork signature is valid to know if the crank request is safe to process. This proxy-contract model protects programs from spam and accidental invocations. Code samples for how to correctly verify crank requests can be found in the [**examples** ](https://github.com/clockwork-xyz/examples/blob/main/hello\_clockwork/programs/hello\_clockwork/src/instructions/hello\_world.rs)repo on Github.&#x20;
