@@ -1,6 +1,6 @@
 # Threads
 
-**Transactions threads is are an automation primitive for Solana developers.** Just like traditional applications use threads to execute a series of instructions on a computer, Clockwork provides transaction threads for programs to execute a series of instructions on Solana.
+**Threads are an automation primitive for Solana developers.** Just like traditional applications can use threads to execute a series of instructions on a computer, Clockwork provides transaction threads for Solana programs to execute a series of instructions on-chain.
 
 ## Account model
 
