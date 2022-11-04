@@ -8,6 +8,7 @@
 
 ## Developers
 
+* [SDK](developers/sdk.md)
 * [Localnet](developers/localnet.md)
 * [Examples](developers/examples.md)
 
