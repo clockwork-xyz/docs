@@ -24,7 +24,7 @@ As soon as a thread's trigger condition is met, the worker network will begin su
 
 Here, the target program can do whatever it needs to with the accounts and data it receives. When finished, the program can return a `CrankResponse` and optionally specify a `next_instruction` to be invoked on the next crank of the thread.
 
-<figure><img src="../.gitbook/assets/Blank document (19).png" alt=""><figcaption><p>On the first crank, a thread will execute its <code>kickoff_instruction</code>.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank document (19) (1).png" alt=""><figcaption><p>On the first crank, a thread will execute its <code>kickoff_instruction</code>.</p></figcaption></figure>
 
 Each instruction executed by a thread has the responsibility of building the instruction to be executed. In this way, threads provide a simple interface for building complex and dynamically branching workflows via smart-contracts.
 
