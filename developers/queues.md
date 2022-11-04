@@ -1,6 +1,6 @@
 # Threads
 
-****![](<../.gitbook/assets/Blank document (19) (1).png>)**Transactions threads is are an automation primitive for Solana developers.** Just like traditional applications use threads to execute a series of instructions on a computer, Clockwork provides transaction threads for programs to execute a series of instructions on Solana.&#x20;
+**Transactions threads is are an automation primitive for Solana developers.** Just like traditional applications use threads to execute a series of instructions on a computer, Clockwork provides transaction threads for programs to execute a series of instructions on Solana.&#x20;
 
 ## Account model
 
