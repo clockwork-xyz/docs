@@ -3,7 +3,9 @@
 ## Installation
 
 ## CLI
+> How do I get information about a thread?
 
+Run `clockwork thread get --address <THREAD_PUBKEY>`
 
 ## SDK
 
