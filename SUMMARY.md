@@ -9,14 +9,9 @@
 
 ## Developers
 
-* [Getting started](developers/getting-started.md)
-* [Threads](developers/threads.md)
-* [Examples](developers/example-code/README.md)
-  * [Hello world](developers/example-code/hello-world.md)
-  * [Recurring payments](developers/example-code/recurring-payments.md)
-  * [Token distributor](developers/example-code/token-distributor.md)
-  * [Dollar cost averaging](developers/example-code/dollar-cost-averaging.md)
-  * [Serum crank](developers/example-code/serum-crank.md)
+* [Threads](developers/queues.md)
+* [Localnet](developers/localnet.md)
+* [Examples](developers/examples.md)
 
 ## Workernet
 
