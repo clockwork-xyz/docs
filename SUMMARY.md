@@ -3,13 +3,11 @@
 ## About
 
 * [Introduction](README.md)
-* [Architecture](about/architecture.md)
-* [Fees](about/fees.md)
-* [Token](about/token.md)
+* [Threads](about/queues.md)
+* [Workernet](about/architecture.md)
 
 ## Developers
 
-* [Threads](developers/queues.md)
 * [Localnet](developers/localnet.md)
 * [Examples](developers/examples.md)
 
