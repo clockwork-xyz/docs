@@ -3,7 +3,7 @@
 ## About
 
 * [Introduction](README.md)
-* [Threads](about/queues.md)
+* [Threads](developers/queues.md)
 * [Workernet](about/architecture.md)
 
 ## Developers
