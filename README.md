@@ -11,7 +11,7 @@ coverY: 0
 
 **Blockchains represent a major paradigm shift in software engineering.** Where applications are traditionally hosted in large centrally managed data centers, blockchains like Solana offer an alternative computing environment – one that's maintained by a decentralized community of stakeholders.&#x20;
 
-On a blockchain, data can be copied to thousands of servers around the world, making its information transparent to users and more durable in storage. Additionally, blockchains can efficiently distribute downtime risk across many independent data centers – generally proving to have more reliable uptime than relying on a single dedicated server!
+On a blockchain, data can be copied to thousands of servers around the world, making information more transparent to users and durable in storage. Blockchains can additionally distribute downtime risk across many independent data centers – generally proving to have more reliable uptime than relying on a single dedicated server!
 
 ### Solana
 
@@ -21,7 +21,7 @@ On a blockchain, data can be copied to thousands of servers around the world, ma
 
 **Decentralization is core to everything we do in crypto.** It's the fundamental principle behind network security, censorship resistance, and permissionless computing.&#x20;
 
-The funny thing is... decentralization is not even a novel idea. It's been __ a core property of the Internet since its earliest days. Though in recent years, this has become much less true. Today, the vast majority of Internet communications flow through just a small handful of companies. This centralization has generally made communication, markets, and services that depend on the Internet less secure and more vulnerable to censorship.&#x20;
+The funny thing is... decentralization is not even a novel idea. It's been __ a core property of the Internet since its earliest days. Though in recent years, this has become much less true. Today, the vast majority of Internet communications flow through just a small handful of companies. This centralization has made communication, markets, and services that depend on the Internet less secure and more vulnerable to censorship.&#x20;
 
 This is why we work in crypto – to build systems that help people live their lives independently of and collaboratively with one another. The design space is enormous and we are incredibly inspired by the things we see our friends building everyday.
 
@@ -33,4 +33,4 @@ This presents a problem for decentralization because it means developers tend to
 
 ## Why Clockwork?&#x20;
 
-We believe a decentralized automation engine will be critical for unlocking future waves of blockchain applications. By providing open-source infrastructure and developer tooling, we hope to support teams of all kinds in their journeys rewriting the games and markets of the new global Internet.&#x20;
+We believe a decentralized automation engine is critical for unlocking new waves of blockchain applications. By providing open-source infrastructure and developer tooling, we hope to support teams of all kinds in their journeys rewriting the games and markets of the new global Internet.&#x20;
