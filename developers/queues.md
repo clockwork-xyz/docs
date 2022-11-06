@@ -4,7 +4,7 @@
 
 ## Use-cases
 
-Threads massively expand the design space for blockchain developers. Below is a list of example programs that developers can build with Clockwork:
+Threads massively expand the design space for blockchain developers. Below is a list of example programs that developers are building with Clockwork today:
 
 **Defi protection** – Automatically repay debt on a lending market like [**Solend**](https://solend.fi/) or [**Jet**](https://www.jetprotocol.io/) when collateral prices approach liquidation levels.&#x20;
 
