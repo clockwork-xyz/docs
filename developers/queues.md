@@ -1,6 +1,6 @@
 # Threads
 
-**Threads are an automation primitive for Solana programs.** Just as traditional applications use[ **threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) to execute a series of instructions on a computer, Solana programs can use Clockwork threads to execute a long-running series of instructions on the blockchain. In this way, threads can help bring smart-contracts to life and make them _run_.
+**Threads are an automation primitive for Solana programs.** Just as traditional applications use[ **threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) to execute instructions on a computer, Solana programs can use Clockwork threads to execute a series of instructions on the blockchain. In this way, threads can help bring smart-contracts to life and make them _run_.
 
 ## Use-cases
 
