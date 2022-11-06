@@ -1,41 +1,43 @@
 # Threads
 
-{% hint style="info" %}
-This page is under construction 👷🏼
-{% endhint %}
+**Threads are an automation primitive for Solana programs.** Just as traditional applications use[ **threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) to execute a series of instructions on a computer, Solana programs can use Clockwork threads to execute a series of instructions on the blockchain. In this way, threads can help bring smart-contracts to life and make them _run_.
 
-**Threads are an automation primitive for Solana developers.** Just like traditional applications use threads to execute a series of instructions on a computer, Solana programs can use Clockwork's transactions threads to execute a series of instructions on-chain.
+## Use-cases
 
-### Triggers
+Threads massively expand the design space for blockchain developers. Below is a list of example programs that developers can build with Clockwork:
 
-Clockwork currently supports 2 trigger types:
+**Defi protection** – Automatically repay debt on a lending market like [**Solend**](https://solend.fi/) or [**Jet**](https://www.jetprotocol.io/) when collateral prices approach liquidation levels.&#x20;
 
-1. **Account**
-   * Triggers whenever an account's data changes. This trigger type is useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.
-2. **Cron**
-   * Triggers according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron). This trigger type is useful for scheduling one-off or periodically recurring threads.
-   * Clockwork uses Solana's network clock as the source-of-truth for time when processing cron schedules. If the Solana clock drifts relative to your local wallclock, Clockwork will remain synced to Solana rather than to the time of your local reference frame.
-3. **On-demand** &#x20;
-   * Begins executing immediately. This trigger type is useful when for immediately kicking off a complex chain of transactions.
+**Yield maximization** – One can even take this a step further to maximize returns by automatically rebalancing collateral positions based on relative yield rates.&#x20;
 
-{% hint style="info" %}
-New trigger types will be supported soon. If you have an idea for a trigger type that is not listed here, please [**file an issue**](https://github.com/clockwork-xyz/clockwork/issues) on Github describing your use-case and ideal interface.
-{% endhint %}
+**Scheduled payments** – Schedule token transfers and automate payroll or subscription payments.
+
+**Dollar-cost averaging** – Run an automated dollar-cost averaging program on-chain to ease into an investment position without hassle or stress. &#x20;
+
+**Auto-claim yield** – Automatically claim yield from your validator or favorite defi application.&#x20;
+
+**Trading bots** – **** Execute trades on an order book like [**Serum**](https://www.projectserum.com/) based on price feeds and technical indicators.&#x20;
+
+**Derivative data feeds** – Calculate stats, moving averages, and derivatives from oracle data feeds.
+
+
+
+## Triggers
+
+Clockwork provides various triggering conditions to kickoff a new transaction thread.&#x20;
+
+1. **Account** – Triggers whenever an account's data changes. This can be useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.
+2. **Cron** – Triggers according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron). This can be useful for scheduling one-off or periodically recurring actions.
+3. **On-demand** – Begins executing immediately. This trigger type is useful when for immediately kicking off a complex chain of transactions.
 
 ## Flow control
 
-As soon as a thread's trigger condition is met, the worker network will begin submitting transactions to execute the thread. When this happens, the thread will initialize a new `exec_context` to track its current execution state and send a [**cross-program invocation**](https://docs.solana.com/developing/programming-model/calling-between-programs) to the target program defined by the thread's `kickoff_instruction`.
+As soon as a thread's trigger condition is met, the worker network will begin submitting transactions to execute the thread's "kickoff instruction". Here, the target program can do whatever it needs to with the accounts and data it receives. When finished, the program can respond with a "next instruction" to be invoked during the next execution of the thread. In this way, threads provide a simple interface for building complex and dynamically branching workflows via smart-contracts.
 
-Here, the target program can do whatever it needs to with the accounts and data it receives. When finished, the program can return a `CrankResponse` and optionally specify a `next_instruction` to be invoked on the next crank of the thread.
+<figure><img src="../.gitbook/assets/Blank document (19) (1).png" alt=""><figcaption><p>When a thread begins, it will execute its "kickoff instruction".</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Blank document (19) (1).png" alt=""><figcaption><p>On the first crank, a thread will execute its <code>kickoff_instruction</code>.</p></figcaption></figure>
-
-Each instruction executed by a thread has the responsibility of building the instruction to be executed. In this way, threads provide a simple interface for building complex and dynamically branching workflows via smart-contracts.
-
-The worker network will executing a thread indefinitely until either its `next_instruction` value is null, an error is thrown, or the thread's account balance is insufficient to pay for the transaction.
-
-<figure><img src="../.gitbook/assets/Blank document (20).png" alt=""><figcaption><p>On subsequent cranks, a thread will execute its <code>next_instruction</code> until a null value is returned.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Blank document (20).png" alt=""><figcaption><p>Thereafter, a thread will recursively execute its "next instruction" until the target programs says there is no more work to do.</p></figcaption></figure>
 
 ## Fees
 
-Fees are a cost, paid by users for automation services provided by the worker network. **** Without fees, the worker network would have no incentive to process automated transactions. The automation fee is currently set to a minimum of **0.000001 SOL / instruction**. Thread owners may set a higher fee on their thread to prioritize their thread with block builders.&#x20;
+Fees are a cost, paid by threads, for the automation services provided by the worker network. The minimum fee is **0.000001 SOL / instruction**, but thread authorities can choose to pay a higher fee to prioritize their threads with block builders.&#x20;
