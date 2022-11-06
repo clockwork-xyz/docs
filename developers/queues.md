@@ -20,11 +20,9 @@ Threads massively expand the design space for blockchain developers. Below is a 
 
 **Derivative data feeds** – Calculate stats, moving averages, and derivatives from oracle data feeds.
 
-
-
 ## Triggers
 
-Clockwork provides various triggering conditions to kickoff a new transaction thread.&#x20;
+Clockwork provides three different triggering conditions to kickoff threads:&#x20;
 
 1. **Account** – Triggers whenever an account's data changes. This can be useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.
 2. **Cron** – Triggers according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron). This can be useful for scheduling one-off or periodically recurring actions.
