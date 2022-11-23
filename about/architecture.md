@@ -11,6 +11,9 @@ This page is under construction 👷🏼
 
 ## Overview
 
+**Clockwork threads are powered by a subnet of RPC nodes called the "workernet".** The nodes on the workernet are running a special plugin that allows them to simulate threads, pack instructions, and submit transactions to the chain on your programs behalf.&#x20;
+
+\
 The Clockwork automation engine has two primary subsystem:
 
 1. A **smart-contract** where users can create transaction queues.

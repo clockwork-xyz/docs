@@ -15,7 +15,7 @@ On a blockchain, data can be copied to thousands of servers around the world, ma
 
 ### Solana
 
-**Solana is the most active blockchain in the world.** With its affordable fees, low-latency messaging, and scalable architecture, Solana is a popular choice amongst users and developers alike. Currently processing over [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over [**3,400**](https://solana.com/news/validator-health-report-august-2022) validators powering the network, Solana is one of the most decentralized blockchains in the world.
+**Solana is the most active blockchain in the world.** With its affordable fees, low-latency messaging, and scalable architecture, Solana is a popular choice amongst users and developers alike. Currently processing around [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over [**3,400**](https://solana.com/news/validator-health-report-august-2022) validators on six different continent powering the network, Solana is additionally one of the most decentralized blockchains in the world.
 
 ### Decentralization
 
