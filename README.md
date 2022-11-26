@@ -27,10 +27,10 @@ This is why we work in crypto – to build systems that help people live their l
 
 ### The automation dilemma
 
-Despite the innovations blockchains provide over traditional data centers, they are not a wholesale replacement for traditional application stacks. One critical service not supported by blockchains today are **lambdas**, automated code that can run without a dedicated server.&#x20;
+Despite the innovations blockchains provide over traditional data centers, they are not yet a wholesale replacement for traditional application stacks. For example, one critical service not supported by blockchains today are **lambdas**, automated code that can run without a dedicated server.&#x20;
 
 This presents a problem for decentralization because it means developers tend to fallback on centralized solutions in order to automate on-chain applications. A dapp can only be as decentralized as its most centralized dependency! We call this problem **"the automation dilemma"** – whenever a developer is forced to choose between _automation_ or _decentralization_ in a system they are building.
 
 ## Why Clockwork?&#x20;
 
-We believe a decentralized automation engine is critical for unlocking new waves of blockchain applications. By providing open-source infrastructure and developer tooling, we hope to support teams of all kinds in their journeys rewriting the games and markets of the new global Internet.&#x20;
+We believe automation and transaction scheduling is critical for building blockchain applications. By providing open-source infrastructure and developer tooling, we hope to support teams of all kinds in their journeys rewriting the games and markets of the new global Internet.&#x20;
