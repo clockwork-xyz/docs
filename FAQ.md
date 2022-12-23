@@ -1,6 +1,17 @@
 # FAQ
 
 ## Installation
+TBC
+
+## Common Errors
+> (code -32002) Transaction simulation failed: Attempt to load a program that does not exist
+
+Often happens on localnet, most probably you are trying to create a thread by calling the thread progrma, but that program cannot be found. That's probably because you ran `solana-test-validator` instead of `clockwork localnet`.
+
+> I see in the validator logs: "Expected an executable account"
+
+You created a thread, but that thread is looking to execute an instruction whose program does not exist (hence the not an executable account). You haven't deployed your program yet.
+
 
 ## CLI
 > How do I get information about a thread?
