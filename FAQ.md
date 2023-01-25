@@ -4,6 +4,13 @@
 TBC
 
 ## Common Errors
+> Localnet - InstructionDidNotDeserialize and others
+
+Serialization errors happen when there is a mismatch between your validator's clockwork engine version and the clockwork librairies you are using. Naturally these two need to match:
+- Note the version of your `clockwork-client`
+- Note the version of your `clockwork-sdk`
+- Make sure to checkout and run the same version of the clockwork engine
+
 > (code -32002) Transaction simulation failed: Attempt to load a program that does not exist
 
 Often happens on localnet, most probably you are trying to create a thread by calling the thread progrma, but that program cannot be found. That's probably because you ran `solana-test-validator` instead of `clockwork localnet`.
