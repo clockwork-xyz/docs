@@ -9,13 +9,13 @@ coverY: 0
 
 ## **Background**
 
-**Blockchains represent a major paradigm shift in software engineering.** Where applications are traditionally hosted in large centrally managed data centers, blockchains like Solana offer an alternative computing environment – one that's maintained by a decentralized community of stakeholders.&#x20;
+**Blockchains represent a major paradigm shift in software engineering.** Where applications are traditionally hosted in large centrally managed data centers, blockchains like Solana offer an alternative computing environment – one that's run by a decentralized community of stakeholders.&#x20;
 
-On a blockchain, data can be copied to thousands of servers around the world, making information more transparent to users and durable in storage. Blockchains can additionally distribute downtime risk across many independent data centers – generally proving to have more reliable uptime than relying on a single dedicated server!
+On a blockchain, data can be copied to thousands of servers around the world, making information more transparent to users and durable in storage. Blockchains additionally distribute downtime risk across many independent data centers – leading to more reliable uptime than relying on a single dedicated server!
 
 ### Solana
 
-**Solana is the most active blockchain in the world.** With its affordable fees, low-latency messaging, and scalable architecture, Solana is a popular choice amongst users and developers alike. Currently processing around [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over [**3,400**](https://solana.com/news/validator-health-report-august-2022) validators on six different continent powering the network, Solana is additionally one of the most decentralized blockchains in the world.
+**Solana is the most active blockchain in the world.** With its affordable fees, fast transactions, and scalable architecture, Solana is a popular choice amongst users and developers alike. Currently processing around [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana has more on-chain activity than every other notable blockchain combined. And with over [**3,400**](https://solana.com/news/validator-health-report-august-2022) validators on six different continents powering the network, Solana is additionally one of the most decentralized blockchains in the world.
 
 ### Decentralization
 
