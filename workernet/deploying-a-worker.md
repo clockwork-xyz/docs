@@ -18,6 +18,20 @@ Next, create a new keypair for signing Clockwork txs. Load this keypair with a s
 solana-keygen new -o clockwork-worker-keypair.json
 ```
 
+Create a System Account for this key by funding the address with at least 0.1 ◎ SOL.
+
+```bash
+solana balance $(solana address -k clockwork-worker-keypair.json)
+```
+
+## Get a new worker id
+
+Register your worker and get a worker ID:
+
+```
+clockwork worker create clockwork-worker-keypair.json
+```
+
 ## Setup the config
 
 Then, setup the plugin config file in a folder where your validator startup script can reference it. Note, the `libpath` and `keypath` values should point to the binary and keypair mentioned in the steps above.
@@ -27,8 +41,9 @@ Then, setup the plugin config file in a folder where your validator startup scri
   "libpath": "/home/sol/clockwork-geyser-plugin-release/lib/libclockwork_plugin.so",
   "keypath": "/home/sol/clockwork-worker-keypair.json",
   "rpc_url": "http://127.0.0.1:8899",
-  "slot_timeout_threshold": 150,
-  "worker_threads": 10
+  "transaction_timeout_threshold": 150,
+  "thread_count": 10,
+  "worker_id": 👈 Set this to your worker ID!
 }
 ```
 
