@@ -14,6 +14,7 @@
 * [Walkthrough](developers/guides/README.md)
   * [You First Automation - Hello Clockwork](developers/guides/you-first-automation-hello-clockwork.md)
   * [Triggers](developers/guides/triggers.md)
+* [FAQ](developers/faq.md)
 
 ## Workernet
 
