@@ -3,6 +3,11 @@
 ## Installation
 TBC
 
+## Why Is My Thread Not Executing?
+- **Instruction Error:** Use the explorer to browse for your Thread and click the simulate **Thread Button** to see if the Thread is able to simulate your Instruction without errors, here's an [example thread](https://explorer.clockwork.xyz/address/9e3BzA7F9CHTYHyTcZ1pja8dY3c9cjLmUPiuY5bpuguX?network=devnet)
+- **Fees:** Does your thread account have enough SOL? Check the economics https://docs.clockwork.xyz/about/queues#fees
+- **Status:** Is your thread paused? Check the status in the [Clockwork Explorer](https://explorer.clockwork.xyz)
+
 ## Common Errors
 > Localnet - InstructionDidNotDeserialize and others
 
