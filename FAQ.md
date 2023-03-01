@@ -24,6 +24,10 @@ Often happens on localnet, most probably you are trying to create a thread by ca
 
 You created a thread, but that thread is looking to execute an instruction whose program does not exist (hence the not an executable account). You haven't deployed your program yet.
 
+## Triggers
+### Cron
+How to write the cron expression? You can use https://crontab.guru to check your cron string.
+The [clockwork cron parser](https://github.com/clockwork-xyz/clockwork/tree/main/cron) however includes **seconds** (left most column) and **year** (right most column).
 
 ## CLI
 > How do I get information about a thread?
