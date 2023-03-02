@@ -142,7 +142,6 @@ solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
 * Check the [FAQ](../../FAQ.md#common-errors).
 * Come build with us and ask questions on [Discord](https://discord.gg/epHsTsnUre).
 
-Dependencies
 | Dependency | Version |
 | --- | --- |
 | Anchor | 0.26.0 |
