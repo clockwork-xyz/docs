@@ -148,7 +148,7 @@ For a complete copy of all code provided in this walkthrough, please checkout th
 
 | Dependency | Version |
 | --- | --- |
-| Anchor | 0.26.0 |
+| Anchor | v0.26.0 |
 | Clockwork | v1.4.2 |
 | Clockwork TS SDK | v0.2.3 |
 | Rust | v1.65.0 | 
