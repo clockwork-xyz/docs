@@ -135,7 +135,7 @@ We can see the `threadCreate` function requires 5 arguments. This includes some 
 If you setup everything correctly, you can now watch your automated program run all on its own. Grab the thread address that was printed out to the console and look it up in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs from devnet by running the command provided below. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2023.
 
 ```bash
-solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
+solana logs -u devnet YOUR_PROGRAM_ID
 ```
 
 <img width="1138" alt="Screenshot 2023-03-02 at 4 48 56 PM" src="https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png">
