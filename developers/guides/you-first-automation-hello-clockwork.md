@@ -132,15 +132,19 @@ We can see the `threadCreate` function requires 5 arguments. This includes some 
 
 ## 3. Monitoring an automated program
 
-You can use the Solana CLI to stream program logs from devnet by running the command below. You can alternatively monitor a thread in any Solana explorer. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2022:
+If you setup everything correctly, you can now watch your automated program run all on its own. Grab the thread address that was printed out to the console and look it up in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs from devnet by running the command provided below. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2023.
 
 ```bash
 solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
 ```
 
-## Appendix
+<img width="1138" alt="Screenshot 2023-03-02 at 4 48 56 PM" src="https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png">
 
-For a full copy of all example code in this guide, please checkout the `hello_clockwork` project in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello_clockwork). This guide was written using the following environment dependencies.
+
+
+## Resources
+
+For a complete copy of all code provided in this walkthrough, please checkout the `hello_clockwork` project in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello_clockwork). This guide was written using the following environment dependencies.
 
 | Dependency | Version |
 | --- | --- |
@@ -149,6 +153,7 @@ For a full copy of all example code in this guide, please checkout the `hello_cl
 | Clockwork TS SDK | v0.2.3 |
 | Rust | v1.65.0 | 
 | Solana | v1.14.15 |
+| Ubuntu | v20.04 |
 
 ## Learn more
 
