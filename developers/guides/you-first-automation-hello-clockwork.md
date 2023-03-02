@@ -41,7 +41,7 @@ cd walkthroughs/hello_clockwork/starter/hello_clockwork
 
 ### Deploy a Solana Program
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 > 🗺 Big Picture Reminder
 >
@@ -197,7 +197,7 @@ Start by installing the \[Clockwork Typescript SDK]\([https://www.npmjs.com/pack
 yarn add @clockwork-xyz/sdk
 ```
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 #### Create An Automation - Prepare An Instruction
 
@@ -372,7 +372,7 @@ anchor test
 You can use the command line to check the logs with
 
 ```bash
-solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
+solana logs -u devnet YOUR_PROGRAM_ID
 ```
 
 <figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
