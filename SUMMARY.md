@@ -12,8 +12,7 @@
 * [Localnet](developers/localnet.md)
 * [Examples](developers/examples.md)
 * [Walkthrough](developers/guides/README.md)
-  * [You First Automation - Hello Clockwork](developers/guides/you-first-automation-hello-clockwork.md)
-  * [Triggers](developers/guides/triggers.md)
+  * [Hello, Clockwork – Your first automation](developers/guides/you-first-automation-hello-clockwork.md)
 * [FAQ](developers/faq.md)
 
 ## Workernet
