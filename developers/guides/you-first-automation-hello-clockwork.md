@@ -1,54 +1,42 @@
 ---
-description: Version 1.4.2
+Clockwork: v1.4.2
+Solana: v1.14.12
+Rust: v1.65.0
 ---
 
-# You First Automation - Hello Clockwork
+# Hello, Clockwork – Your first automation
 
 ## Goals
 
-* [ ] Understand the Clockwork workflow
-* [ ] Turning a simple Solana Instruction into an Automated Instruction
-* [ ] Getting familiar with Clockwork libs
-* [ ] Creating a Time Triggered Cron Thread
-* [ ] Debugging
+In this guide, we will build an automated program with Clockwork. We will start with a simple Solana program, and then use the Clockwork SDK to automate one of its instructions to run every 10 seconds. Our goals will be to:
 
-### Our Roadmap
+* [ ] Understand the Clockwork programming model.
+* [ ] Learn to schedule an instruction.
+* [ ] Debug common programming errors. 
 
-In this walkthrough, we will go over the basic steps of creating a thread. We start from a standard Solana program with a basic **Instruction**, and turn it into a **Threadable** using the Clockwork SDK. We will follow this method:
+## 0. The Clockwork programming model
 
-1. 🛠 Setup
-2. ✍️ Code
-3. 🔮 Observe
+Let's start with the big picture. Clockwork threads are an automation primitive for Solana. In short, we can simply point Clockwork at a target program to automate it. A model of this interaction can be seen in the diagram below. As we progress through this guide, we will work from right-to-left across the diagram – first deploying a simple Solana program, and then creating a Clockwork thread to automate it. 
 
+![Twitter post - 2](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
+## 1. Deploying the program
 
-## ⏳ The Clockwork Workflow
-
-Let's start with the big picture, overall this is what the workflow feels like
-
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
-
-## ⚓️ Anchor Program
-
-We assume you have experience with Anchor, so we will skip through the basics, and directly clone this starter project:
+To get started, we will assume you have a beginner's knowledge of Solana program development and some experience with Anchor. If you are unfamiliar with these concepts, we highly recommend you checkout the [Anchor framework](https://www.anchor-lang.com/) and setup your environment for Solana smart-contract development. Now let's begin by cloning the `hello_clockwork` starter project from Github:
 
 ```bash
 git clone git@github.com:clockwork-xyz/examples.git
 cd walkthroughs/hello_clockwork/starter/hello_clockwork
 ```
 
+<!-- <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure> -->
 
-
-### Deploy a Solana Program
-
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
-
-> 🗺 Big Picture Reminder
+<!-- > 🗺 Big Picture Reminder
 >
 > * [ ] Deploy a Solana Program 👈
-> * [ ] Create a Thread _(later)_
+> * [ ] Create a Thread _(later)_ -->
 
-Let's take a look at the program in`programs/hello_clockwork/src/lib.rs:`
+Let's open up the file located at `programs/hello_clockwork/src/lib.rs`. Here we have an entire Solana program, consisting of a single instruction named `hello`. There's nothing crazy going on here. We simply have an instruction that prints "hello" and the current cluster timestamp. 
 
 ```rust
 use anchor_lang::prelude::*;
@@ -68,11 +56,8 @@ pub mod hello_clockwork {
 
 #[derive(Accounts)]
 pub struct HelloClockwork {}
+
 ```
-
-* Nothing crazy in here, it is just a simple instruction that will print a log
-
-
 
 Before going further, let's update the Anchor **Program Id** with your own, and make sure you can deploy. Just run this script:
 
@@ -86,7 +71,7 @@ In this article, we will only cover how to use devnet for now. Localnet involves
 
 
 
-## ⏳ Automating Our Instruction With Clockwork
+## 2. Automating our program with Clockwork
 
 > 🗺 Big Picture Reminder
 >
@@ -416,9 +401,6 @@ const buildHelloInstruction = async (threadAddress: PublicKey) => {
 
 ## Going Further
 
-* Check the \[FAQ]\([https://github.com/clockwork-xyz/docs/blob/main/FAQ.md#common-errors](../../FAQ.md#common-errors))
-* Come build with us and ask us questions [Discord](https://discord.gg/epHsTsnUre)!
+* Check the [FAQ](../../FAQ.md#common-errors).
+* Come build with us and ask questions [Discord](https://discord.gg/epHsTsnUre).
 
-
-
-## 🧐 How Does it Actually Work?
