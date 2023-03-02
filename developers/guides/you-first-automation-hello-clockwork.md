@@ -150,6 +150,7 @@ For a full copy of all example code in this guide, please checkout the `hello_cl
 | Rust | v1.65.0 | 
 | Solana | v1.14.15 |
 
-To learn more:
+## Learn more
+
 * Read the [Clockwork FAQ](../../FAQ.md#common-errors).
 * Ask questions in the [Clockwork Discord](https://discord.gg/epHsTsnUre).
