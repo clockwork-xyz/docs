@@ -1,53 +1,46 @@
----
-Clockwork: v1.4.2
-Solana: v1.14.12
-Rust: v1.65.0
----
-
 # Hello, Clockwork – Your first automation
 
 ## Goals
 
-In this guide, we will build an automated program with Clockwork. We will start with a simple Solana program, and then use the Clockwork SDK to automate one of its instructions to run every 10 seconds. Our goals will be to:
+In this guide, we will build an automated program with Clockwork. We will start with a simple Solana program and then use the Clockwork SDK to schedule one of its instructions to run every 10 seconds. Our goals will be to:
 
 * [ ] Understand the Clockwork programming model.
-* [ ] Learn to schedule an instruction.
+* [ ] Learn how to schedule an instruction.
 * [ ] Debug common programming errors. 
 
-## 0. The Clockwork programming model
+## 0. Understanding the Clockwork programming model
 
-Let's start with the big picture. Clockwork threads are an automation primitive for Solana. In short, we can simply point Clockwork at a target program to automate it. A model of this interaction can be seen in the diagram below. As we progress through this guide, we will work from right-to-left across the diagram – first deploying a simple Solana program, and then creating a Clockwork thread to automate it. 
+Let's start with the big picture. Solana is a really fast, globally distributed computer. Just on like a traditional computer, Solana programs need be able to execute dynamic and long-running series of instructions. To do this on a traditional computer, developers use a primitive called a [thread](https://en.wikipedia.org/wiki/Thread_(computing)). On Solana, program developers can use Clockwork threads. 
 
-![Twitter post - 2](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
+In simple terms, Clockwork is an automation primitive for Solana. We can point Clockwork at any program on Solana to automate it. A simplified model of the relationship between Clockwork and a target automated program is available in the diagram below. As we progress through this guide, we will build our way from right-to-left across the diagram – first deploying a simple Solana program, and then creating a Clockwork thread to automate it. 
 
-## 1. Deploying the program
+![Figure 1](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
-To get started, we will assume you have a beginner's knowledge of Solana program development and some experience with Anchor. If you are unfamiliar with these concepts, we highly recommend you checkout the [Anchor framework](https://www.anchor-lang.com/) and setup your environment for Solana smart-contract development. Now let's begin by cloning the `hello_clockwork` starter project from Github:
+## 1. Deploying a Solana program
 
-```bash
-git clone git@github.com:clockwork-xyz/examples.git
-cd walkthroughs/hello_clockwork/starter/hello_clockwork
+To get started, we will assume you have a beginner's knowledge of Solana programming and some experience with Anchor. If you are unfamiliar with these concepts, we recommend you checkout the [Anchor framework](https://www.anchor-lang.com/) and setup your local environment for Solana smart-contract development.
+
+Let's begin by creating a new Anchor workspace for our project:
+```sh
+anchor init hello_clockwork
+cd hello_clockwork
 ```
 
-<!-- <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure> -->
-
-<!-- > 🗺 Big Picture Reminder
->
-> * [ ] Deploy a Solana Program 👈
-> * [ ] Create a Thread _(later)_ -->
-
-Let's open up the file located at `programs/hello_clockwork/src/lib.rs`. Here we have an entire Solana program, consisting of a single instruction named `hello`. There's nothing crazy going on here. We simply have an instruction that prints "hello" and the current cluster timestamp. 
+Now let's open up the program file located at `programs/hello_clockwork/src/lib.rs`. In here, we have our entire Solana program. Let's add an instruction named `hello` that prints out `"Hello, {name}"` and the current Solana cluster timestamp. 
 
 ```rust
 use anchor_lang::prelude::*;
+
+declare_id!("HCWy1dTbHUUk64LyqBeQxha23AMrRgKfShPXVmDuiUbY");
 
 #[program]
 pub mod hello_clockwork {
     use super::*;
 
-    pub fn hello_ix(_ctx: Context<HelloClockwork>) -> Result<()> {
+    pub fn hello(_ctx: Context<Hello>, name: String) -> Result<()> {
         msg!(
-            "Hello! The current time is: {}",
+            "Hello, {}! The current time is: {}",
+            name,
             Clock::get().unwrap().unix_timestamp
         );
         Ok(())
@@ -55,352 +48,105 @@ pub mod hello_clockwork {
 }
 
 #[derive(Accounts)]
-pub struct HelloClockwork {}
-
+#[instruction(name: String)]
+pub struct Hello {}
 ```
 
-Before going further, let's update the Anchor **Program Id** with your own, and make sure you can deploy. Just run this script:
+Anchor will automatically deploy your program to devnet when you run tests. To do this, we'll first need to install the test dependencies using `yarn`. Next, we can open up our test file located at `tests/hello_clockwork.ts` and write test case that calls our `hello` instruction. 
 
-```bash
-./deploy.sh devnet
-```
-
-{% hint style="info" %}
-In this article, we will only cover how to use devnet for now. Localnet involves more setup steps.
-{% endhint %}
-
-
-
-## 2. Automating our program with Clockwork
-
-> 🗺 Big Picture Reminder
->
-> * [x] Deploy a Solana Program
-> * [ ] Adapt our Solana Program For Automation __ 👈
-> * [ ] Create an Automation
-
-### Off-Chain - Using Anchor Tests
-
-To keep this walkthrough succinct. We will be using existing anchor tests to interact with the Solana RPC. Let's take a look at the existing tests in `tests/hello_clockwork.ts`
-
-```typescript
+```ts
 describe("hello_clockwork", () => {
-  it("It logs hello", async () => {
-    const tx = await program.methods.helloIx().rpc();
+  anchor.setProvider(anchor.AnchorProvider.env());
+  const program = anchor.workspace.HelloClockwork as Program<HelloClockwork>;
 
-    print_address("🤖 Program", program.programId.toString());
-    print_tx("✍️  Transaction", tx);
+  it("It says hello", async () => {
+    const tx = await program.methods.hello("world").rpc();
+    console.log(tx);
   });
+  
 });
 ```
 
+To run your tests, simply execute `anchor test`.
 
 
-Run the tests, and click on the **transaction** **link** to check our program logs
 
-```bash
-anchor test
-```
+## 2. Automating a program with Clockwork
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-
-### Automated Instruction
-
-We deployed our Solana program and called our instruction through the RPC with anchor tests. Now, how do we go from a simple instruction that needs to be manually called to an automated instruction?
-
-{% hint style="info" %}
-👩‍🍳 The Clockwork Recipe
-
-* [ ] Modify your instruction to return a `ThreadResponse` 👈
-* [ ] Create a `Thread`
-{% endhint %}
-
-### Program Side - Return a ThreadResponse From Your Instruction
-
-Install the \[clockwork-sdk for Solana Programs]\([https://crates.io/crates/clockwork-sdk](https://crates.io/crates/clockwork-sdk)):
-
-```
-cargo add clockwork-sdk@1.4.2
-```
-
-Jump into `programs/hello_clockwork/src/lib.rs` and add
-
-```rust
-...
-use clockwork_sdk::{
-    state::{ThreadResponse}, 👈
-};
-
-
-#[program]
-pub mod hello_clockwork {
-    use super::*;
-
-    pub fn hello_ix(_ctx: Context<HelloClockwork>, name: String) 
-    -> Result<ThreadResponse> 👈 {
-        msg!(
-            "Hello {}! The current time is: {}",
-            name,
-            Clock::get().unwrap().unix_timestamp
-        );
-        
-        Ok(ThreadResponse::default()) 👈
-    }
-}
-```
-
-1. Import the `clockwork_sdk` crate
-2. Modify the function signature to return a `Result<ThreadResponse>`
-3. Finally, return an `ThreadResponse`. In future tutorials, we will go over what exactly is that `ThreadResponse`, for the time being, let's just return a `::default()` one.
-
-Check that everything is fine
-
-```
-anchor build
-```
-
-### Client Side - Create a Thread
-
-{% hint style="info" %}
-👩‍🍳 The Clockwork Recipe
-
-* [x] Modify your instruction to return a`ThreadResponse`
-* [ ] Create an `Automation` 👈
-{% endhint %}
-
-Time to finally create a Thread, this is where things will feel a bit different. In this guide, we will create a Thread from the client side.
-
-> Again, we are leveraging anchor tests to keep the guide succinct, but this can be applied to any Solana client.
-
-#### Clockwork Typescript SDK
-
-Start by installing the \[Clockwork Typescript SDK]\([https://www.npmjs.com/package/@clockwork-xyz/sdk](https://www.npmjs.com/package/@clockwork-xyz/sdk))
+We just deployed our Solana program to devnet and tested it by sumbitting a transaction to call the `hello` instruction. Now we'll automate that transaction to happen every 10 seconds. First we'll need to install the [Clockwork Typescript SDK](https://www.npmjs.com/package/@clockwork-xyz/sdk).
 
 ```
 yarn add @clockwork-xyz/sdk
 ```
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+Now, we can jump back into the test file at `tests/hello_clockwork.ts` and spin up a new thread. Previously we executed the `hello` instruction directly. Now we will build the instruction and pass it to a thread to be automated.
 
-#### Create An Automation - Prepare An Instruction
-
-{% hint style="info" %}
-👩‍🍳 The Clockwork Recipe
-
-* [x] Modify your instruction to return an `ThreadResponse`
-* [ ] Create a `Thread`
-  * [ ] 1\) Prepare an instruction 👈
-{% endhint %}
-
-Jump to `tests/hello_clockwork.ts` and add
-
-```typescript
-...
-// 👇 The new import
-import { getThreadAddress, createThread } from "@clockwork-xyz/sdk";
-
-const step1_buildHelloInstruction = async (name: string) => { 👈
-  return program.methods
-    .helloIx(name)
-    .accounts({})
-    .instruction();
-}
+```ts
+// 0️⃣  Import the Clockwork SDK.
+import * from "@clockwork-xyz/sdk";
 
 describe("hello_clockwork", () => {
-  it("It logs hello", async () => {
-    // 1. Prepare an instruction to feed to the Automation
-    const targetIx = await buildHelloInstruction("Chronos") 👈
-    
-    // Create Automation
-    const createThreadIx = createThread({
-      instruction: targetIx,
-      trigger: ?,
-      threadName: ?,
-      threadAuthority: ?,
-    }, provider);
-  });
-});
-```
+  const provider = anchor.AnchorProvider.env();
+  anchor.setProvider(provider);
+  const wallet = provider.wallet;
+  const program = anchor.workspace.HelloClockwork as Program<HelloClockwork>;
+  const clockworkProvider = new ClockworkProvider(wallet, provider.connection);
 
-* Previously we submitted the hello world instruction directly
-* Now, we build the hello instruction without submitting it.
+  it("It runs every 10 seconds", async () => {
+    // 1️⃣  Prepare an instruction to be automated.
+    const targetIx = await program.methods.hello("world").accounts({}).instruction();
 
-> 💡 Paradigm Shift #1: The instruction will be run by our Thread not manually
-
-### Create An Automation - Triggers
-
-👩‍🍳 The Clockwork Recipe
-
-* [x] Modify your instruction to return an `ThreadResponse`
-* [ ] Create a `Thread`
-  * [x] 1\) Prepare an instruction&#x20;
-  * [ ] 2\) Define a trigger 👈
-
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
-
-Then the question is how do we want the Automation to run the instruction? That's the t`rigger`
-
-Today, we have two types of triggers:
-
-* \[Time based]\([https://docs.rs/clockwork-client/1.4.0/clockwork\_client/thread/state/enum.Trigger.html#variant.Cron](https://docs.rs/clockwork-client/1.4.0/clockwork\_client/thread/state/enum.Trigger.html#variant.Cron))
-* \[Account based]\([https://docs.rs/clockwork-client/1.4.0/clockwork\_client/thread/state/enum.Trigger.html#variant.Account](https://docs.rs/clockwork-client/1.4.0/clockwork\_client/thread/state/enum.Trigger.html#variant.Account))
-
-We will talk more about triggers in other examples. For now, let's use a time-based one, so that our Automation runs the instruction every 10 seconds
-
-<pre class="language-typescript"><code class="lang-typescript">// 👇 The new import
-<strong>import { getThreadAddress, createThread } from "@clockwork-xyz/sdk";
-</strong>
-it("It logs hello", async () => {
-    // 1. Prepare an instruction to feed to the Automation
-    const targetIx = await buildHelloInstruction("Chronos")
-
-    // 2. Define a trigger for the Automation to execute
+    // 2️⃣  Define a trigger condition.
     const trigger = {
       cron: {
         schedule: "*/10 * * * * * *",
         skippable: true,
       },
-    }
+    };
     
-    // 3. Create Thread
-    const createThreadIx = createThread({
-      instruction: targetIx,
-      trigger: trigger,
-      threadName: ?,
-      threadAuthority: ?,
-    }, provider);
-    
+    // 3️⃣ Create the thread.
+    const threadId = "test-" + new Date().getTime() / 1000;
+    const tx = await clockworkProvider.threadCreate(
+        wallet.publicKey,             // authority
+        threadId,                     // id
+        [targetIx],                   // instructions to execute
+        trigger,                      // trigger condition
+        anchor.web3.LAMPORTS_PER_SOL, // pre-fund amount
+    );
+    const [threadAddress, threadBump] = clockworkProvider.getThreadPDA(wallet.publicKey, threadId)
+    console.log(threadAddress);
+    console.log(tx);
   });
-});
-</code></pre>
-
-> 💡 Paradigm Shift #2: Automation can be triggered by time or conditions
-
-#### Create A Thread - Accounts
-
-We forgot the Solana mantra: _"In solana everything is a... account!"._ A Thread is an account, so we need to give an address that will be used for this account and who will pay for that account.
-
-```typescript
-import { getThreadAddress, createThread } from "@clockwork-xyz/sdk";
-
-it("It logs hello", async () => {
-    // 1. Prepare an instruction to feed to the Thread
-    ...
-
-    // 2. Define a trigger for the Thread to execute
-    ...
-    
-    // Accounts
-    const threadLabel = "hello_clockwork";
-    const threadAuthority = provider.publicKey;
-    const payer = provider.publicKey;
-    const threadAddress = getThreadAddress(threadAuthority, threadLabel);
-  });
+  
 });
 ```
 
-* `threadLabel:` an identifier for the Automation _(can also use buffer or vec u8)_
-* `threadAuthority:` the signing authority for the thread account. You will need the corresponding private key to sign any mutation to your Thread account. For example, if you need to delete/stop/pause/resume this Thread via the `clockwork thread` cli command (more on this later).
-* `payer`: the payer from the transaction, will also be used to fund the Thread
-* `threadAddress:` \[a program-derived address]\([https://docs.rs/clockwork-thread-program/1.4.0/src/clockwork\_thread\_program/state/thread.rs.html#65](https://docs.rs/clockwork-thread-program/1.4.0/src/clockwork\_thread\_program/state/thread.rs.html#65))
-
-#### Create An Automation - Thread Creation Request
-
-```typescript
-import { getThreadAddress, createThread } from "@clockwork-xyz/sdk";
-
-describe("hello_clockwork", () => {
-  it("It logs hello", async () => {
-    // 1. Prepare an instruction to feed to the Thread
-    ...
-
-    // 2. Define a trigger for the Thread to execute
-    ...
-
-    // Accounts
-    ...
-
-    // 3. Create Thread
-    const createThreadIx = createThread({
-      instruction: targetIx,
-      trigger: trigger,
-      threadName: threadLabel,
-      threadAuthority: threadAuthority,
-    }, provider);
-
-      const tx = await createThreadIx;
-      print_address("🤖 Program", program.programId.toString());
-      print_tx("✍️  Transaction", tx);
-  });
-});
-```
-
-* createThread`()`: the rest is really just plugging all the parameters we prepared earlier into the createThread() helper
-* Finally, we submit the final `createAutomation` instruction
+We can see the `threadCreate` call requires 5 arguments. This includes some basic information needed to initialize the thread account. 
+* `authority` – The owner of the thread. This account must be the transaction signer and will have permission to delete/stop/pause/resume and update the thread.
+* `id` – An identifier for the thread _(can also use buffer or vec u8)_.
+* `instructions` – The list of instructions to execute when the trigger condition becomes valid.
+* `trigger` – The trigger condition for the thread. When this condition becomes valid, the the thread will begin executing the provided instructions.
+* `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. The Clockwork base fee begins at 1000 lamports per executed instruction.
 
 
+### 3. Monitoring automated programs
 
-### 🔮 Observe - Let's See What's Happening
-
-Run the tests
-
-```
-anchor test
-```
-
-> You might run into a `ThreadCreate - Instruction - "Address already in use"`. It just means the `threadAddress` is already in use, you just need to give modify the `threadLabel` or provide a new `threadAddress` to assign
-
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
-
-You can use the command line to check the logs with
+You can use the Solana CLI to stream program logs from devnet by running the command below. You can alternatively monitor a thread using the Solana explorer. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2022:
 
 ```bash
 solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
 ```
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
-
-Or use the Clockwork explorer, here's the result with my program: [https://explorer.clockwork.xyz/address/A6KvnEL244thrkJACeuKvonoYa3LTtnG8ViCHf57r6fg?network=devnet](https://explorer.clockwork.xyz/address/A6KvnEL244thrkJACeuKvonoYa3LTtnG8ViCHf57r6fg?network=devnet)
-
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
-
-### ⚠️ Security
-
-Finally a note on security. For some reason, you might not want your instruction to be run by anyone or anything than your own Thread. In that case, we can add an anchor constraint and provide the thread address to our instruction.
-
-
-
-In your Anchor Program:
-
-```rust
-use clockwork_sdk::{
-    state::{Thread, ThreadAccount},
-};
-
-...
-
-#[derive(Accounts)]
-pub struct HelloClockwork<'info> {
-    #[account(address = thread.pubkey(), signer)]
-    pub thread: Account<'info, Thread>,
-}
-```
-
-In the client:
-
-```rust
-const buildHelloInstruction = async (threadAddress: PublicKey) => {
-  return await program.methods
-    .helloIx()
-    .accounts({ thread: threadAddress })
-    .instruction();
-}
-```
-
-## Going Further
+## Going further
 
 * Check the [FAQ](../../FAQ.md#common-errors).
-* Come build with us and ask questions [Discord](https://discord.gg/epHsTsnUre).
+* Come build with us and ask questions on [Discord](https://discord.gg/epHsTsnUre).
 
+Dependencies
+| Dependency | Version |
+| --- | --- |
+| Anchor | 0.26.0 |
+| Clockwork | v1.4.2 |
+| Clockwork TS SDK | v0.2.3 |
+| Rust | v1.65.0 | 
+| Solana | v1.14.15 |
