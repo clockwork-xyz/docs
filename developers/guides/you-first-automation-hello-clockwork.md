@@ -129,7 +129,7 @@ We can see the `threadCreate` call requires 5 arguments. This includes some basi
 * `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. The Clockwork base fee begins at 1000 lamports per executed instruction.
 
 
-### 3. Monitoring automated programs
+## 3. Monitoring automated programs
 
 You can use the Solana CLI to stream program logs from devnet by running the command below. You can alternatively monitor a thread using the Solana explorer. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2022:
 
@@ -137,10 +137,9 @@ You can use the Solana CLI to stream program logs from devnet by running the com
 solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
 ```
 
-## Going further
+## Appendix
 
-* Check the [FAQ](../../FAQ.md#common-errors).
-* Come build with us and ask questions on [Discord](https://discord.gg/epHsTsnUre).
+For a full copy of all example code in this guide, please checkout the `hello_clockwork` project in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello_clockwork). This guide was written with the following environment dependencies.
 
 | Dependency | Version |
 | --- | --- |
@@ -149,3 +148,7 @@ solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
 | Clockwork TS SDK | v0.2.3 |
 | Rust | v1.65.0 | 
 | Solana | v1.14.15 |
+
+To learn more:
+* Read the [Clockwork FAQ](../../FAQ.md#common-errors).
+* Ask questions in the [Clockwork Discord](https://discord.gg/epHsTsnUre).
