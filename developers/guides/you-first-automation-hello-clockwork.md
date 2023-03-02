@@ -2,31 +2,29 @@
 
 ## Goals
 
-In this guide, we will build an automated program with Clockwork. We will start with a simple Solana program and then use the Clockwork SDK to schedule one of its instructions to run every 10 seconds. Our goals will be to:
+In this guide, we will learn how to automate a Solana program using Clockwork. We will start by building a simple Solana program, and then use the Clockwork SDK to schedule an instruction to run every 10 seconds. Our goals will be to:
 
-* [ ] Understand the Clockwork programming model.
-* [ ] Learn how to schedule an instruction.
-* [ ] Debug common programming errors. 
+1. Understand the Clockwork programming model.
+2. Schedule a program instruction.
+3. Monitor an automated program. 
 
 ## 0. Understanding the Clockwork programming model
 
-Let's start with the big picture. Solana is a really fast, globally distributed computer. Just on like a traditional computer, Solana programs need be able to execute dynamic and long-running series of instructions. To do this on a traditional computer, developers use a primitive called a [thread](https://en.wikipedia.org/wiki/Thread_(computing)). On Solana, program developers can use Clockwork threads. 
+Let's start with the big picture. Solana is a really fast, globally distributed computer. Just a traditional computer, programs on Solana need be able to execute a dynamic series of instructions. To do this, developers traditionally use a programming primitive called a [thread](https://en.wikipedia.org/wiki/Thread_(computing)). On Solana, program developers can use Clockwork threads. 
 
-In simple terms, Clockwork is an automation primitive for Solana. We can point Clockwork at any program on Solana to automate it. A simplified model of the relationship between Clockwork and a target automated program is available in the diagram below. As we progress through this guide, we will build our way from right-to-left across the diagram – first deploying a simple Solana program, and then creating a Clockwork thread to automate it. 
+In simple terms, this means we can point Clockwork at any program on Solana to automate it. A simplified model of this relationship is presented in the diagram below. As we progress through this guide, we will build our way from right-to-left across the diagram – first deploying a simple Solana program, and then creating a Clockwork thread to automate it. 
 
 ![Figure 1](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
 ## 1. Deploying a Solana program
 
-To get started, we will assume you have a beginner's knowledge of Solana programming and some experience with Anchor. If you are unfamiliar with these concepts, we recommend you checkout the [Anchor framework](https://www.anchor-lang.com/) and setup your local environment for Solana smart-contract development.
-
-Let's begin by creating a new Anchor workspace for our project:
+To get started, we will assume you have a beginner's knowledge of Solana programming and some experience working with Anchor. If you are unfamiliar with these concepts, we recommend checking out [Anchor](https://www.anchor-lang.com/) and setting up your local environment for Solana program development. Let's begin by initializing a new Anchor workspace for our project:
 ```sh
 anchor init hello_clockwork
 cd hello_clockwork
 ```
 
-Now let's open up the program file located at `programs/hello_clockwork/src/lib.rs`. In here, we have our entire Solana program. Let's add an instruction named `hello` that prints out `"Hello, {name}"` and the current Solana cluster timestamp. 
+Now let's open up the program file located at `programs/hello_clockwork/src/lib.rs`. In here, we have our entire Solana program. Let's add an instruction named `hello` that prints out `"Hello, {name}"` followed by the current Solana cluster timestamp. 
 
 ```rust
 use anchor_lang::prelude::*;
@@ -52,7 +50,7 @@ pub mod hello_clockwork {
 pub struct Hello {}
 ```
 
-Anchor will automatically deploy your program to devnet when you run tests. To do this, we'll first need to install the test dependencies using `yarn`. Next, we can open up our test file located at `tests/hello_clockwork.ts` and write test case that calls our `hello` instruction. 
+Anchor will automatically deploy your program to devnet when you run your tests. To configure your tests, we'll first need to install the test dependencies using `yarn`. After this, we can open up the test file located at `tests/hello_clockwork.ts` and add a test case that calls our program's `hello` instruction. 
 
 ```ts
 describe("hello_clockwork", () => {
@@ -67,19 +65,22 @@ describe("hello_clockwork", () => {
 });
 ```
 
-To run your tests, simply execute `anchor test`.
+To run the test, simply execute the command below in your local project directory. You can verify the program ran successfully by looking up the transaction signature printed out to the console in your favorite [Solana explorer](https://explorer.solana.com). 
+```sh
+anchor test
+```
 
 
 
-## 2. Automating a program with Clockwork
+## 2. Creating a Clockwork thread
 
-We just deployed our Solana program to devnet and tested it by sumbitting a transaction to call the `hello` instruction. Now we'll automate that transaction to happen every 10 seconds. First we'll need to install the [Clockwork Typescript SDK](https://www.npmjs.com/package/@clockwork-xyz/sdk).
+We just deployed our program to the Solana devnet and tested it by sumbitting a transaction to call `hello`. Now we will learn how to automate that instruction to run every 10 seconds. But first, we need to install the [Clockwork Typescript SDK](https://www.npmjs.com/package/@clockwork-xyz/sdk).
 
 ```
 yarn add @clockwork-xyz/sdk
 ```
 
-Now, we can jump back into the test file at `tests/hello_clockwork.ts` and spin up a new thread. Previously we executed the `hello` instruction directly. Now we will build the instruction and pass it to a thread to be automated.
+Let's jump back into the test file located at `tests/hello_clockwork.ts`. In our first test case, we submitted a transaction to invoke `hello` directly. This time, let's add a new test case that builds the `hello` instruction and passes it to a Clockwork thread to be automated.
 
 ```ts
 // 0️⃣  Import the Clockwork SDK.
@@ -109,9 +110,9 @@ describe("hello_clockwork", () => {
     const tx = await clockworkProvider.threadCreate(
         wallet.publicKey,             // authority
         threadId,                     // id
-        [targetIx],                   // instructions to execute
-        trigger,                      // trigger condition
-        anchor.web3.LAMPORTS_PER_SOL, // pre-fund amount
+        [targetIx],                   // instructions
+        trigger,                      // trigger
+        anchor.web3.LAMPORTS_PER_SOL, // amount
     );
     const [threadAddress, threadBump] = clockworkProvider.getThreadPDA(wallet.publicKey, threadId)
     console.log(threadAddress);
@@ -121,17 +122,17 @@ describe("hello_clockwork", () => {
 });
 ```
 
-We can see the `threadCreate` call requires 5 arguments. This includes some basic information needed to initialize the thread account. 
-* `authority` – The owner of the thread. This account must be the transaction signer and will have permission to delete/stop/pause/resume and update the thread.
+We can see the `threadCreate` function requires 5 arguments. This includes some basic information needed to initialize the thread account. 
+* `authority` – The owner of the thread. This account must be the transaction signer and will have permission to delete, pause, resume, stop, and update the thread.
 * `id` – An identifier for the thread _(can also use buffer or vec u8)_.
 * `instructions` – The list of instructions to execute when the trigger condition becomes valid.
-* `trigger` – The trigger condition for the thread. When this condition becomes valid, the the thread will begin executing the provided instructions.
-* `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. The Clockwork base fee begins at 1000 lamports per executed instruction.
+* `trigger` – The trigger condition for the thread. When this condition is valid, the thread will begin executing the provided instructions.
+* `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. The Clockwork base fee starts at 1000 lamports per executed instruction.
 
 
-## 3. Monitoring automated programs
+## 3. Monitoring an automated program
 
-You can use the Solana CLI to stream program logs from devnet by running the command below. You can alternatively monitor a thread using the Solana explorer. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2022:
+You can use the Solana CLI to stream program logs from devnet by running the command below. You can alternatively monitor a thread in any Solana explorer. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2022:
 
 ```bash
 solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
@@ -139,7 +140,7 @@ solana logs -u devnet | grep -A 10 YOUR_PROGRAM_ID
 
 ## Appendix
 
-For a full copy of all example code in this guide, please checkout the `hello_clockwork` project in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello_clockwork). This guide was written with the following environment dependencies.
+For a full copy of all example code in this guide, please checkout the `hello_clockwork` project in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello_clockwork). This guide was written using the following environment dependencies.
 
 | Dependency | Version |
 | --- | --- |
