@@ -8,10 +8,12 @@
 
 ## Developers
 
+* [Threads](developers/threads.md)
+* [Dynamic payers](developers/dynamic-payers.md)
+* [Localnet](developers/localnet.md)
+* [SDKs](developers/sdk.md)
 * [Guides](developers/guides/README.md)
   * [Hello, Clockwork](developers/guides/you-first-automation-hello-clockwork.md)
-* [Localnet](developers/localnet.md)
-* [SDK](developers/sdk.md)
 * [FAQ](developers/faq.md)
 
 ## Workernet
