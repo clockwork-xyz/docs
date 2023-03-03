@@ -49,8 +49,3 @@ Use the Clockwork CLI to run the following command:
  clockwork thread get --address <THREAD_PUBKEY>
 ```
 
-## SDK
-
-### Clockwork Engine
-
->

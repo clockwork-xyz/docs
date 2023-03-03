@@ -1,7 +1,7 @@
 # SDK
 
-{% hint style="info" %}
-This page is under construction 👷🏼
+{% hint style="warning" %}
+This page needs to updated for v2 👷🏼
 {% endhint %}
 
 ## Getting started
