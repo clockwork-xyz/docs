@@ -159,5 +159,5 @@ This guide was written using the following environment dependencies.
 
 ## Learn more
 
-* Read the [Clockwork FAQ](../../FAQ.md#common-errors).
+* Read the [Clockwork FAQ](../FAQ.md#common-errors).
 * Ask questions in the [Clockwork Discord](https://discord.gg/epHsTsnUre).
