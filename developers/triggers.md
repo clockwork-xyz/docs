@@ -1,6 +1,6 @@
 # Triggers
 
-Clockwork provides 5 different trigger conditions for scheduling a thread's execution. These trigger conditions support a wide array of use-cases and allow threads to subscribe to time-based events as well as on-chain state changes. If none of the trigger conditions described below support your team's use-case, please reach out in the [**Clockwork Discord**](localnet.md) to propose a new trigger type.  &#x20;
+Clockwork provides 5 different trigger conditions for scheduling a thread's execution. These trigger conditions support a wide array of use-cases and allow threads to subscribe to time-based events as well as on-chain state changes. If none of the trigger conditions below support your use-case, please reach out in the [**Clockwork Discord**](localnet.md) with your use-case and proposed trigger type.  &#x20;
 
 ## 1. Account
 
