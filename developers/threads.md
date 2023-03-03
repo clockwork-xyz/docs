@@ -1,8 +1,12 @@
 # Threads
 
+## Introduction
+
 Threads are an automation primitive for Solana developers. Just as a traditional computer program often needs to execute a dynamic series of instructions, so too do Solana programs. Clockwork threads allow developers define a series of instructions (either static or dynamic) and setup a trigger condition to schedule their execution.&#x20;
 
 ## Account model
+
+On Solana, we often say that everything is an account. Threads are no different. A thread account holds the on-chain state needed to schedule and execute a static and/or dynamic series of instructions on Solana.&#x20;
 
 ```rust
 pub struct Thread {
