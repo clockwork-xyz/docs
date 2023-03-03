@@ -2,9 +2,9 @@
 
 ## Why is my thread not executing?
 
-* **Instruction Error:** Use the [Clockwork explorer](https://explorer.clockwork.xyz) to browse for your thread and click the **Simulate thread** button to see if your thread is able to simulate your instructions without errors.&#x20;
-* **Fees:** Is your thread funded account with enough SOL? Check it's balance and airdrop some SOL to it. See the [Fees](../about/queues.md#fees) section for more information.
-* **Status:** Is your thread paused? Check its status in the [Clockwork explorer](https://explorer.clockwork.xyz/).
+* Check for programming errors. Use the [Clockwork explorer](https://explorer.clockwork.xyz) to browse for your thread and click the **Simulate thread** button to see if your thread is able to simulate your instructions without errors.&#x20;
+* Is your thread funded account with enough SOL? Check it's balance and airdrop some SOL to it. See the [Fees](../about/queues.md#fees) section for more information.
+* Is your thread paused? Check its status in the [Clockwork explorer](https://explorer.clockwork.xyz/).
 
 ## Common programming bugs
 
