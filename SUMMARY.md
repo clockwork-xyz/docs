@@ -3,12 +3,12 @@
 ## About
 
 * [Introduction](README.md)
-* [Threads](about/queues.md)
-* [Workernet](about/architecture.md)
+* [Use-cases](about/queues.md)
 
 ## Developers
 
 * [Threads](developers/threads.md)
+* [Triggers](developers/triggers.md)
 * [Dynamic payers](developers/dynamic-payers.md)
 * [Localnet](developers/localnet.md)
 * [SDKs](developers/sdk.md)
@@ -18,4 +18,5 @@
 
 ## Workernet
 
+* [Introduction](workernet/architecture.md)
 * [Deploying a worker](workernet/deploying-a-worker.md)

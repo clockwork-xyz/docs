@@ -1,10 +1,6 @@
-# Threads
+# Use-cases
 
-**Threads are an automation primitive for Solana.** Just as traditional applications use[ **threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) to execute instructions on a computer, Clockwork threads allow Solana programs to execute a series of instructions on the blockchain. In this way, developers can use threads to bring smart-contracts to life and make them _run_.
-
-## Use-cases
-
-Threads massively expand the design space for blockchain developers. Below is a list of use-cases developers are using threads to build today:
+Clockwork automations massively expands the design space for blockchain developers. Below is a list of use-cases developers are using threads to build today:
 
 ### Defi
 
@@ -21,13 +17,7 @@ Threads massively expand the design space for blockchain developers. Below is a 
 
 * **Derivative data feeds** – Calculate stats, moving averages, and derivatives from oracle data feeds.
 
-## Triggers
 
-Clockwork provides three different triggering conditions to kickoff threads:&#x20;
-
-1. **Account** – Triggers whenever an account's data changes. This can be useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.
-2. **Cron** – Triggers according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron). This can be useful for scheduling one-off or periodically recurring actions.
-3. **On Demand** – Begins executing immediately. This trigger type is useful when for immediately kicking off a complex chain of transactions.
 
 ## Flow control
 
