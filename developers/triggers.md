@@ -1,6 +1,6 @@
 # Triggers
 
-Clockwork provides five different triggering conditions scheduling a thread's execution. These support&#x20;
+Clockwork provides 5 different trigger conditions for scheduling a thread's execution. These trigger conditions support a wide array of use-cases and allow threads to subscribe to time-based events as well as on-chain state changes.&#x20;
 
 ## 1. Account
 
