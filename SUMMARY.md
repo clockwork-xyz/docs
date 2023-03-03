@@ -17,6 +17,11 @@
   * [Hello, Clockwork](developers/guides/you-first-automation-hello-clockwork.md)
 * [FAQ](developers/faq.md)
 
+## Copy of Developers
+
+* [Getting started](copy-of-developers/guides.md)
+* [Hello, Clockwork](copy-of-developers/you-first-automation-hello-clockwork.md)
+
 ## Workernet
 
 * [Introduction](about/architecture.md)
