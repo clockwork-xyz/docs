@@ -1,7 +1,57 @@
 # Triggers
 
-Clockwork provides three different triggering conditions to kickoff a thread's execution:&#x20;
+Clockwork provides five different triggering conditions scheduling a thread's execution. These support&#x20;
 
-1. **Account** – Triggers whenever an account's data changes. This can be useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.
-2. **Cron** – Triggers according to a [**cron schedule**](https://en.wikipedia.org/wiki/Cron). This can be useful for scheduling one-off or periodically recurring actions.
-3. **On Demand** – Begins executing immediately. This trigger type is useful when for immediately kicking off a complex chain of transactions.
+## 1. Account
+
+Allows a thread to begin execution whenever an account's data changes. This can be useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.
+
+```rust
+    Account {
+        /// The address of the account to monitor.
+        address: Pubkey,
+        /// The byte offset of the account data to monitor.
+        offset: u64,
+        /// The size of the byte slice to monitor (must be less than 1kb)
+        size: u64,
+    },
+```
+
+## 2. Cron
+
+Allows a thread to begin execution whenever a [**cron schedule**](https://en.wikipedia.org/wiki/Cron) is valid. This can be useful for scheduling one-off or periodically recurring actions.
+
+```rust
+    Cron {
+        /// The schedule in cron syntax. Value must be parsable by the `clockwork_cron` package.
+        schedule: String,
+
+        /// Boolean value indicating whether triggering moments may be skipped if they are missed (e.g. due to network downtime).
+        /// If false, any "missed" triggering moments will simply be executed as soon as the network comes back online.
+        skippable: bool,
+    },
+```
+
+## 3. Now
+
+Allows a thread to begin execution immediately. This can be useful when a new calculation needs to be immediately kicked off.
+
+```rust
+    Now,
+```
+
+## 4. Slot
+
+Allows a thread to begin executing when a specified slot has passed. This can be useful for scheduling processes related to staking an Solana epoch transitions.
+
+```rust
+    Slot { slot: u64 },
+```
+
+## 5. Epoch
+
+Allows a thread to begin executing when a specified epoch becomes active. This can be useful for scheduling processes related to staking and Solana epoch transitions.
+
+```rust
+    Epoch { epoch: u64 },
+```

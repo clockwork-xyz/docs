@@ -9,8 +9,6 @@
 
 * [Threads](developers/threads.md)
 * [Triggers](developers/triggers.md)
-* [Dynamic payers](developers/dynamic-payers.md)
-* [Fees](developers/fees.md)
 * [Localnet](developers/localnet.md)
 * [SDKs](developers/sdk.md)
 * [FAQ](developers/faq.md)
