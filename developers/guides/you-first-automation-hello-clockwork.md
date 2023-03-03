@@ -142,7 +142,7 @@ If you setup everything correctly, you can now watch your automated program run 
 solana logs -u devnet YOUR_PROGRAM_ID
 ```
 
-![Screenshot 2023-03-02 at 4 48 56 PM](https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png)
+<figure><img src="https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png" alt=""><figcaption></figcaption></figure>
 
 ## Appendix
 
