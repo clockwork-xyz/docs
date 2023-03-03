@@ -1,6 +1,8 @@
 # Threads
 
-The **thread** account is a fundamental automation primitive for Solana. It tracks the state necessary to schedule and execute a series of instructions on the blockchain.&#x20;
+Threads are an automation primitive for Solana developers. Just as a traditional computer program often needs to execute a dynamic series of instructions, so too do Solana programs. Clockwork threads allow developers define a series of instructions (either static or dynamic) and setup a trigger condition to schedule their execution.&#x20;
+
+## Account model
 
 ```rust
 pub struct Thread {
