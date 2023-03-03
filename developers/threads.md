@@ -1,8 +1,6 @@
 # Threads
 
-## Account
-
-The thread account is an automation primitive for Solana. It tracks the state necessary to manage and execute a series of instructions.
+The **thread** account is a fundamental automation primitive for Solana. It tracks the state necessary to schedule and execute a series of instructions on the blockchain.&#x20;
 
 ```rust
 pub struct Thread {
@@ -36,7 +34,7 @@ pub struct Thread {
 
 ## Public address
 
-The public address of every thread is derived deterministically from its `authority` and `id`. These properties are immutable and may never change throughout the lifetime of the thread. To verify a Clockwork thread account in your programs, you can use the `pubkey()` helper function provided by the SDK:
+A thread's public address is derived deterministically from its `authority` and `id`. These properties are immutable and may never change throughout the lifetime of the thread account. To verify a Clockwork thread account in your programs, you can use the `pubkey()` helper function provided by the SDK:
 
 ```rust
 #[account(

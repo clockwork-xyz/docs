@@ -4,18 +4,19 @@ Clockwork automations massively expands the design space for blockchain develope
 
 ### Defi
 
-* **Defi protection** – Automatically repay debt on a lending market like [**Solend**](https://solend.fi/) or [**Jet**](https://www.jetprotocol.io/) when collateral prices approach liquidation levels.&#x20;
+* **Defi protection** – Automatically repay debt on a lending market like [**Solend**](https://solend.fi/) or [**Jet**](https://www.jetprotocol.io/) when collateral prices approach liquidation levels.
 * **Trading bots** – **** Execute trades on an order book like [**Serum**](https://www.projectserum.com/) based on price feeds and technical indicators.&#x20;
-* **Auto-claim yield** – Automatically claim yield from your validator or favorite defi application.&#x20;
+* **LP rebalancing** – Automatically rebalance liquidity on AMMs like [**Orca**](https://www.orca.so/) whenever the market price moves out of a specified range.
 
 ### Payments
 
 * **Scheduled payments** – Schedule token transfers and automate payroll or subscription payments.
 * **Dollar-cost averaging** – Run an automated dollar-cost averaging program on-chain to ease into an investment position without hassle or stress. &#x20;
+* **Auto-claim yield** – Automatically claim and distribute yield from your favorite validator or defi application.&#x20;
 
 ### Oracles
 
-* **Derivative data feeds** – Calculate stats, moving averages, and derivatives from oracle data feeds.
+* **Statistics** – Calculate stats, moving averages, volatility indices and more from oracle data feeds.
 
 
 
@@ -27,6 +28,4 @@ As soon as a thread's trigger condition is met, the worker network will begin su
 
 <figure><img src="../.gitbook/assets/Blank document (20).png" alt=""><figcaption><p>Thereafter, a thread will recursively execute its "next instruction" until the target programs says there is no more work to do.</p></figcaption></figure>
 
-## Fees
-
-Fees are a cost, paid by threads, for the automation services provided by the worker network. The minimum fee is **0.000001 SOL / instruction**, but thread authorities can choose to pay a higher fee to prioritize their threads with block builders.&#x20;
+##

@@ -3,7 +3,7 @@ cover: ../.gitbook/assets/gitbook-header-architecture-2 (1).png
 coverY: 0
 ---
 
-# Workernet
+# Introduction
 
 {% hint style="info" %}
 This page is under construction 👷🏼
@@ -11,7 +11,7 @@ This page is under construction 👷🏼
 
 ## Overview
 
-**Clockwork threads are powered by a subnet of RPC nodes called the "workernet".** The nodes on the workernet are running a special plugin that allows them to simulate threads, pack instructions, and submit transactions to the chain on your programs behalf.&#x20;
+**Clockwork threads are powered by a subnet of RPC nodes called the "workernet" (or "workers").** The nodes on the workernet are running a special plugin that allows them to simulate threads, pack instructions, and submit transactions to the chain on your programs behalf.&#x20;
 
 \
 The Clockwork automation engine has two primary subsystem:
