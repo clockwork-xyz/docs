@@ -62,6 +62,64 @@ On Solana, the term “authority” is often used by convention to refer to the 
 
 An authority may be any valid public address (i.e. a wallet pubkey or PDA). When the authority is a PDA, we occasionally refer to this as a “program authority” since the account is managed by a program. If you are unfamiliar with PDAs, the Solana Cookbook has a [great writeup](https://solanacookbook.com/core-concepts/pdas.html) on what they are and how to build secure programs with them.
 
+## Triggers
+
+Clockwork provides 5 different trigger conditions for scheduling a thread's execution. These trigger conditions support a wide array of use-cases and allow threads to subscribe to time-based events as well as on-chain state changes. If none of the trigger conditions described below support your team's use-case, please reach out in the [**Clockwork Discord**](localnet.md) to propose a new trigger type.  &#x20;
+
+#### 1. Account
+
+Allows a thread to begin execution whenever an account's data changes. This can be useful for listening to account updates, process realtime events, or subscribing to an oracle data stream.
+
+```rust
+    Account {
+        /// The address of the account to monitor.
+        address: Pubkey,
+        /// The byte offset of the account data to monitor.
+        offset: u64,
+        /// The size of the byte slice to monitor (must be less than 1kb)
+        size: u64,
+    },
+```
+
+#### 2. Cron
+
+Allows a thread to begin execution whenever a [**cron schedule**](https://en.wikipedia.org/wiki/Cron) is valid. This can be useful for scheduling one-off or periodically recurring actions.
+
+```rust
+    Cron {
+        /// The schedule in cron syntax. Value must be parsable by the `clockwork_cron` package.
+        schedule: String,
+
+        /// Boolean value indicating whether triggering moments may be skipped if they are missed (e.g. due to network downtime).
+        /// If false, any "missed" triggering moments will simply be executed as soon as the network comes back online.
+        skippable: bool,
+    },
+```
+
+#### 3. Now
+
+Allows a thread to begin execution immediately. This can be useful when a new calculation needs to be immediately kicked off.
+
+```rust
+    Now,
+```
+
+#### 4. Slot
+
+Allows a thread to begin executing when a specified slot has passed. This can be useful for scheduling processes related to staking an Solana epoch transitions.
+
+```rust
+    Slot { slot: u64 },
+```
+
+#### 5. Epoch
+
+Allows a thread to begin executing when a specified epoch becomes active. This can be useful for scheduling processes related to staking and Solana epoch transitions.
+
+```rust
+    Epoch { epoch: u64 },
+```
+
 ## Fees
 
 Fees are a cost, paid by thread accounts, for the automation services provided by the worker network. The minimum automation fee begins at **0.000001 SOL / instruction.** Thread authorities may choose to pay higher fees to prioritize their threads with worker network.&#x20;

@@ -8,7 +8,6 @@
 ## Developers
 
 * [Threads](developers/threads.md)
-* [Triggers](developers/triggers.md)
 * [Localnet](developers/localnet.md)
 * [SDKs](developers/sdk.md)
 * [FAQ](developers/faq.md)
