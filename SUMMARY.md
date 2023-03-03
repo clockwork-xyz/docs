@@ -8,10 +8,10 @@
 
 ## Developers
 
-* [SDK](developers/sdk.md)
-* [Localnet](developers/localnet.md)
 * [Guides](developers/guides/README.md)
   * [Hello, Clockwork](developers/guides/you-first-automation-hello-clockwork.md)
+* [Localnet](developers/localnet.md)
+* [SDK](developers/sdk.md)
 * [FAQ](developers/faq.md)
 
 ## Workernet
