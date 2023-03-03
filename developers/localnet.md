@@ -1,6 +1,6 @@
 # Localnet
 
-## Building source
+## Building from source
 
 Currently, the fastest way to get up and running with Clockwork is to clone the repo, checkout the latest release, and build the toolkit from source:
 
