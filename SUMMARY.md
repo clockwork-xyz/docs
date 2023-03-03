@@ -19,5 +19,5 @@
 
 ## Workernet
 
-* [Introduction](workernet/architecture.md)
+* [Introduction](about/architecture.md)
 * [Deploying a worker](workernet/deploying-a-worker.md)
