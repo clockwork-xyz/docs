@@ -1,4 +1,8 @@
-# FAQ
+# Support
+
+If you have a question, you can ask the community in the Clockwork Discord. If you would rather have a private word with the team, please file a ticket in the support channel.&#x20;
+
+{% embed url="https://discord.gg/6zGyWF7mP4" %}
 
 ## Why is my thread not executing?
 
@@ -6,7 +10,7 @@
 * Is your thread funded account with enough SOL? Check it's balance and airdrop some SOL to it. See the [Fees](../about/queues.md#fees) section for more information.
 * Is your thread paused? Check its status in the [Clockwork explorer](https://explorer.clockwork.xyz/).
 
-## Common programming bugs
+#### Common errors
 
 > InstructionDidNotDeserialize and others
 
@@ -24,7 +28,7 @@ This often happens on localnet. You are probably trying to create a thread by ca
 
 You created a thread, but that thread is trying to execute an instruction whose program does not exist (hence the not an executable account). You haven't deployed your program yet.
 
-## Localnet issues
+## Why is localnet not working?
 
 > My validator stopped after ⠚ Initializing..
 
@@ -37,15 +41,7 @@ The Clockwork plugins depends on a specific of Solana _(for know we recommend th
 
 Run `cat test-ledger/validator.log | grep "crate-info"`
 
-## Debugging cron schedules
+## How do I write a cron schedule?
 
-Not sure if you have a valid cron expression? You can use [https://crontab.guru](https://crontab.guru/) to check your cron string. Note that crontab guru is a 5 columns cron while The [clockwork cron parser](https://github.com/clockwork-xyz/clockwork/tree/main/cron) is a 7 columns cron. It includes **seconds** (left most column) and **year** (right most column).
-
-## Looking up a parsed thread account
-
-Use the Clockwork CLI to run the following command:
-
-```
- clockwork thread get --address <THREAD_PUBKEY>
-```
+You can use [https://crontab.guru](https://crontab.guru/) to check your cron string. Note that crontab guru is a 5 columns cron while The [clockwork cron parser](https://github.com/clockwork-xyz/clockwork/tree/main/cron) is a 7 columns cron. It includes **seconds** (left most column) and **year** (right most column).
 
