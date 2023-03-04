@@ -1,6 +1,6 @@
-# Getting started
+# Guides
 
-In this section, you will find a list of guides designed to help you build an automated program from scratch. A complete collection of all example programs in this section is available and free-to-fork on Github!
+In this section, you will find a number of guides designed to help you build automated programs with Clockwork. A complete collection of all example programs in this section is available and free-to-fork on Github!
 
 * [**Hello, Clockwork**](broken-reference) – Learn how to log a "Hello, world" memo every 10 seconds.
 * [**Recurring payments**](https://github.com/clockwork-xyz/examples/tree/main/payments) – Executes an SPL token transfer on a user-defined schedule.
