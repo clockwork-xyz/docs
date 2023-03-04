@@ -49,7 +49,7 @@ solana program deploy \
 {% endtab %}
 {% endtabs %}
 
-## Stream logs
+## 3. Stream logs
 
 To stream logs from your deployed program, you can use the Solana CLI.
 
