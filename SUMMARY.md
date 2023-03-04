@@ -7,7 +7,7 @@
 
 ## Developers
 
-* [Threads](developers/threads/README.md)
+* [Threads](developers/threads.md)
   * [Account](developers/threads/account.md)
   * [Address](developers/threads/address.md)
   * [Authority](developers/threads/authority.md)

@@ -1,5 +1,9 @@
 # Payers
 
+{% embed url="https://github.com/clockwork-xyz/clockwork/blob/781b42fd06f2926899597ce5ea1f19b8ecd3d2e4/utils/src/thread.rs#L13" %}
+PAYER\_PUBKEY: Pubkey
+{% endembed %}
+
 Anchor currently does not support PDAs as payers for account initialization. This means that if one of your automated instructions initializes a new account, you must specify a keypair signer as the `payer`. For this, we provide a special Clockwork payer address:
 
 ```rust
