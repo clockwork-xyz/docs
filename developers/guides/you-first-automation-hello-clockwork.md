@@ -12,7 +12,7 @@ In this guide, we will learn how to automate a Solana program using Clockwork. W
 2. Schedule a program instruction.
 3. Monitor an automated program.
 
-## 0. Understanding the Clockwork programming model
+## 1. Understanding the Clockwork programming model
 
 Let's start with the big picture. Solana is a really fast, globally distributed computer. Just a traditional computer, programs on Solana need be able to execute a dynamic series of instructions. To do this, developers traditionally use a programming primitive called a [thread](https://en.wikipedia.org/wiki/Thread\_\(computing\)). On Solana, program developers can use Clockwork threads.
 
@@ -20,7 +20,7 @@ In simple terms, this means we can point Clockwork at any program on Solana to a
 
 ![Figure 1](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
-## 1. Deploying a Solana program
+## 2. Deploying a Solana program
 
 To get started, we will assume you have a beginner's knowledge of Solana programming and some experience working with Anchor. If you are unfamiliar with these concepts, we recommend checking out [Anchor](https://www.anchor-lang.com/) and setting up your local environment for Solana program development. Let's begin by initializing a new Anchor workspace for our project:
 
@@ -76,7 +76,7 @@ To run the test, simply execute the command below in your local project director
 anchor test
 ```
 
-## 2. Creating a Clockwork thread
+## 3. Creating a Clockwork thread
 
 We just deployed our program to the Solana devnet and tested it by sumbitting a transaction to call `hello`. Now we will learn how to automate that instruction to run every 10 seconds. But first, we need to install the [Clockwork Typescript SDK](https://www.npmjs.com/package/@clockwork-xyz/sdk).
 
@@ -134,7 +134,7 @@ We can see the `threadCreate` function requires 5 arguments. This includes some 
 * `trigger` – The trigger condition for the thread. When this condition is valid, the thread will begin executing the provided instructions.
 * `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. The Clockwork base fee starts at 1000 lamports per executed instruction.
 
-## 3. Monitoring an automated program
+## 4. Monitoring an automated program
 
 If you setup everything correctly, you can now watch your automated program run all on its own. Grab the thread address that was printed out to the console and look it up in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs from devnet by running the command provided below. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2023.
 
