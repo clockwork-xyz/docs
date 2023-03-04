@@ -1,8 +1,8 @@
 # Localnet
 
-## Building from source
+## 1. Compile from source
 
-Currently, the fastest way to get up and running with Clockwork is to clone the repo, checkout the latest release, and build the toolkit from source:
+Currently, the fastest way to get up and running with a Clockwork localnet is to clone the repo, checkout a latest release version, and build the toolkit from scratch.
 
 ```bash
 git clone https://github.com/clockwork-xyz/clockwork
@@ -11,7 +11,7 @@ git checkout tags/$(git describe --tags)
 ./scripts/build-all.sh . && export PATH=$PWD/bin:$PATH
 ```
 
-## Deploying a localnet
+## 2. Deploy a localnet
 
 First, remember to configure your Solana CLI for local development:
 
