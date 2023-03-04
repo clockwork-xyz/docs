@@ -1,6 +1,6 @@
-# Deploying a worker
+# Deploy a worker
 
-## 1. Download the binary
+## 1. Download the geyser plugin
 
 To turn your Solana validator or RPC into a Clockwork worker, you simply need to install the Clockwork [geyser plugin](https://docs.solana.com/developing/plugins/geyser-plugins). You can get the binary either by [building from source](../developers/localnet.md#build-from-source) or installing the pre-built binary:
 
@@ -32,7 +32,7 @@ Register your worker and get a worker ID:
 clockwork worker create clockwork-worker-keypair.json
 ```
 
-## 4. Setup the config
+## 4. Configure your node
 
 Then, setup the plugin config file in a folder where your validator startup script can reference it. Note, the `libpath` and `keypath` values should point to the binary and keypair mentioned in the steps above.
 
