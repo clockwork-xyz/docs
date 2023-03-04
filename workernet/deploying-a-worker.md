@@ -1,6 +1,6 @@
 # Deploying a worker
 
-## Download the binary
+## 1. Download the binary
 
 To turn your Solana validator or RPC into a Clockwork worker, you simply need to install the Clockwork [geyser plugin](https://docs.solana.com/developing/plugins/geyser-plugins). You can get the binary either by [building from source](../developers/localnet.md#build-from-source) or installing the pre-built binary:
 
@@ -10,7 +10,7 @@ tar -xjvf clockwork-geyser-plugin-release-x86_64-unknown-linux-gnu.tar.bz2
 rm clockwork-geyser-plugin-release-x86_64-unknown-linux-gnu.tar.bz2
 ```
 
-## Create a keypair
+## 2. Create a keypair
 
 Next, create a new keypair for signing Clockwork txs. Load this keypair with a small amount of SOL (\~0.01 â—Ž). You will be compensated for lamports spent by the transactions your worker automates.&#x20;
 
@@ -24,7 +24,7 @@ Create a System Account for this key by funding the address with at least 0.1 â—
 solana balance $(solana address -k clockwork-worker-keypair.json)
 ```
 
-## Get a new worker id
+## 3. Get a worker ID
 
 Register your worker and get a worker ID:
 
@@ -32,7 +32,7 @@ Register your worker and get a worker ID:
 clockwork worker create clockwork-worker-keypair.json
 ```
 
-## Setup the config
+## 4. Setup the config
 
 Then, setup the plugin config file in a folder where your validator startup script can reference it. Note, the `libpath` and `keypath` values should point to the binary and keypair mentioned in the steps above.
 
@@ -47,7 +47,7 @@ Then, setup the plugin config file in a folder where your validator startup scri
 }
 ```
 
-## Restart your validator
+## 5. Restart your validator
 
 Finally, add an additional line to your startup script to run your validator with the Clockwork plugin (often located at `/home/sol/bin/validator.sh`):
 
