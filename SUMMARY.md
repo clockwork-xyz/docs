@@ -22,4 +22,4 @@
 
 ## Workernet
 
-* [Deploying a worker](workernet/deploying-a-worker.md)
+* [Deploy a worker](workernet/deploying-a-worker.md)
