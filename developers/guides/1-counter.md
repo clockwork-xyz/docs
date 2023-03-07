@@ -262,7 +262,7 @@ it("It increments every 10 seconds", async () => {
 
 Clone the [completed project](https://github.com/clockwork-xyz/examples/tree/main/counter), and run the tests with `anchor test`; we can see that our counter account is now being incremented every 10 seconds by our thread:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 4. Key Takeaways
 
