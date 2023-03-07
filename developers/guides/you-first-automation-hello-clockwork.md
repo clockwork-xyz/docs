@@ -1,4 +1,4 @@
-# 0 - Hello, Clockwork
+# 0. Hello, Clockwork
 
 {% hint style="info" %}
 A complete copy of all code provided in this guide can be found in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork) on Github.
@@ -143,6 +143,10 @@ solana logs -u devnet YOUR_PROGRAM_ID
 ```
 
 <figure><img src="https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png" alt=""><figcaption></figcaption></figure>
+
+## 💡 Key Takeaways
+
+
 
 ## Appendix
 

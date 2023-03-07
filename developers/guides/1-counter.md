@@ -1,4 +1,4 @@
-# 1 - Counter
+# 1. Counter
 
 {% hint style="info" %}
 A complete copy of all code provided in this guide can be found in the [Clockwork examples repository](https://github.com/clockwork-xyz/examples/tree/main/counter).
@@ -264,10 +264,10 @@ Clone the [completed project](https://github.com/clockwork-xyz/examples/tree/mai
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-## 4. Key Takeaways
+## Key Learnings
 
-* Use [`PAYER_PUBKEY`](../threads/payers.md) whenever you need your thread to pay for accounts.
-* User wallets cannot sign end-to-end transactions made by a thread. For such situations, delegate the signing to PDAs.
+* Use the [`PAYER_PUBKEY`](../threads/payers.md) address whenever you need to pay for new account initializations.
+* User wallets cannot sign automated transactions. Instead, we can delegate token spending authority to a PDA and automate that account.
 
 ## Appendix
 

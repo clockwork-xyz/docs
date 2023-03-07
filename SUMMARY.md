@@ -16,7 +16,7 @@
   * [Triggers](developers/threads/triggers.md)
 * [Guides](developers/guides/README.md)
   * [0. Hello, Clockwork](developers/guides/you-first-automation-hello-clockwork.md)
-  * [1. Counter](developers/guides/1.-counter.md)
+  * [1. Counter](developers/guides/1-counter.md)
 * [Localnet](developers/localnet.md)
 * [SDK](developers/sdk.md)
 * [Support](developers/faq.md)
