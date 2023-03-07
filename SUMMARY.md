@@ -15,7 +15,7 @@
   * [Payers](developers/threads/payers.md)
   * [Triggers](developers/threads/triggers.md)
 * [Guides](developers/guides/README.md)
-  * [0 - Hello, Clockwork](developers/guides/hello-clockwork.md)
+  * [0 - Hello, Clockwork](developers/guides/0-hello-clockwork.md)
   * [1 - Counter](developers/guides/1-counter.md)
 * [Localnet](developers/localnet.md)
 * [SDK](developers/sdk.md)

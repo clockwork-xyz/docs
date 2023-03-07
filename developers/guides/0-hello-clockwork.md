@@ -1,4 +1,4 @@
-# Hello, Clockwork
+# 0 - Hello, Clockwork
 
 {% hint style="info" %}
 A complete copy of all code provided in this guide can be found in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork) on Github.
