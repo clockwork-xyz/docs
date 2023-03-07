@@ -1,7 +1,7 @@
 # 0. Hello, Clockwork
 
 {% hint style="info" %}
-A complete copy of all code provided in this guide can be found in the [Clockwork examples repo](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork) on Github.
+A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork) on Github.
 {% endhint %}
 
 ## Goals
@@ -78,7 +78,7 @@ anchor test
 
 ## 3. Creating a Clockwork thread
 
-We just deployed our program to the Solana devnet and tested it by sumbitting a transaction to call `hello`. Now we will learn how to automate that instruction to run every 10 seconds. But first, we need to install the [Clockwork Typescript SDK](https://www.npmjs.com/package/@clockwork-xyz/sdk).
+We just deployed our program to the Solana devnet and tested it by sumbitting a transaction to call `hello`. Now we will learn how to automate that instruction to run every 10 seconds. But first, we need to install the [**Clockwork Typescript SDK**](https://www.npmjs.com/package/@clockwork-xyz/sdk).
 
 ```
 yarn add @clockwork-xyz/sdk
@@ -144,9 +144,12 @@ solana logs -u devnet YOUR_PROGRAM_ID
 
 <figure><img src="https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png" alt=""><figcaption></figcaption></figure>
 
-## 💡 Key Takeaways
+## Key Learnings
 
-
+1. Threads are an automation primitive for Solana.
+2. You can create a thread to automate any program instruction on Solana.&#x20;
+3. Use trigger conditions to define when a thread should execute its provided instructions.&#x20;
+4. Threads must be funded with a small amount of SOL to pay for automated transactions.&#x20;
 
 ## Appendix
 
@@ -163,5 +166,5 @@ This guide was written using the following environment dependencies.
 
 ## Learn more
 
-* Read the [Clockwork FAQ](../../FAQ.md#common-errors).
-* Ask questions in the [Clockwork Discord](https://discord.gg/epHsTsnUre).
+* Read the[ **FAQ**](../../FAQ.md#common-errors).
+* Ask questions on[ **Discord**](https://discord.gg/epHsTsnUre).
