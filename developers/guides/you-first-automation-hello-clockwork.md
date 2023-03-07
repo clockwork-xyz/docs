@@ -14,7 +14,7 @@ In this guide, we will learn how to automate a Solana program using Clockwork. W
 
 ## 1. Understanding the Clockwork programming model
 
-Let's start with the big picture. Solana is a really fast, globally distributed computer. Just a traditional computer, programs on Solana need be able to execute a dynamic series of instructions. To do this, developers traditionally use a programming primitive called a [thread](https://en.wikipedia.org/wiki/Thread\_\(computing\)). On Solana, program developers can use Clockwork threads.
+Let's start with the big picture. Solana is a really fast, globally distributed computer. Just programs on a traditional computer need to be able to execute an automated series of instructions, so too do programs on Solana. Clockwork threads are an automation primitive analogous to [**computer threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) of traditional computing environments.
 
 In simple terms, this means we can point Clockwork at any program on Solana to automate it. A simplified model of this relationship is presented in the diagram below. As we progress through this guide, we will build our way from right-to-left across the diagram – first deploying a simple Solana program, and then creating a Clockwork thread to automate it.
 
