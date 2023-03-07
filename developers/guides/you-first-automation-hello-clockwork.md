@@ -18,7 +18,7 @@ Let's start with the big picture. Solana is a really fast, globally distributed 
 
 ![Figure 1](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
-## 2. Deploying a Solana program
+## 2. Printing "Hello, world" on Solana
 
 To get started, we will assume you have a beginner's knowledge of Solana programming and some experience working with Anchor. If you are unfamiliar with these concepts, we recommend checking out [Anchor](https://www.anchor-lang.com/) and setting up your local environment for Solana program development. Let's begin by initializing a new Anchor workspace for our project:
 
