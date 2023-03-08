@@ -6,7 +6,7 @@ A complete copy of all code provided in this guide can be found in the [**exampl
 
 ## Goals
 
-In this guide, we will learn how to automate a Solana program using Clockwork. We will start by building a simple Solana program, and then use the Clockwork SDK to schedule an instruction to run every 10 seconds. Our goals will be to:
+In this guide, we will learn how to automate a [**Solana**](https://solana.com) program using [**Clockwork**](https://clockwork.xyz). We will start by building a simple program with [**Anchor**](https://www.anchor-lang.com/), and then use the Clockwork SDK to schedule an instruction to run every 10 seconds. Our goals will be to:
 
 1. Understand the Clockwork programming model.
 2. Schedule a program instruction.
@@ -14,13 +14,15 @@ In this guide, we will learn how to automate a Solana program using Clockwork. W
 
 ## 1. Understanding the Clockwork programming model
 
-Let's start with the big picture. Solana is a really fast, globally distributed computer. Just as programs on a traditional computer need to be able to execute an automated series of instructions, so too do programs on Solana. Clockwork threads are an automation primitive analogous to [**computer threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) that developers can use to automate programs on Solana. In simple terms, we can point Clockwork at any Solana program to automate it. A model of this relationship is presented in the diagram below.&#x20;
+Let's start with the big picture. Solana is a really fast, globally distributed computer. Just as programs on a traditional computer needs to be able to execute an automated series of instructions, so too do programs on Solana. Clockwork threads are an automation primitive analogous to [**computer threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) that developers can use to automate programs on Solana. In simple terms, this means we can point Clockwork at any Solana program to automate it. A model of this relationship is presented in the diagram below.&#x20;
 
 ![Figure 1](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
 ## 2. Printing "Hello, world" on Solana
 
-To get started, we will assume you have a beginner's knowledge of Solana programming and some experience working with Anchor. If you are unfamiliar with these concepts, we recommend checking out [Anchor](https://www.anchor-lang.com/) and setting up your local environment for Solana program development. Let's begin by initializing a new Anchor workspace for our project:
+To get started, we will assume you have a beginner's knowledge of Solana programming and some experience working with Anchor. If you are unfamiliar with these concepts, we recommend checking out  [**Solana's developer resources**](https://solana.com/developers) and setting up your local environment for Solana programming.&#x20;
+
+Let's begin by initializing a new Anchor workspace for our project:
 
 ```sh
 anchor init hello_clockwork
