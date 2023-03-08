@@ -25,7 +25,7 @@ anchor init hello_clockwork
 cd hello_clockwork
 ```
 
-Now let's open up the program file located at `programs/hello_clockwork/src/lib.rs`. In here, we have our entire Solana program. Let's add an instruction named `hello` that prints out `"Hello, {name}"` followed by the current Solana cluster timestamp.
+Now let's open up the program file located at `programs/hello_clockwork/src/lib.rs`. In here, we have an entire Solana program. Let's add an instruction named `hello` that prints out `"Hello, {name}"` followed by the current Solana cluster timestamp.
 
 ```rust
 use anchor_lang::prelude::*;
@@ -51,7 +51,7 @@ pub mod hello_clockwork {
 pub struct Hello {}
 ```
 
-Anchor will automatically deploy your program to devnet when you run your tests. To configure your tests, we'll first need to install the test dependencies using `yarn`. After this, we can open up the test file located at `tests/hello_clockwork.ts` and add a test case that calls our program's `hello` instruction.
+Anchor will automatically deploy your program when you run your tests. To configure your tests, we'll first need to install the test dependencies using `yarn`. After this, we can open up the test file located at `tests/hello_clockwork.ts` and add a test case that calls our program's `hello` instruction.
 
 ```ts
 describe("hello_clockwork", () => {
@@ -62,7 +62,6 @@ describe("hello_clockwork", () => {
     const tx = await program.methods.hello("world").rpc();
     console.log(tx);
   });
-  
 });
 ```
 
@@ -122,10 +121,10 @@ describe("hello_clockwork", () => {
 });
 ```
 
-We can see the `threadCreate` function requires 5 arguments. This includes some basic information needed to initialize the thread account.
+We can see the `threadCreate` function asks for 5 arguments. These include some basic information needed to initialize the thread account.
 
 * `authority` – The owner of the thread. This account must be the transaction signer and will have permission to delete, pause, resume, stop, and update the thread.
-* `id` – An identifier for the thread _(can also use buffer or vec u8)_.
+* `id` – An identifier for the thread (can also use buffer or vec u8).
 * `instructions` – The list of instructions to execute when the trigger condition becomes valid.
 * `trigger` – The trigger condition for the thread. When this condition is valid, the thread will begin executing the provided instructions.
 * `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. The Clockwork base fee starts at 1000 lamports per executed instruction.
@@ -163,5 +162,4 @@ This guide was written using the following environment dependencies.
 ## Learn more
 
 * A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork) on Github.
-* Ask questions on[ **Discord**](https://discord.gg/epHsTsnUre).
-* Read the[ **FAQ**](../../FAQ.md#common-errors).
+* Ask questions on [**Discord**](https://discord.gg/epHsTsnUre).
