@@ -144,7 +144,7 @@ solana logs -u devnet YOUR_PROGRAM_ID
 1. Threads are an automation primitive for Solana.
 2. You can create a thread to automate any program instruction on Solana.&#x20;
 3. Use trigger conditions to define when a thread should execute its provided instructions.&#x20;
-4. Threads must be funded with a small amount of SOL to pay for automated transactions.&#x20;
+4. Threads must be [funded](https://docs.clockwork.xyz/developers/threads/fees) with a small amount of SOL to pay for automated transactions.&#x20;
 
 ## Appendix
 
