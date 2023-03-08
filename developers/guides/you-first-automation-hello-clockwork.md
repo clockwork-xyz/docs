@@ -131,7 +131,7 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 
 ## 4. Monitoring an automated program
 
-If you setup everything correctly, you can now watch your automated program run all on its own. Grab the thread address that was printed out to the console and look it up in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs from devnet by running the command provided below. Here's [an example thread](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2023.
+If you setup everything correctly, you can now watch your automated program run all on its own. Grab the thread address that was printed out to the console and look it up in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs from devnet by running the command provided below. Here's [**an example thread**](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on March 2nd, 2023.
 
 ```bash
 solana logs -u devnet YOUR_PROGRAM_ID
@@ -144,7 +144,7 @@ solana logs -u devnet YOUR_PROGRAM_ID
 1. Threads are an automation primitive for Solana.
 2. You can create a thread to automate any program instruction on Solana.&#x20;
 3. Use trigger conditions to define when a thread should execute its provided instructions.&#x20;
-4. Threads must be [funded](https://docs.clockwork.xyz/developers/threads/fees) with a small amount of SOL to pay for automated transactions.&#x20;
+4. Threads must be funded with a small amount of SOL to pay for [**automation fees**](../threads/fees.md).&#x20;
 
 ## Appendix
 
