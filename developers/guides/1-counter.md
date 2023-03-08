@@ -2,11 +2,11 @@
 
 ## Goals
 
-In the [**previous guide**](https://docs.clockwork.xyz/developers/guides/you-first-automation-hello-clockwork), we learned how to automate a Solana program using the [**Clockwork Typescript SDK**](https://www.npmjs.com/package/@clockwork-xyz/sdk). In this guide, we will see how programs can create and manage **threads** directly by sending [**CPIs**](https://docs.solana.com/developing/programming-model/calling-between-programs#cross-program-invocations) to the [**thread program**](https://docs.rs/clockwork-thread-program/latest/clockwork\_thread\_program/).
+In the [**previous guide**](https://docs.clockwork.xyz/developers/guides/you-first-automation-hello-clockwork), we learned how to automate a Solana program using the [**Clockwork Typescript SDK**](https://www.npmjs.com/package/@clockwork-xyz/sdk). In this guide, we will see how programs can create and manage **threads** directly using [**CPIs**](https://docs.solana.com/developing/programming-model/calling-between-programs#cross-program-invocations)**.**
 
-1. Learn how to create and manage threads via CPIs.
-2. Build an automated counter program that owns its own thread.
-3. Secure our program against spam and unwanted callers.&#x20;
+1. Learn how to create a thread via CPI.
+2. Build an automated counter program that increments itself.
+3. Secure our program endpoints against spam and unwanted callers.&#x20;
 
 ## 1. Building a counter program
 
