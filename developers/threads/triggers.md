@@ -4,7 +4,7 @@
 enum Trigger
 {% endembed %}
 
-Clockwork provides 5 different **trigger conditions** for scheduling a thread's execution. These trigger conditions support a wide array of use-cases and allow threads to subscribe to time-based as well as event-based changes. If none of the trigger conditions currently provided support your team's use-case, please reach out in the [**Clockwork Discord**](../localnet.md) with your proposals.
+Clockwork provides 5 different **trigger conditions** for scheduling a thread's execution. These trigger conditions support a wide variety of use-cases and allow you to subscribe to time-based as well as event-based changes. If none of the trigger conditions currently provided support your team's use-case, please reach out in the [**Clockwork Discord**](../localnet.md) to propose a new one.
 
 ### Account
 
