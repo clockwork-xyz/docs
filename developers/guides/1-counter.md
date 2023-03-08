@@ -1,9 +1,5 @@
 # 1. Counter
 
-{% hint style="info" %}
-A complete copy of all code provided in this guide can be found in the[ **examples repo**](https://github.com/clockwork-xyz/examples/tree/main/counter) on Github.
-{% endhint %}
-
 ## Goals
 
 In the [**previous guide**](https://docs.clockwork.xyz/developers/guides/you-first-automation-hello-clockwork), we learned how to automate a Solana program using the [**Clockwork Typescript SDK**](https://www.npmjs.com/package/@clockwork-xyz/sdk). In this guide, we will see how programs can create and manage **threads** directly by sending [**CPIs**](https://docs.solana.com/developing/programming-model/calling-between-programs#cross-program-invocations) to the [**thread program**](https://docs.rs/clockwork-thread-program/latest/clockwork\_thread\_program/).
@@ -298,5 +294,6 @@ This guide was written using the following environment dependencies.
 
 ## Learn more
 
-* Read the [**FAQ**](../../FAQ.md#common-errors).
+* A complete copy of all code provided in this guide can be found in the[ **examples repo**](https://github.com/clockwork-xyz/examples/tree/main/counter) on Github.
 * Ask questions on[ **Discord**](https://discord.gg/epHsTsnUre).
+* Read the [**FAQ**](../../FAQ.md#common-errors).

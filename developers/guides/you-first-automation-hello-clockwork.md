@@ -1,9 +1,5 @@
 # 0. Hello, Clockwork
 
-{% hint style="info" %}
-A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork) on Github.
-{% endhint %}
-
 ## Goals
 
 In this guide, we will learn how to automate a [**Solana**](https://solana.com) program using [**Clockwork**](https://clockwork.xyz). We will start by building a simple program with [**Anchor**](https://www.anchor-lang.com/), and then use the Clockwork SDK to schedule an instruction to run every 10 seconds. Our goals will be to:
@@ -166,5 +162,6 @@ This guide was written using the following environment dependencies.
 
 ## Learn more
 
-* Read the[ **FAQ**](../../FAQ.md#common-errors).
+* A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/hello\_clockwork) on Github.
 * Ask questions on[ **Discord**](https://discord.gg/epHsTsnUre).
+* Read the[ **FAQ**](../../FAQ.md#common-errors).
