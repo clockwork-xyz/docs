@@ -270,5 +270,5 @@ This guide was written using the following environment dependencies.
 
 ## Learn more
 
-* A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/counter)[ ](https://github.com/clockwork-xyz/examples/tree/main/1-counter)on GitHub.
+* A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/1-counter)****[ ](https://github.com/clockwork-xyz/examples/tree/main/1-counter)on GitHub.
 * Ask questions on [**Discord**](https://discord.gg/epHsTsnUre).
