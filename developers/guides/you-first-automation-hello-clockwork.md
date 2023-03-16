@@ -1,4 +1,4 @@
-# 0. Hello, Clockwork
+# 1. Hello, Clockwork
 
 ## Goals
 
@@ -65,7 +65,7 @@ describe("hello_clockwork", () => {
 });
 ```
 
-To run the test, simply execute the command below in your local project directory. You can verify the program ran successfully by looking up the transaction signature printed out to the console in your favorite [Solana explorer](https://explorer.solana.com).
+To run the test, simply execute the command below in your local project directory. You can verify the program ran successfully by looking up the transaction signature printed out to the console in your favorite [**Solana explorer**](https://explorer.solana.com).
 
 ```sh
 anchor test
@@ -161,5 +161,5 @@ This guide was written using the following environment dependencies.
 
 ## Learn more
 
-* A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/0-hello\_clockwork) on Github.
+* A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/1-hello\_clockwork) on Github.
 * Ask questions on [**Discord**](https://discord.gg/epHsTsnUre).
