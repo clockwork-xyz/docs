@@ -216,7 +216,12 @@ Let's add a test case to initialize our program and get it running. Here, we wil
 ...
 import { ClockworkProvider } from "@clockwork-xyz/sdk";
 
-const clockworkProvider = new ClockworkProvider(wallet, provider.connection);
+const provider = anchor.AnchorProvider.env();
+anchor.setProvider(provider);
+const wallet = provider.wallet;
+const program = anchor.workspace.Counter as Program<Counter>;
+const clockworkProvider = ClockworkProvider.fromAnchorProvider(provider);
+
 
 it("It increments every 10 seconds", async () => {    
     // 1️⃣ Prepare thread address
@@ -263,7 +268,7 @@ This guide was written using the following environment dependencies.
 | ---------------- | -------- |
 | Anchor           | v0.26.0  |
 | Clockwork        | v2.0.1   |
-| Clockwork TS SDK | v0.2.3   |
+| Clockwork TS SDK | v0.3.0   |
 | Rust             | v1.65.0  |
 | Solana           | v1.14.15 |
 | Ubuntu           | v20.04   |

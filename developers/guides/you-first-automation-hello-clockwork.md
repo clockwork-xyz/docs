@@ -90,7 +90,7 @@ describe("hello_clockwork", () => {
   anchor.setProvider(provider);
   const wallet = provider.wallet;
   const program = anchor.workspace.HelloClockwork as Program<HelloClockwork>;
-  const clockworkProvider = new ClockworkProvider(wallet, provider.connection);
+  const clockworkProvider = ClockworkProvider.fromAnchorProvider(provider);
 
   it("It runs every 10 seconds", async () => {
     // 1️⃣  Prepare an instruction to be automated.
@@ -106,13 +106,16 @@ describe("hello_clockwork", () => {
     
     // 3️⃣ Create the thread.
     const threadId = "test-" + new Date().getTime() / 1000;
-    const tx = await clockworkProvider.threadCreate(
+    const ix = await clockworkProvider.threadCreate(
         wallet.publicKey,             // authority
         threadId,                     // id
         [targetIx],                   // instructions
         trigger,                      // trigger
         anchor.web3.LAMPORTS_PER_SOL, // amount
     );
+    const tx = new anchor.web3.Transaction().add(ix);
+    const signature = await clockworkProvider.anchorProvider.sendAndConfirm(tx);
+    
     const [threadAddress, threadBump] = clockworkProvider.getThreadPDA(wallet.publicKey, threadId)
     console.log(threadAddress);
     console.log(tx);
@@ -154,12 +157,12 @@ This guide was written using the following environment dependencies.
 | ---------------- | -------- |
 | Anchor           | v0.26.0  |
 | Clockwork        | v2.0.1   |
-| Clockwork TS SDK | v0.2.3   |
+| Clockwork TS SDK | v0.3.4   |
 | Rust             | v1.65.0  |
 | Solana           | v1.14.15 |
 | Ubuntu           | v20.04   |
 
 ## Learn more
 
-* A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/1-hello\_clockwork) on Github.
+* GitHubA complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/1-hello\_clockwork) on Github.
 * Ask questions on [**Discord**](https://discord.gg/epHsTsnUre).
