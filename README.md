@@ -1,8 +1,3 @@
----
-cover: .gitbook/assets/gitbook-header-intro-4.png
-coverY: 0
----
-
 # Introduction
 
 **Clockwork** **is an open-source automation engine for the** [**Solana**](https://solana.com/) **blockchain**. Developers can use Clockwork to schedule transactions and automate smart-contracts without relying on centralized infrastructure.
@@ -21,7 +16,7 @@ On a blockchain, data can be copied to thousands of servers around the world, ma
 
 **Decentralization is core to everything we do in crypto.** It's the fundamental principle behind network security, censorship resistance, and permissionless computing.&#x20;
 
-The funny thing is... decentralization is not even a novel idea. It's been __ a core property of the Internet since its earliest days. Though in recent years, this has become much less true. Today, the vast majority of Internet communications flow through just a small handful of companies. This centralization has made communication, markets, and services that depend on the Internet less secure and more vulnerable to censorship.&#x20;
+The funny thing is... decentralization is not even a novel idea. It's been a core property of the Internet since its earliest days. Though in recent years, this has become much less true. Today, the vast majority of Internet communications flow through just a small handful of companies. This centralization has made communication, markets, and services that depend on the Internet less secure and more vulnerable to censorship.&#x20;
 
 This is why we work in crypto – to build systems that help people live their lives independently of and collaboratively with one another. The design space is enormous and we are incredibly inspired by the things we see our friends building everyday.
 
