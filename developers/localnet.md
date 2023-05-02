@@ -1,14 +1,17 @@
 # Localnet
 
-## 1. Compile from source
+## 1. Install the clockwork-cli
 
-Currently, the fastest way to get up and running with a Clockwork localnet is to clone the repo, checkout a latest release version, and build the toolkit from scratch.
+If you are on linux, you might need to run this:
 
-```bash
-git clone https://github.com/clockwork-xyz/clockwork
-cd clockwork
-git checkout tags/$(git describe --tags)
-./scripts/build-all.sh . && export PATH=$PWD/bin:$PATH
+```sh
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y pkg-config build-essential libudev-dev libssl-dev
+```
+
+Install with cargo:
+
+```sh
+cargo install -f --locked clockwork-cli
 ```
 
 ## 2. Deploy a localnet
