@@ -9,7 +9,7 @@ A thread's **public address** is derived deterministically from its `authority` 
 ```rust
 #[account(
     address = thread.pubkey(),
-    contraint = thread.id.eq("my_thread"),
+    constraint = thread.id.eq("my_thread"),
     has_one = authority,
 )]
 pub thread: Account<'info, Thread>
