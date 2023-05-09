@@ -146,7 +146,7 @@ solana logs -u devnet YOUR_PROGRAM_ID
 
 1. Threads are an automation primitive for Solana.
 2. You can use threads to automate any program instruction on Solana.&#x20;
-3. ****[**Triggers**](../threads/triggers.md) allow you to define when a thread should begin execution.
+3. [**Triggers**](../threads/triggers.md) allow you to define when a thread should begin execution.
 4. Threads must be funded with a small amount of SOL to pay for [**automation fees**](../threads/fees.md).&#x20;
 
 ## Appendix
@@ -164,5 +164,5 @@ This guide was written using the following environment dependencies.
 
 ## Learn more
 
-* GitHubA complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/1-hello\_clockwork) on Github.
+* A complete copy of all code provided in this guide can be found in the [**examples repo**](https://github.com/clockwork-xyz/examples/tree/main/1-hello\_clockwork) on GitHub.
 * Ask questions on [**Discord**](https://discord.gg/epHsTsnUre).
