@@ -10,7 +10,7 @@ On a blockchain, data can be copied to thousands of servers around the world, ma
 
 ### Solana
 
-**Solana is the fastest public blockchain in the world.** With its affordable fees, snappy transactions, and global distributed validator network, Solana is a favorite amongst users and developers alike. Currently hovering around [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana processes more transactions than many other notable blockchains combined. With over [**2,000**](https://solana.com/news/validator-health-report-august-2022) validators on six different continents around the world, Solana is by many metrics one the most decentralized blockchains in the world.
+**Solana is the fastest public blockchain in the world.** With its affordable fees, snappy transactions, and globally distributed validator network, Solana is a favorite amongst users and developers alike. Currently hovering around [**40,000,000**](https://dune.com/kroeger0x/Solana-Metrics) transactions per day, Solana processes more transactions than many other notable blockchains combined. With over [**2,000**](https://solana.com/news/validator-health-report-august-2022) validators on six different continents around the world, Solana is by many metrics one the most decentralized blockchains in the world.
 
 ### Decentralization
 
