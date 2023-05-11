@@ -16,4 +16,4 @@ Despite the many innovations blockchains provide, they are not yet a wholesale r
 
 ### Why Clockwork?&#x20;
 
-We believe blockchain developers should be able to easily schedule transactions and build event-driven programs without having to maintain expensive off-chain infrastructure.
+We believe blockchain developers should be able to easily schedule transactions and build event-driven smart-contracts without having to maintain expensive off-chain infrastructure.
