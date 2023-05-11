@@ -35,4 +35,18 @@ Allows a thread to begin executing when a specified slot has passed. This can be
 
 Allows a thread to begin executing when a specified epoch becomes active. This can be useful for scheduling processes related to staking and Solana epoch transitions. This trigger condition requires 1 argument.&#x20;
 
-* `epoch` – The epoch to begine execution on.&#x20;
+* `epoch` – The epoch to begin execution on.&#x20;
+
+### Timestamp
+
+Allows a thread to begin executing when a specified unix timestamp has passed. This can be useful for scenarios where you have an exact date in the future when you want a program to begin running.
+
+* `unix_ts` – The unix timestamp to begin execution on.&#x20;
+
+### Pyth
+
+Allows a thread to begin executing when a price threshold has been crossed. This can be useful for scheduling actions that are driven by price movements such as automated stop-loss and take-profit orders.&#x20;
+
+* `price_feed` – The Pyth price feed account to monitor. Please refer to the [**Pyth website**](https://pyth.network/price-feeds?cluster=mainnet-beta) for these addresses.
+* `equality` – The equality operator (≥ or ≤) used to compare the the price feed to the limit price.
+* `limit` – The limit price to compare the price feed to. When this threshold has been crossed, the thread will execute.&#x20;
