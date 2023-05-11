@@ -23,7 +23,3 @@ Solana Foundation: Building an idle game on Solana with Clockwork
 * **Dollar-cost averaging** – Run an automated dollar-cost averaging program on-chain to ease into an investment position without hassle or stress. &#x20;
 * **Auto-claim yield** – Automatically claim and distribute yield from your favorite validator or defi application.&#x20;
 
-### Oracles
-
-* **Statistics** – Calculate stats, moving averages, volatility indices and more from oracle data feeds.
-
