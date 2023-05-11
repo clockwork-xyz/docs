@@ -5,7 +5,7 @@ Clockwork automations massively expands the design space for blockchain develope
 ### Defi
 
 * **Defi protection** – Automatically repay debt on a lending market like [**Solend**](https://solend.fi/) or [**Jet**](https://www.jetprotocol.io/) when collateral prices approach liquidation levels.
-* **Trading bots** – **** Execute trades on an order book like [**Serum**](https://www.projectserum.com/) based on price feeds and technical indicators.&#x20;
+* **Trading bots** – Execute trades on an order book like [**Serum**](https://www.projectserum.com/) based on price feeds and technical indicators.&#x20;
 * **LP rebalancing** – Automatically rebalance liquidity on AMMs like [**Orca**](https://www.orca.so/) whenever the market price moves out of a specified range.
 
 ### Payments
