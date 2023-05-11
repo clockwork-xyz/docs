@@ -29,7 +29,7 @@ use clockwork_sdk::utils::PAYER_PUBKEY;
 If an account in your automated instruction references the Clockwork payer account, workers will automatically inject their address in its place. By doing this, the worker node will pay for any account initializations your program needs to do, and Clockwork will reimburse the worker from your thread's account balance.
 
 {% hint style="info" %}
-When Anchor adds support for PDA payers (expected in the next release), this “dynamic payer” feature mayer be deprecated in favor of using PDAs to pay for account initializations.
+When Anchor adds support for PDA payers (expected in the next release), this “dynamic payer” feature may be deprecated in favor of using PDAs to pay for account initializations.
 
 [https://github.com/coral-xyz/anchor/pull/1938](https://github.com/coral-xyz/anchor/pull/1938)
 {% endhint %}
