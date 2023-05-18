@@ -14,7 +14,7 @@ On a blockchain, computing is secured by smart-contracts and data is automatical
 
 ### Automated smart-contracts
 
-**Clockwork helps bring smart-contracts to life and makes then fully autonomous.** As developers, oftentimes we want our programs to run automatically, or according a schedule, or to be triggered by some unpredictable event. Clockwork helps developers encode these rules directly into their smart-contracts. Further, the network of Clockwork workers (Solana RPC nodes) will take care of monitoring for the events your programs care about and submit transactions to the chain on your program's behalf. In this way, you can build fully autonomous smart-contracts without having to build and maintain your own expensive off-chain infrastructure.&#x20;
+**Clockwork helps bring smart-contracts to life.** As developers, we oftentimes want our programs to run automatically, according a schedule, or to be triggered by some unplanned event. Clockwork helps developers encode these rules directly into their smart-contracts so they can be run fully autonomously without even requiring any user interaction. Once these rules are in place, the Clockwork worker network (i.e. Solana RPC nodes) will take care of monitoring for the events your programs care about and submit transactions to the chain on your program's behalf. In this way, you can build fully autonomous smart-contracts without having to build and maintain your own expensive off-chain infrastructure.&#x20;
 
 ### Why Solana?
 
