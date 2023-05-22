@@ -8,9 +8,7 @@ Clockwork presentation at Breakpoint 2022.
 
 ### **Blockchains**
 
-**Blockchains represent a major paradigm shift in software engineering.** Where applications are traditionally hosted in large centrally managed data centers, blockchains like Solana offer an alternative computing environment – one that's run by a decentralized community of stakeholders.&#x20;
-
-On a blockchain, computing is secured by smart-contracts and data is automatically replicated to thousands of servers around the world. This helps makes information transparent to users and tamperproof from malicious actors. These qualities make blockchains an ideal choice for applications where cryptographically-secured truth is important.&#x20;
+**Blockchains represent a major paradigm shift in software engineering.** Where applications are traditionally hosted in large centrally managed data centers, blockchains like Solana offer an alternative computing environment – one that's run by a decentralized community of stakeholders. On a blockchain, computing is secured by smart-contracts and data is automatically replicated to thousands of servers around the world. This helps makes information transparent to users and tamperproof from malicious actors. These qualities make blockchains an ideal choice for applications where cryptographically-secured truth is important.&#x20;
 
 ### Automated smart-contracts
 
