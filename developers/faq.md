@@ -28,6 +28,10 @@ This often happens on localnet. You are probably trying to create a thread by ca
 
 You created a thread, but that thread is trying to execute an instruction whose program does not exist (hence the not an executable account). You haven't deployed your program yet.
 
+## How can my instruction pay for account initialization?
+
+[https://docs.clockwork.xyz/developers/threads/payers](https://docs.clockwork.xyz/developers/threads/payers)
+
 ## Why is localnet not working?
 
 > My validator stopped after ⠚ Initializing..
