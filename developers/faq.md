@@ -43,5 +43,9 @@ Run `cat test-ledger/validator.log | grep "crate-info"`
 
 ## How do I write a cron schedule?
 
-You can use [**https://crontab.guru**](https://crontab.guru/) to check your cron string. Note that crontab guru is a 5 columns cron while the Clockwork [**cron parser**](https://github.com/clockwork-xyz/clockwork/tree/main/cron) is a 7 columns cron. It includes **seconds** (left most column) and **year** (right most column).
+The easiest way to test your cron string before even playing with thread, is to install the [**clockwork-cli**](localnet.md#1.-install-the-clockwork-cli) and run `clockwork crontab YOUR_STRING`.
+
+You can use [**https://crontab.guru**](https://crontab.guru/) as reference to build your cron string. Note that crontab guru is a 5 columns cron while the Clockwork [**cron parser**](https://github.com/clockwork-xyz/clockwork/tree/main/cron) is a 7 columns cron. It includes **seconds** (left most column) and **year** (right most column).
+
+
 
