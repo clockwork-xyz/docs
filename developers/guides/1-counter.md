@@ -264,14 +264,7 @@ Finally, let's run the test using `anchor test`. You modify the test to print th
 
 This guide was written using the following environment dependencies.
 
-| Dependency       | Version  |
-| ---------------- | -------- |
-| Anchor           | v0.26.0  |
-| Clockwork        | v2.0.1   |
-| Clockwork TS SDK | v0.3.0   |
-| Rust             | v1.65.0  |
-| Solana           | v1.14.15 |
-| Ubuntu           | v20.04   |
+<table><thead><tr><th width="340">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Anchor</td><td>v0.26.0</td></tr><tr><td>Clockwork</td><td>v2.0.1</td></tr><tr><td>Clockwork TS SDK</td><td>v0.3.0</td></tr><tr><td>Rust</td><td>v1.65.0</td></tr><tr><td>Solana</td><td>v1.14.15</td></tr><tr><td>Ubuntu</td><td>v20.04</td></tr></tbody></table>
 
 ## Learn more
 

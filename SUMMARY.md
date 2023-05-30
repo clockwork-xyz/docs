@@ -17,6 +17,8 @@
 * [Guides](developers/guides/README.md)
   * [1. Hello, Clockwork](developers/guides/you-first-automation-hello-clockwork.md)
   * [2. Counter](developers/guides/1-counter.md)
+  * [Scheduled Transfer](developers/guides/scheduled-transfer.md)
+  * [SPL Transfer](developers/guides/spl-transfer.md)
 * [Localnet](developers/localnet.md)
 * [SDK](developers/sdk.md)
 * [Support](developers/faq.md)

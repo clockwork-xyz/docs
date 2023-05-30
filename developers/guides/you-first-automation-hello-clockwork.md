@@ -10,7 +10,7 @@ In this guide, we will learn how to automate a [**Solana**](https://solana.com) 
 
 ## 1. Understanding the Clockwork programming model
 
-Let's start with the big picture. Solana is a really fast, globally distributed computer. Just as programs on a traditional computer needs to be able to execute an automated series of instructions, so too do programs on Solana. Clockwork threads are an automation primitive analogous to [**computer threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) that developers can use to automate programs on Solana. In simple terms, this means we can point Clockwork at any Solana program to automate it. A model of this relationship is presented in the diagram below.&#x20;
+Let's start with the big picture. Solana is a really fast, globally distributed computer. Just as programs on a traditional computer needs to be able to execute an automated series of instructions, so do programs on Solana. Clockwork threads are an automation primitive analogous to [**computer threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) that developers can use to automate programs on Solana. In simple terms, this means we can point Clockwork at any Solana program to automate it. A model of this relationship is presented in the diagram below.&#x20;
 
 ![Figure 1](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
@@ -153,14 +153,7 @@ solana logs -u devnet YOUR_PROGRAM_ID
 
 This guide was written using the following environment dependencies.
 
-| Dependency       | Version  |
-| ---------------- | -------- |
-| Anchor           | v0.26.0  |
-| Clockwork        | v2.0.1   |
-| Clockwork TS SDK | v0.3.4   |
-| Rust             | v1.65.0  |
-| Solana           | v1.14.15 |
-| Ubuntu           | v20.04   |
+<table><thead><tr><th width="340">Dependency</th><th>Version</th></tr></thead><tbody><tr><td>Anchor</td><td>v0.26.0</td></tr><tr><td>Clockwork</td><td>v2.0.1</td></tr><tr><td>Clockwork TS SDK</td><td>v0.3.4</td></tr><tr><td>Rust</td><td>v1.65.0</td></tr><tr><td>Solana</td><td>v1.14.15</td></tr><tr><td>Ubuntu</td><td>v20.04</td></tr></tbody></table>
 
 ## Learn more
 
