@@ -5,8 +5,8 @@
 In this guide, we will demonstrate how to automate a SPL token transfer using Clockwork. We will prepare a simple SPL token transfer, then use a Clockwork Thread to schedule that transfer instruction to run every 10 seconds.
 
 1. Understand the Clockwork security model.
-2. Schedule a SPL token transfer instruction.
-3. Understand how signing works with Threads.
+2. Understand how to sign with Threads.
+3. Scheduling a SPL token transfer instruction.
 4. Monitor an automated program.
 
 ## 1. Understanding the Clockwork programming model
@@ -15,13 +15,13 @@ Let's start with the big picture. Solana is a really fast, globally distributed 
 
 ![Figure 1](https://user-images.githubusercontent.com/8634334/222291232-ce195a01-7bdc-4567-8907-14485d19ee91.png)
 
-## 2. Using Clockwork on Localnet
+### Using Clockwork on Localnet
 
 For this guide, we will be using localnet, please follow the steps here to install the [clockwork-cli](https://docs.clockwork.xyz/developers/localnet). If use devnet you can skip this part.
 
 
 
-## 3. Initializing The Typescript Project
+### Initializing The Typescript Project
 
 To get started, we will assume you have a beginner's knowledge of Solana programming and some experience working with Anchor. If you are unfamiliar with these concepts, we recommend checking out  [**Solana's developer resources**](https://solana.com/developers) and setting up your local environment for Solana programming.&#x20;
 
@@ -144,7 +144,7 @@ describe("spl-transfer", async () => {
 
 
 
-## 4. Understanding Clockwork Signing Model
+## 2. Understand how to sign with Threads.
 
 In this section, we will focus on how signing works with Threads. But first, let's prepare the accounts needed for the SPL Transfer Instruction to be scheduled.
 
@@ -219,7 +219,7 @@ describe("spl-transfer", async () => {
 
 When doing a a transfer we need to deduct fund and authorize this debit, thus source should be a signer. This works fine in a traditional scenario, you provide the signer when submitting the transaction and voila!
 
-When working with Threads, we schedule our instructions to be executed by Threads, more precisely by the Clockwork Thread Program. For this reason, the signer for your threaded transaction is actually your Thread:
+When working with Threads, we schedule our instructions to be executed by Threads, more precisely by the Clockwork Thread Program. For this reason, the signer for your (threaded) instruction is actually your Thread:
 
 ```typescript
   it("It transfers tokens every 10s", async () => {
@@ -244,7 +244,7 @@ When working with Threads, we schedule our instructions to be executed by Thread
 
 
 
-## 5. Building the SPL Transfer Instruction
+## 3. Scheduling a SPL token transfer instruction.
 
 Now that we have the ingredients in place, we can finally build our SPL token transfer instruction and schedule a Thread to run this instruction:
 
@@ -287,7 +287,7 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 
 
 
-## 6. Monitoring an automated program
+## 4. Monitoring an automated program
 
 If you setup everything correctly, you can now watch your automated program run all on its own. Grab the clockwork explorer link that was printed out to the console. Using the clockwork explorer, you can get simulation logs and inspect if your thread is not running and why. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
 
