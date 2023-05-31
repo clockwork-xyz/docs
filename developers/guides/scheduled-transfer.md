@@ -36,10 +36,11 @@ const provider = anchor.Provider.env();
 anchor.setProvider(provider);
 
 const wallet = provider.wallet;
-
 const clockworkProvider = ClockworkProvider.fromAnchorProvider(provider);
 
 ```
+
+
 
 Next, we'll prepare a system transfer instruction and automate it with a Clockwork thread.
 
@@ -91,13 +92,9 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 * `trigger` – The trigger condition for the thread. When this condition is valid, the thread will begin executing the provided instructions.
 * `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. Read more about how fees are calculated [here](https://docs.clockwork.xyz/developers/threads/fees).
 
-## PAYER\_PUBKEY
-
-Because we are deducting fees form the `fromPubkey` we need to prove that we are the signer for that account. When you schedule a transaction to be run by a Thread, the thread will effectively be the one to sign and submit your transaction. So, in this context it's actually impossible for any "outside" keys to sign the transaction. In such situations, you can use PAYER\_PUBKEY to let the thread cover the transaction costs and execute the transaction. Also, remember to fund the Thread with enough SOL to be distributed then. You can read more about PAYER\_PUBKEY in the [payers section](https://docs.clockwork.xyz/developers/threads/payers).
 
 
-
-## 4. Monitoring an automated program
+## 3. Monitoring an automated program
 
 If you setup everything correctly, you can now watch your automated program run all on its own. Grab the clockwork explorer link that was printed out to the console. Using the clockwork explorer, you can get simulation logs and inspect if your thread is not running and why. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
 
