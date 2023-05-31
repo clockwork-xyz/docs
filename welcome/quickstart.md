@@ -2,7 +2,7 @@
 
 ## Getting started
 
-In this quickstart, you will learn how to automate a SOL transfer using Clockwork. Within 10 minutes, you will have your first Clockwork thread up and running. We will install the Clockwork CLI and learn to automate Solana instructions from a Typescript application.
+In this quickstart, you will learn how to automate a SOL transfer using Clockwork. We will install the Clockwork CLI and spawn a Clockwork thread from our Typescript application. Within 10 minutes, you will have your first automation up and running.
 
 {% hint style="info" %}
 All code in this quide is open-source and free to fork [**on Github**](https://github.com/clockwork-xyz/examples/tree/main/0-quickstart\_transfer)**.**
