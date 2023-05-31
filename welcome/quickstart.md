@@ -8,7 +8,7 @@ In this quickstart, you will learn how to automate a SOL transfer using Clockwor
 All code in this quide is open-source and free to fork [**on Github**](https://github.com/clockwork-xyz/examples/tree/main/0-quickstart\_transfer)**.**
 {% endhint %}
 
-## 1. Spawn a thread (\~5 min) <a href="#spawn-a-thread" id="spawn-a-thread"></a>
+## 1. Create your first automation (5 min)
 
 Let's begin by creating a new vanilla Node Typescript project:
 
@@ -87,7 +87,7 @@ const clockworkProvider = ClockworkProvider.fromAnchorProvider(provider);
 
 
 
-Next, we'll prepare a `SystemTransfer` instruction and automate it with a Clockwork Thread.
+Next, we'll prepare a `SystemTransfer` instruction and automate it with a Clockwork thread. Threads are the basic building block for automating Solana transactions. Every thread has a trigger condition and a set of instructions to run. In the code sample below, we create a thread that schedules a SOL transfer to happen every 10 seconds.&#x20;
 
 ```typescript
 ...
@@ -152,7 +152,7 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 * `trigger` – The trigger condition for the thread. When this condition is valid, the thread will begin executing the provided instructions.
 * `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. Read more about how fees are calculated [**here**](https://docs.clockwork.xyz/developers/threads/fees).
 
-## 2. Run the tests (1 min)
+## 2. Run the tests (2 min)
 
 Now we need to get our app running. If you haven't done so already, let's install the Clockwork CLI. If you face trouble here, please refer to the [**installation**](installation.md) docs.
 
