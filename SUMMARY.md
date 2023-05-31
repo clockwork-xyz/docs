@@ -1,11 +1,10 @@
 # Table of contents
 
-## About
+## Welcome
 
 * [Introduction](README.md)
-* [Use-cases](about/queues.md)
-* [Installation](about/installation.md)
-* [Quickstart](about/quickstart.md)
+* [Quickstart](welcome/quickstart.md)
+* [Installation](welcome/installation.md)
 
 ## Developers
 

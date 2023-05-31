@@ -2,7 +2,7 @@
 
 ## Launch a localnet
 
-To deploy Clockwork on your machine for local development, you must first [**install the CLI**](../about/installation.md). When this is done, you can launch a local Clockwork instance with the following command:
+To deploy Clockwork on your machine for local development, you must first [**install the CLI**](../welcome/installation.md). When this is done, you can launch a local Clockwork instance with the following command:
 
 ```bash
 clockwork localnet
