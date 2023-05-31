@@ -2,7 +2,7 @@
 
 ## 1. Download the geyser plugin
 
-To turn your Solana validator or RPC into a Clockwork worker, you simply need to install the Clockwork [geyser plugin](https://docs.solana.com/developing/plugins/geyser-plugins). You can get the binary either by [building from source](../developers/localnet.md#build-from-source) or installing the pre-built binary:
+To turn your Solana validator or RPC into a Clockwork worker, you simply need to install the Clockwork [geyser plugin](https://docs.solana.com/developing/plugins/geyser-plugins). You can get the binary either by [building from source](../reference/localnet.md#build-from-source) or installing the pre-built binary:
 
 ```
 curl -s https://api.github.com/repos/clockwork-xyz/clockwork/releases/latest | grep "clockwork-geyser-plugin-release-x86_64-unknown-linux-gnu.tar" | cut -d : -f 2,3 | tr -d \" | wget -qi -

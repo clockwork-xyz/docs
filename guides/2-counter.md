@@ -209,7 +209,7 @@ pub struct Initialize<'info> {
 }
 ```
 
-Finally, the trickiest part is to define our `Initialize` instruction constraints with Anchor macros properly. Note that the thread [authority](../threads/authority.md) is a PDA account. Only this program has the authority to administrate the thread; pause, start, create, delete the thread, etc.
+Finally, the trickiest part is to define our `Initialize` instruction constraints with Anchor macros properly. Note that the thread [authority](../reference/threads/authority.md) is a PDA account. Only this program has the authority to administrate the thread; pause, start, create, delete the thread, etc.
 
 ## 4. Testing our automation
 
@@ -257,7 +257,7 @@ it("It increments every 10 seconds", async () => {
 
 Finally, let's run the test using `anchor test`. You modify the test to print the thread address and look up the thread in your favorite Solana explorer. You should see the counter being auto-increment every 10 seconds by our thread.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Key Learnings
 

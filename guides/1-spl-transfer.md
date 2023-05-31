@@ -285,7 +285,7 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 
 If you setup everything correctly, you can now watch your automated program run all on its own. Grab the clockwork explorer link that was printed out to the console. Using the clockwork explorer, you can get simulation logs and inspect if your thread is not running and why. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Of course you can also look up your thread account in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs by running the command provided below. Here's [**an example thread**](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on May 24th, 2023.
 
@@ -299,8 +299,8 @@ solana logs -u devnet YOUR_PROGRAM_ID
 
 1. Threads are an automation primitive for Solana.
 2. You can use threads to automate any program instruction on Solana.&#x20;
-3. [**Triggers**](../threads/triggers.md) allow you to define when a thread should begin execution.
-4. Threads must be funded with a small amount of SOL to pay for [**automation fees**](../threads/fees.md).&#x20;
+3. [**Triggers**](../reference/threads/triggers.md) allow you to define when a thread should begin execution.
+4. Threads must be funded with a small amount of SOL to pay for [**automation fees**](../reference/threads/fees.md).&#x20;
 5. The signer for your instruction is your thread pda.
 
 ## Appendix

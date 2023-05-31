@@ -194,8 +194,8 @@ solana logs -u l YOUR_PROGRAM_ID
 
 1. Threads are an automation primitive for Solana.
 2. You can use threads to automate any program instruction on Solana.&#x20;
-3. [**Triggers**](../developers/threads/triggers.md) allow you to define when a thread should begin execution.
-4. Threads must be funded with a small amount of SOL to pay for [**automation fees**](../developers/threads/fees.md).&#x20;
+3. [**Triggers**](../reference/threads/triggers.md) allow you to define when a thread should begin execution.
+4. Threads must be funded with a small amount of SOL to pay for [**automation fees**](../reference/threads/fees.md).&#x20;
 
 ## Continue Learning
 

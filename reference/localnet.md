@@ -1,6 +1,6 @@
 # Localnet
 
-## Launch a localnet
+## Run a local Clockwork node
 
 To deploy Clockwork on your machine for local development, you must first [**install the CLI**](../welcome/installation.md). When this is done, you can launch a local Clockwork instance with the following command:
 
