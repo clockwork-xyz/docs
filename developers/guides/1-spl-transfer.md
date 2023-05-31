@@ -132,7 +132,7 @@ describe("spl-transfer", async () => {
 });
 ```
 
-* We create a cluster connection (make sure you installed the [clockwork-cli](https://docs.clockwork.xyz/developers/localnet)) if you are using localhost.
+* We create a cluster connection (make sure you have installed the [clockwork-cli](https://docs.clockwork.xyz/developers/localnet)) if you are using localhost.
 * We use your default paper keypair as the payer, this of course will change depending on your use case.
 * Finally, we initialize a `ClockworkProvider`. This will be required later to create your thread.
 
