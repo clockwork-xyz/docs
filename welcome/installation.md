@@ -8,7 +8,7 @@ Go [**here**](https://www.rust-lang.org/tools/install) to install Rust.
 
 Go [**here**](https://docs.solana.com/cli/install-solana-cli-tools) to install Solana, and then run `solana-keygen new` to create a local keypair for development.&#x20;
 
-## Anchor (optional)
+## Anchor
 
 Go [**here**](https://www.anchor-lang.com/docs/installation) to install Anchor. Anchor is a popular framework for building Solana smart-contracts. We will reference Anchor frequently in these docs and guides.
 
@@ -20,7 +20,7 @@ To install Clockwork on your local machine, simply run the following cargo insta
 cargo install -f --locked clockwork-cli
 ```
 
-If you are on Linux, you might need to install these additional dependencies:
+If you are on Linux, you may need to additionally install these dependencies:
 
 ```sh
 sudo apt-get update && \
