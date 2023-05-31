@@ -8,7 +8,7 @@ In this quickstart, you will learn how to automate a SOL transfer using Clockwor
 All code in this quide is open-source and free to fork [**on Github**](https://github.com/clockwork-xyz/examples/tree/main/0-quickstart\_transfer)**.**
 {% endhint %}
 
-## 1. Scheduling a SOL Transfer Instruction
+## 1. Spawn a thread
 
 Let's begin by creating a new vanilla Node Typescript project:
 
@@ -150,9 +150,7 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 * `id` – An identifier for the thread (can also use buffer or vec u8).
 * `instructions` – The list of instructions to execute when the trigger condition becomes valid.
 * `trigger` – The trigger condition for the thread. When this condition is valid, the thread will begin executing the provided instructions.
-* `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. Read more about how fees are calculated [here](https://docs.clockwork.xyz/developers/threads/fees).
-
-
+* `amount` – The number of lamports to fund the thread account with. Remember to provide a small amount of SOL. Read more about how fees are calculated [**here**](https://docs.clockwork.xyz/developers/threads/fees).
 
 ## 2. Run the tests
 
@@ -178,7 +176,7 @@ And voila:
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-06-01 at 01.48.01.png" alt=""><figcaption></figcaption></figure>
 
-## 3. Monitoring your automation
+## 3. Monitor your automation
 
 You can now watch your automation run all on its own. Grab the Clockwork explorer link that was printed out to the console. Using the Clockwork explorer, you can get simulation logs and inspect your thread. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
 
