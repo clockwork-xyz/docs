@@ -1,12 +1,12 @@
 # Quickstart
 
-{% hint style="info" %}
-All code are open source and tested, feel free to grab and fork the [**examples**](https://github.com/clockwork-xyz/examples)**.**
-{% endhint %}
-
 ## Getting started
 
 In this quickstart, you will learn how to automate a SOL transfer using Clockwork. We will install the Clockwork CLI, and spawn a thread to automate Solana instructions from a Typescript application.
+
+{% hint style="info" %}
+All code in this quide is open-source and free to fork [**on Github**](https://github.com/clockwork-xyz/examples/tree/main/0-quickstart\_transfer)**.**
+{% endhint %}
 
 ## 1. Scheduling a SOL Transfer Instruction
 
@@ -124,7 +124,7 @@ describe("transfer", async () => {
           threadId,                  // id
           [transferIx],              // instructions
           trigger,                   // trigger
-          50 * LAMPORTS_PER_SOL,      // amount to fund the thread with
+          LAMPORTS_PER_SOL,      // amount to fund the thread with
       );
       const tx = new Transaction().add(ix);
       const signature = await clockworkProvider.anchorProvider.sendAndConfirm(tx);
