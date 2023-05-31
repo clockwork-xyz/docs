@@ -1,4 +1,4 @@
-# 2. Counter
+# 2. Automating a Counter
 
 ## Goals
 
@@ -7,6 +7,10 @@ In the [**previous guide**](https://docs.clockwork.xyz/developers/guides/0-hello
 1. Learn how to create a thread via CPI.
 2. Build an automated counter program that increments itself.
 3. Secure our program endpoints against spam and unwanted callers.&#x20;
+
+{% hint style="info" %}
+All code are open source and tested, feel free to grab and fork the [**examples**](https://github.com/clockwork-xyz/examples)**.**
+{% endhint %}
 
 ## 1. Building a counter program
 

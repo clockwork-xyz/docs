@@ -9,6 +9,10 @@ In this guide, we will demonstrate how to automate a SPL token transfer using Cl
 3. Scheduling a SPL token transfer instruction.
 4. Monitor an automated program.
 
+{% hint style="info" %}
+All code are open source and tested, feel free to grab and fork the [**examples**](https://github.com/clockwork-xyz/examples)**.**
+{% endhint %}
+
 ## 1. Understanding the Clockwork programming model
 
 Let's start with the big picture. Solana is a really fast, globally distributed computer. Just as programs on a traditional computer needs to be able to execute an automated series of instructions, so do programs on Solana. Clockwork threads are an automation primitive analogous to [**computer threads**](https://en.wikipedia.org/wiki/Thread\_\(computing\)) that developers can use to automate programs on Solana. In simple terms, this means we can point Clockwork at any Solana program to automate it. A model of this relationship is presented in the diagram below.&#x20;

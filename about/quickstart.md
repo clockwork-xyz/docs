@@ -8,7 +8,9 @@ In this guide, we will demonstrate how to automate a SOL transfer using Clockwor
 If you haven't already install the [Clockwork CLI](installation.md).
 {% endhint %}
 
-
+{% hint style="info" %}
+All code are open source and tested, feel free to grab and fork the [**examples**](https://github.com/clockwork-xyz/examples)**.**
+{% endhint %}
 
 ## 1. Scheduling a SOL Transfer Instruction
 
@@ -72,7 +74,7 @@ import {
 } from "@solana/web3.js";
 import * as anchor from "@coral-xyz/anchor";
 import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
-import { ClockworkProvider } from "@clockwork-xyz/sdk";
+import { ClockworkProvider, PAYER_PUBKEY } from "@clockwork-xyz/sdk";
 
 const connection = new Connection("http://localhost:8899", "processed");
 const payer = Keypair.fromSecretKey(
@@ -199,5 +201,5 @@ solana logs -u devnet YOUR_PROGRAM_ID
 3. [**Triggers**](../developers/threads/triggers.md) allow you to define when a thread should begin execution.
 4. Threads must be funded with a small amount of SOL to pay for [**automation fees**](../developers/threads/fees.md).&#x20;
 
-* Many more examples codes are free to fork in the [**guides section**](https://docs.clockwork.xyz/developers/guides)**.**
+* Many more examples can be found in the [**guides section**](https://docs.clockwork.xyz/developers/guides)**.**
 * Ask questions on [**Discord**](https://discord.gg/epHsTsnUre).
