@@ -1,24 +1,20 @@
 # Quickstart
 
-Goals
-
-In this guide, we will demonstrate how to automate a SOL transfer using Clockwork. We will prepare a simple transfer of SOL between two accounts, then use the Clockwork SDK to schedule this instruction to run every 10 seconds.
-
-{% hint style="info" %}
-If you haven't already install the [Clockwork CLI](installation.md).
-{% endhint %}
-
 {% hint style="info" %}
 All code are open source and tested, feel free to grab and fork the [**examples**](https://github.com/clockwork-xyz/examples)**.**
 {% endhint %}
 
+## Getting started
+
+In this quickstart, you will learn how to automate a SOL transfer using Clockwork. We will install the Clockwork CLI, and spawn a thread to automate Solana instructions from a Typescript application.
+
 ## 1. Scheduling a SOL Transfer Instruction
 
-To keep the guide simple, we won't be using any framework. We will be creating a simple node typescript project:
+Let's begin by creating a new vanilla Node Typescript project:
 
 ```sh
-mkdir transfer
-cd transfer
+mkdir clockwork_quickstart
+cd clockwork_quickstart
 ```
 
 Create a new `tsconfig.json` file:
@@ -34,9 +30,7 @@ Create a new `tsconfig.json` file:
 }
 ```
 
-
-
-Create a new `package.json` file with the below content. The main dependencies you really need in your project is the [Clockwork SDK](https://www.npmjs.com/package/@clockwork-xyz/sdk) and anchor.
+Create a new `package.json` file with the below content. The main dependencies you really need in your project are the [**Clockwork SDK**](https://www.npmjs.com/package/@clockwork-xyz/sdk) and Anchor.
 
 ```json
 {
@@ -59,15 +53,13 @@ Create a new `package.json` file with the below content. The main dependencies y
 }
 ```
 
-
-
 After this, create a new file called `main.ts`. Import the necessary libraries and set up a Clockwork provider.
 
 ```ts
 import { expect } from "chai";
 import {
     Connection,
-    Keypair,
+    Keypair,}
     LAMPORTS_PER_SOL,
     PublicKey,
     Transaction,
@@ -162,15 +154,21 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 
 
 
-## 2. Testing & Monitoring an automated program
+## 2. Run the tests
 
-Run the Clockwork validator:
+Now we need to get our app running. If you haven't done so already, let's install the Clockwork CLI. If you face trouble here, please refer to the [**installation**](installation.md) docs.
+
+```shell
+cargo install -f --locked clockwork-cli
+```
+
+Now that we have Clockwork installed, we can go ahead and spin up a Clockwork node:
 
 ```bash
 clockwork localnet
 ```
 
-In a seperate terminal window, run the test:
+In a separate terminal window, we'll run the test:
 
 ```bash
 yarn test
@@ -180,14 +178,16 @@ And voila:
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-06-01 at 01.48.01.png" alt=""><figcaption></figcaption></figure>
 
-You can now watch your automated program run all on its own. Grab the clockwork explorer link that was printed out to the console. Using the clockwork explorer, you can get simulation logs and inspect your thread. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
+## 3. Monitoring your automation
+
+You can now watch your automation run all on its own. Grab the Clockwork explorer link that was printed out to the console. Using the Clockwork explorer, you can get simulation logs and inspect your thread. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Of course you can also look up your thread account in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs by running the command provided below. Here's [**an example thread**](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on May 24th, 2023.
 
 ```bash
-solana logs -u devnet YOUR_PROGRAM_ID
+solana logs -u l YOUR_PROGRAM_ID
 ```
 
 <figure><img src="https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png" alt=""><figcaption></figcaption></figure>
