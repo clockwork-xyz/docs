@@ -4,6 +4,7 @@
 
 * [Introduction](README.md)
 * [Use-cases](about/queues.md)
+* [Installation](about/installation.md)
 
 ## Developers
 

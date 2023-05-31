@@ -1,28 +1,8 @@
 # Localnet
 
-## 1. Install the clockwork-cli
+## Deploy localnet
 
-If you are on linux, you might need to run this:
-
-```sh
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y pkg-config build-essential libudev-dev libssl-dev
-```
-
-Install with cargo:
-
-```sh
-cargo install -f --locked clockwork-cli
-```
-
-## 2. Deploy a localnet
-
-First, remember to configure your Solana CLI for local development:
-
-```bash
-solana config set --url localhost
-```
-
-Now you can use the Clockwork CLI to launch a localnet with all the Clockwork plugin and programs initialized and ready to go:
+To deploy Clockwork on your machine for local development, you must first [**install the CLI**](../about/installation.md). When this is done, you can launch a local Clockwork instance with the following command:
 
 ```bash
 clockwork localnet
@@ -52,10 +32,10 @@ solana program deploy \
 {% endtab %}
 {% endtabs %}
 
-## 3. Stream logs
+## Stream logs
 
-To stream logs from your deployed program, you can use the Solana CLI.
+To stream logs from your localnet, you can use the Solana CLI.
 
 ```bash
-solana logs --url localhost
+solana logs --url l
 ```
