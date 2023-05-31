@@ -1,10 +1,10 @@
-# SPL Transfer
+# 1. Scheduling a SPL Transfer
 
 ## Goals
 
 In this guide, we will demonstrate how to automate a SPL token transfer using Clockwork. We will prepare a simple SPL token transfer, then use a Clockwork Thread to schedule that transfer instruction to run every 10 seconds.
 
-1. Understand the Clockwork security model.
+1. Understand the Clockwork programming model.
 2. Understand how to sign with Threads.
 3. Scheduling a SPL token transfer instruction.
 4. Monitor an automated program.
@@ -47,7 +47,7 @@ Create a new `tsconfig.json` file:
 
 
 
-Create a new `package.json` file with the above contents. The main dependencies you really need in your project are:
+Create a new `package.json` file with the below content. The main dependencies you really need in your project are:
 
 * [Clockwork SDK](https://www.npmjs.com/package/@clockwork-xyz/sdk).
 * `@solana/spl-token` for our token transfer.
@@ -58,7 +58,7 @@ Create a new `package.json` file with the above contents. The main dependencies 
   "version": "1.0.0",
   "description": "SPL Transfer Example",
   "scripts": {
-    "test": "yarn run ts-mocha -p tsconfig.json -t 1000000 ./tests/main.ts"
+    "test": "yarn run ts-mocha -p tsconfig.json -t 1000000 main.ts"
   },
   "dependencies": {
     "@clockwork-xyz/sdk": "^0.3.4",
@@ -87,17 +87,7 @@ yarn
 
 
 
-Let's create our first test file:
-
-```
-mkdir tests
-cd tests
-touch main.ts
-```
-
-
-
-Start by adding this into `test.ts`:
+Start by adding this into `main.ts`:
 
 ```typescript
 import { expect } from "chai";
