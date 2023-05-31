@@ -1,6 +1,6 @@
 # Quickstart
 
-## Goals
+Goals
 
 In this guide, we will demonstrate how to automate a SOL transfer using Clockwork. We will prepare a simple transfer of SOL between two accounts, then use the Clockwork SDK to schedule this instruction to run every 10 seconds.
 
@@ -170,7 +170,7 @@ Run the Clockwork validator:
 clockwork localnet
 ```
 
-Run the test:
+In a seperate terminal window, run the test:
 
 ```bash
 yarn test
@@ -178,11 +178,9 @@ yarn test
 
 And voila:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-06-01 at 01.48.01.png" alt=""><figcaption></figcaption></figure>
 
-
-
-If you setup everything correctly, you can now watch your automated program run all on its own. Grab the clockwork explorer link that was printed out to the console. Using the clockwork explorer, you can get simulation logs and inspect if your thread is not running and why. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
+You can now watch your automated program run all on its own. Grab the clockwork explorer link that was printed out to the console. Using the clockwork explorer, you can get simulation logs and inspect your thread. For example, here's mine: [https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet](https://app.clockwork.xyz/threads/GB7YgYK3bKF8J4Rr9Z2oeA3hwxrJdvW5zgXuNaxWWmUF?cluster=devnet)
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
