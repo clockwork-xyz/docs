@@ -6,7 +6,8 @@ In this guide, we will demonstrate how to automate a SPL token transfer using Cl
 
 1. Understand the Clockwork security model.
 2. Schedule a SPL token transfer instruction.
-3. Monitor an automated program.
+3. Understand how signing works with Threads.
+4. Monitor an automated program.
 
 ## 1. Understanding the Clockwork programming model
 
