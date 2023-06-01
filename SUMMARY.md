@@ -24,6 +24,6 @@
 * [SDK](reference/sdk.md)
 * [Support](reference/faq.md)
 
-## Workernet
+## Node operators
 
-* [Deploy a worker](workernet/deploying-a-worker.md)
+* [Deploy a worker](node-operators/deploying-a-worker.md)
