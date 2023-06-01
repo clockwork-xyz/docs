@@ -2,7 +2,7 @@
 
 ## Welcome
 
-* [About](README.md)
+* [What is Clockwork?](README.md)
 * [Quickstart](welcome/quickstart.md)
 * [Installation](welcome/installation.md)
 
