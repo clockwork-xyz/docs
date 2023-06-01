@@ -1,4 +1,4 @@
-# 1. Scheduling an SPL Transfer
+# 1. Scheduling an SPL transfer
 
 ## What you will learn
 
@@ -9,7 +9,7 @@ In this guide, you will learn how to schedule an SPL token transfer using Clockw
 3. How to monitor an automation.
 
 {% hint style="info" %}
-All code in this guide is open-source and and free to fork [**on Github**](https://github.com/clockwork-xyz/examples)**.**
+All code in this guide is open-source and free to fork [**on Github**](https://github.com/clockwork-xyz/examples)**.**
 {% endhint %}
 
 ## 1. The Clockwork programming model

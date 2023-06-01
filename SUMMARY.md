@@ -2,7 +2,7 @@
 
 ## Welcome
 
-* [Introduction](README.md)
+* [About](README.md)
 * [Quickstart](welcome/quickstart.md)
 * [Installation](welcome/installation.md)
 
