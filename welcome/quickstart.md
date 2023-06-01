@@ -2,10 +2,10 @@
 
 ## Getting started
 
-In this quickstart, you will learn how to automate a SOL transfer using Clockwork. We will install the Clockwork CLI and spawn a Clockwork thread from our Typescript application. Within 10 minutes, you will have your first automation up and running.
+In this quickstart, you will learn how to automate a SOL transfer using Clockwork. We will install the Clockwork CLI and spawn a Clockwork thread from a Typescript application. Within 10 minutes, you will have your first automation up and running.
 
 {% hint style="info" %}
-All code in this quide is open-source and free to fork [**on Github**](https://github.com/clockwork-xyz/examples/tree/main/0-quickstart\_transfer)**.**
+All code in this quickstart is open-source and free to fork [**on Github**](https://github.com/clockwork-xyz/examples/tree/main/0-quickstart\_transfer)**.**
 {% endhint %}
 
 ## 1. Create your first automation (5 min)
@@ -87,7 +87,7 @@ const clockworkProvider = ClockworkProvider.fromAnchorProvider(provider);
 
 
 
-Next, we'll prepare a `SystemTransfer` instruction and automate it with a Clockwork thread. Threads are the basic building block for automating Solana transactions. Every thread has a trigger condition and a set of instructions to run. In the code sample below, we create a thread that schedules a SOL transfer to happen every 10 seconds.&#x20;
+Next, we'll prepare a `SystemTransfer` instruction and automate it with a Clockwork thread. Threads are the basic building blocks of automations on Solana. Every thread has a trigger condition and a set of instructions to run. In the code sample below, we create a thread that schedules a SOL transfer to happen every 10 seconds.&#x20;
 
 ```typescript
 ...
@@ -154,13 +154,13 @@ We can see the `threadCreate` function asks for 5 arguments. These include some 
 
 ## 2. Run the tests (2 min)
 
-Now we need to get our app running. If you haven't done so already, let's install the Clockwork CLI. If you face trouble here, please refer to the [**installation**](installation.md) docs.
+Now we need to get our app running. If you have not done so already, you will need to install the Clockwork CLI by running the cargo command below. If you face any trouble here, please refer to the [**installation**](installation.md) docs.&#x20;
 
 ```shell
 cargo install -f --locked clockwork-cli
 ```
 
-Now that we have Clockwork installed, we can go ahead and spin up a Clockwork node:
+Now that we have Clockwork installed, we can go ahead and spin up a local Clockwork node:
 
 ```bash
 clockwork localnet
