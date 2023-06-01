@@ -1,8 +1,8 @@
-# 2. Automating a Counter
+# 2. Auto-incrementing counter
 
 ## Goals
 
-In the [**previous guide**](https://docs.clockwork.xyz/developers/guides/0-hello-clockwork), we learned how to automate a Solana program using the [**Clockwork Typescript SDK**](https://www.npmjs.com/package/@clockwork-xyz/sdk). In this guide, we will see how programs can create and manage **threads** directly using [**CPIs**](https://docs.solana.com/developing/programming-model/calling-between-programs#cross-program-invocations)**.**
+In this guide, we will learn how programs can create and manage threads directly using [**CPIs**](https://docs.solana.com/developing/programming-model/calling-between-programs#cross-program-invocations)**.**
 
 1. Learn how to create a thread via CPI.
 2. Build an automated counter program that increments itself.
