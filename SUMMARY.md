@@ -8,7 +8,7 @@
 
 ## Guides
 
-* [1. Scheduling a SPL Transfer](guides/1-spl-transfer.md)
+* [1. Scheduling an SPL Transfer](guides/1-spl-transfer.md)
 * [2. Automating a Counter](guides/2-counter.md)
 
 ## Reference
