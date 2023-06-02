@@ -273,7 +273,7 @@ clockwork localnet
 In a separate terminal window, we'll run the test:
 
 ```bash
-anchor test --skip-local-validator
+yarn test
 ```
 
 ## 6. Monitoring our automation
@@ -285,7 +285,7 @@ If you setup everything correctly, you can now watch your automated program run 
 Of course you can also look up your thread account in your favorite Solana explorer. You can alternatively use the Solana CLI to stream program logs by running the command provided below. Here's [**an example thread**](https://explorer.solana.com/address/3ohRKgNyLS1iTGiUqnzoiFiQcrCLGmr3NWHzq4HW8BdJ?cluster=devnet) that was created in a test on May 24th, 2023.
 
 ```bash
-solana logs -u devnet YOUR_PROGRAM_ID
+solana logs YOUR_PROGRAM_ID
 ```
 
 <figure><img src="https://user-images.githubusercontent.com/8634334/222591908-bbaa04c5-83b4-46c2-b83b-68e1fef473eb.png" alt=""><figcaption></figcaption></figure>
