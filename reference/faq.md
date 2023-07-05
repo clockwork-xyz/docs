@@ -53,3 +53,18 @@ You can use [**https://crontab.guru**](https://crontab.guru/) as reference to bu
 
 
 
+### Anchor 0.28
+
+We don't support anchor 0.28 yet, if you encounter build issue related to -
+
+* AnchorDeserialize not implemented
+* spl-token-2022 failed to compile
+
+Please check these two solutions:
+
+{% embed url="https://discord.com/channels/889725689543143425/951718079925202954/1126059435995955281" %}
+
+{% embed url="https://discord.com/channels/889725689543143425/951718079925202954/1124240787379597312" %}
+
+
+
