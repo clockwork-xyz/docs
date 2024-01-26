@@ -2,9 +2,7 @@
 
 **Clockwork** **is an open-source automation engine for the** [**Solana**](https://solana.com/) **blockchain**. Developers can use Clockwork to schedule transactions and build automated, event-driven smart-contracts.&#x20;
 
-{% embed url="https://www.youtube.com/watch?v=1iBG1U3VE6Y" %}
-Clockwork presentation at Breakpoint 2022.
-{% endembed %}
+See (Clockwork presentation at Breakpoint 2022)["https://www.youtube.com/watch?v=1iBG1U3VE6Y"].
 
 ### **Blockchains**
 
